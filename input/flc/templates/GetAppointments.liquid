@@ -1,0 +1,31 @@
+{% comment %}
+==========================================================================
+Template:     PatientPmoExtractTransactionBundle
+Purpose:      Generates a FHIR TransactionBundle for a single PMO patient.
+Version:      0.0.1
+Author:       Region Skåne/@olof.mattsson
+Date:         2025-07-08
+
+Context:
+  -PMO PatientJSON från vyn facade.Patient
+
+Parameters:
+
+Output:
+  - FHIR Bundle resource with:
+      - Patient
+==========================================================================
+{% endcomment %}
+{% assign bundle_id = msg.id | generate_id_input: "Bundle", false | generate_uuid -%}
+{% assign full_bundle_id = bundle_id | prepend: "urn:uuid:" -%}
+{
+  "resourceType": "Bundle",
+  "type": "searchresult",
+  "id": "{{ bundle_id }}",
+  "timestamp": "{{ Meta.ExtractDate }}+01:00",
+  "entry": [
+    {% for nisse in msg %}
+        {% include 'resources/appointment' apa = nisse %},
+    {% endfor %}
+  ]
+}

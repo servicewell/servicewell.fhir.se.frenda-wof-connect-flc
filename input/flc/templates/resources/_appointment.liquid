@@ -19,14 +19,19 @@
     ],
     "lastUpdated": "2025-08-25T12:16:00+00:00",
     "tag": [
+      {% if apa.canAppointmentBeCancelled == true %}
       {
         "code": "false",
         "system": "http://portal.wof.purified.link/fhir/CodeSystem/csAvailableForCancellation"
-      },
-      {
+      }
+      {% endif %}
+      ,
+      {% if apa.canAppointmentBeRescheduled == true %}
+    {
         "code": "false",
         "system": "http://portal.wof.purified.link/fhir/CodeSystem/csAvailableForReschedule"
       }
+      {% endif %}
     ]
   },
   "extension": [
@@ -45,7 +50,7 @@
         ]
       },
       "system": "[[baseurl]]/1C6D760E-4445-4ED9-99F8-7A70BD85011E/fhir/NamingSystem/nsbookingId",
-      "value": "{{msg.first.id}}"
+      "value": "{{apa.first.id}}"
     }
   ],
   "status": "booked",
