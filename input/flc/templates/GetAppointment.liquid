@@ -1,0 +1,105 @@
+{
+  "resourceType": "Appointment",
+  "id": "ITBAppointmentExample",
+  "meta": {
+    "extension": [
+      {
+        "extension": [
+          {
+            "url": "created",
+            "valueDateTime": "2025-08-25T12:15:35.123+00:00"
+          },
+          {
+            "url": "row-version",
+            "valueString": "AAAAAAADS8E="
+          }
+        ],
+        "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extWofMeta"
+      }
+    ],
+    "lastUpdated": "2025-08-25T12:16:00+00:00",
+    "tag": [
+      {
+        "code": "false",
+        "system": "http://portal.wof.purified.link/fhir/CodeSystem/csAvailableForCancellation"
+      },
+      {
+        "code": "false",
+        "system": "http://portal.wof.purified.link/fhir/CodeSystem/csAvailableForReschedule"
+      }
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extBookingCommentFromPatient"
+    }
+  ],
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "code": "bookingId",
+            "system": "http://opusdental.purified.link/fhir/CodeSystem/csOpusIdentifier"
+          }
+        ]
+      },
+      "system": "[[baseurl]]/1C6D760E-4445-4ED9-99F8-7A70BD85011E/fhir/NamingSystem/nsbookingId",
+      "value": "{{msg.first.id}}"
+    }
+  ],
+  "status": "booked",
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "code": "itb-not-defined",
+          "system": "http://portal.wof.purified.link/fhir/CodeSystem/csServiceType",
+          "display": "Bokat besök online"
+        }
+      ],
+      "text": "Bokat besök online"
+    }
+  ],
+  "start": "2025-08-26T11:00:00+00:00",
+  "end": "2025-08-26T11:40:00+00:00",
+  "participant": [
+    {
+      "actor": {
+        "reference": "ITBHealthcareServiceExample",
+        "display": "Service O"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "ITBPatientExample"
+      },
+      "status": "accepted"
+    },
+    {
+      "type": [
+        {
+          "coding": [
+            {
+              "code": "PPRF",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+            }
+          ],
+          "text": "PrimaryPerformer"
+        }
+      ],
+      "actor": {
+        "reference": "ITBPractitionerRoleExample",
+        "display": "Tandläkare Nils Nilsson"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Device/17"
+      },
+      "status": "accepted"
+    }
+  ]
+}

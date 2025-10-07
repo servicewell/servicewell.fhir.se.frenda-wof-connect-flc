@@ -1,0 +1,8 @@
+Eventuella mappningar:
+
+clinics 								--> HealthcareServices
+clinic_treatments (treatments)			--> ActivityDefinitions
+clinic_treatment_treaters 				--> PractitionerRoles
+clinic_treatments (treaters)			--> Schedules
+availableslots							--> Slots 
+appointments 							--> Appointments

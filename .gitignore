@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+/fsh-generated
+/flc-generated
+/input-cache
+/output
+/temp
+/template
+
+.vscode/settings.json
+_build.bat
