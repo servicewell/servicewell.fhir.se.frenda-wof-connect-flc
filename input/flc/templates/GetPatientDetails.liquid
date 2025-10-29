@@ -1,0 +1,20 @@
+{% comment %}
+==========================================================================
+Template:     Frenda GetPatientDetails
+Purpose:      Generates a FHIR Patient.
+Version:      0.0.1
+Author:       Service Well/@marcus.johnsson
+Date:         2025-10-22
+
+Context:
+  -FrendaGetAPIPatientDetails from Frenda API
+
+Parameters:
+
+Output:
+  - FHIR resource with:
+      - Patient
+==========================================================================
+{% endcomment %}
+
+{% include "resources/patientdetails", patient: msg %}

@@ -1,0 +1,14 @@
+{% assign scheduleSeed = 'schedule|frenda|' | append: slot.clinicId | append: '|' | append: slot.treatmentId | append: '|' | append: slot.treaterId -%}
+{% assign scheduleId = scheduleSeed | generate_uuid -%}
+{
+  "resourceType": "Slot",
+  "id": "{{ slot.slotId }}",
+  "schedule": {
+    {% comment %} Setting ID as clinic-treatment-treater {% endcomment %}
+    "reference": "Schedule/{{ scheduleId }}",
+    "display": "{{ slot.treaterNameWithTitle }}"
+  },
+  "status": "free",
+  "start": "{{ slot.startDateTime }}",
+  "end": "{{ slot.endDateTime }}"
+}

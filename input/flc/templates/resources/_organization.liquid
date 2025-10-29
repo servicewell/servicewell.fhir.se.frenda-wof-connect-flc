@@ -1,0 +1,44 @@
+{%- comment -%} Expects: organization {%- endcomment -%}
+
+{%- assign nameAsCode = organization.name | downcase | strip | replace: ' ','-' | replace: 'å','a' | replace: 'ä','a' | replace: 'ö','o' -%}
+
+{%- assign tenant = "_TO_BE_DECIDED_" -%}
+
+{
+  "resourceType": "Organization",
+  {%- comment -%}
+  Not sure how these extensions should be populated
+  
+  "extension": [
+    {
+      "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extCreated",
+      "valueDateTime": "{{ 'now'| date: 'yyyy-MM-dd'T'HH:mm:sszzz' }}"
+    },
+    {
+      "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extNameAsCode",
+      "valueString": "{{ nameAsCode }}"
+    }{% if tenant %},
+    {
+      "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extTenantIdenfier",
+      "valueString": "{{ tenant }}"
+    }{% endif %},
+    {
+      "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extAttachment",
+      "valueAttachment": { }
+    }
+  ]
+  {%- endcomment -%}
+  "id": "{{ organization.id }}",
+  "meta": {
+    "profile": [
+      "http://ki.purified.link/wof-portal/fhir/StructureDefinition/clinicalorganization"
+    ],
+    "lastUpdated": "2025-10-22T12:00:00+00:00"
+  },
+  "name": "{{ organization.name }}"
+  {%- comment -%}
+  Not sure if display and reference should be included or not. Organization will result in a WofReference, which has these props
+  "display": "Frenda Organization",
+  "reference": "Organization/{{ organization.id }}"
+  {%- endcomment -%}
+}

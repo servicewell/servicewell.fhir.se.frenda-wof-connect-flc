@@ -24,12 +24,9 @@ publisher:
 # package id and the value is the version (or dev/current). For advanced
 # use cases, the value can be an object with keys for id, uri, and version.
 #
-# dependencies:
-#   hl7.fhir.us.core: 3.1.0
-#   hl7.fhir.us.mcode:
-#     id: mcode
-#     uri: http://hl7.org/fhir/us/mcode/ImplementationGuide/hl7.fhir.us.mcode
-#     version: 1.0.0
+dependencies:
+  ihe.iti.scheduling: 1.0.0
+
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -63,7 +60,7 @@ publisher:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
 parameters:
-  path-binary: [input\flc\templates, input\flc\sampledata, input\flc\templates\codesystem]
+  path-binary: [input\flc\templates, input\flc\sampledata, input\flc\templates\codesystem, input\flc\templates\resources]
   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #

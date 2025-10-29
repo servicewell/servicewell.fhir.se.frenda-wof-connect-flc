@@ -1,0 +1,55 @@
+{% comment %}
+Maps a ItbAppointmentNew to Frendas CreateAppointment for POST to their API
+{% endcomment %}
+
+{% comment %} Find and assign a contained patient in "patient" {% endcomment %}
+{%- assign patient = nil -%}
+{%- for c in msg.contained -%}
+  {%- if c.resourceType == 'Patient' -%}
+    {%- assign hit = false -%}
+    {%- for idt in c.identifier -%}
+      {%- if idt.system == 'urn:oid:1.2.752.129.2.1.3.1' -%}
+        {%- assign hit = true -%}{%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if hit -%}{%- assign patient = c -%}{%- break -%}{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- assign name0 = nil -%}{%- if patient and patient.name -%}{%- assign name0 = patient.name | first -%}{%- endif -%}
+{%- assign firstname = '' -%}{%- if name0 and name0.given -%}{%- assign firstname = name0.given | first | default: '' -%}{%- endif -%}
+{%- assign lastname = name0.family | default: '' -%}
+
+{%- assign phone = '' -%}
+{%- assign email = '' -%}
+{%- if patient and patient.telecom -%}
+  {%- for t in patient.telecom -%}
+    {%- if t.system == 'phone' and phone == '' -%}{%- assign phone = t.value | default: '' -%}{%- endif -%}
+    {%- if t.system == 'email' and email == '' -%}{%- assign email = t.value | default: '' -%}{%- endif -%}
+  {%- endfor -%}
+{%- endif -%}
+
+{
+    {% comment %} We need a reference to the slotId here, and we don't have it in our conformance {% endcomment %}
+    "slotId": "",
+    {% comment %} Needs to be added to conformance {% endcomment %}
+    "comment": "",
+    {% comment %} Needs to be added to conformance {% endcomment %}
+    "promoCode": "",
+    "patient": {
+        "ssn": "{% if patient and patient.identifier %}{% for i in patient.identifier %}{% if i.system == 'urn:oid:2.16.578.1.12.4.1.4.1' %}{{ i.value }}{% break %}{% endif %}{% endfor %}{% endif %}",
+        "firstname": "{{ firstname }}",
+        "lastname": "{{ lastname }}",
+        "mobile": "{{ phone }}",
+        "eMail": "{{ email }}"
+    },
+    {% comment %} Not sure if and how to solve {% endcomment %}
+    "costLocationId": ""
+}
+
+{% comment %}
+Summary: In this case it feels like we should change the conformance and probably our Opus-implementation.
+For the quickest non-breaking Frenda support we add a reference to slotId, and make fields like start, end, 
+participant.healthcareservice and participant.practitionerrole optional so a called adds either slotId or the
+other explicit properties.
+{% endcomment %}

@@ -1,19 +1,19 @@
 {% comment %}
 ==========================================================================
-Template:     Frenda GetAppointmentBundle
-Purpose:      Generates a FHIR SearchSet Bundle with appointments.
+Template:     Frenda GetSlotsBundle
+Purpose:      Generates a FHIR Collection Bundle with slots.
 Version:      0.0.1
-Author:       Service Well/@olof.mattsson
-Date:         2025-10-07
+Author:       Service Well/@marcus.johnsson
+Date:         2025-10-08
 
 Context:
-  -FrendaGetAPIAppointment from Frenda API
+  -FrendaGetAPIAvailableSlots from Frenda API
 
 Parameters:
 
 Output:
   - FHIR Bundle resource with:
-      - Appointments
+      - Slots
 ==========================================================================
 {% endcomment %}
 {% assign bundle_id = msg.id | generate_id_input: "Bundle", false | generate_uuid -%}
@@ -29,9 +29,9 @@ Output:
   "id": "{{ bundle_id }}",
   "timestamp": "{{ timestamp }}",
   "entry": [
-    {% for itemAppt in msg -%}
+    {% for item in msg -%}
       {
-        "resource": {% include "resources/appointment", appt: itemAppt %}
+        "resource": {% include "resources/slot", slot: item %}
       }
      {% if forloop.last == false %},{% endif %}
     {% endfor -%}

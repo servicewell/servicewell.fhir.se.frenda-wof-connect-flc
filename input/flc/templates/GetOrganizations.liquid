@@ -1,26 +1,23 @@
 {% comment %}
 ==========================================================================
-Template:     Frenda GetAppointmentBundle
-Purpose:      Generates a FHIR SearchSet Bundle with appointments.
+Template:     Frenda GetOrganizationBundle
+Purpose:      Generates a FHIR SearchSet Bundle with Organizations.
 Version:      0.0.1
-Author:       Service Well/@olof.mattsson
-Date:         2025-10-07
+Author:       Service Well/@marcus.lindblom
+Date:         2025-10-21
 
 Context:
-  -FrendaGetAPIAppointment from Frenda API
+  -Clinics from Frenda API
 
 Parameters:
 
 Output:
   - FHIR Bundle resource with:
-      - Appointments
+      - Organizations
 ==========================================================================
 {% endcomment %}
 {% assign bundle_id = msg.id | generate_id_input: "Bundle", false | generate_uuid -%}
 {% assign full_bundle_id = bundle_id | prepend: "urn:uuid:" -%}
-{% comment %} UTC-date {% endcomment %}
-{% comment %}{% assign timestamp = 'now' | date: "u" | replace: ' ', 'T' %}{% endcomment %}
-{% comment %} Local date with offset {% endcomment %}
 {% assign timestamp = 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
 
 {
@@ -29,11 +26,11 @@ Output:
   "id": "{{ bundle_id }}",
   "timestamp": "{{ timestamp }}",
   "entry": [
-    {% for itemAppt in msg -%}
-      {
-        "resource": {% include "resources/appointment", appt: itemAppt %}
-      }
-     {% if forloop.last == false %},{% endif %}
+    {% for organizationItem in msg -%}
+    {
+      "fullUrl": "urn:uuid:{{ organizationItem.id }}",
+      "resource": {% include "resources/organization", organization: organizationItem %}
+    }{% if forloop.last == false %},{% endif %}
     {% endfor -%}
   ]
 }

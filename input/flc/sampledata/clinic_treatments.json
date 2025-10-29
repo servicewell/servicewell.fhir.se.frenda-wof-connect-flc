@@ -1,76 +1,82 @@
-[
-  {
-    "clinic": {
-      "id": "48e428b0-fb37-4224-84df-5783a301a9da",
-      "name": "Service Well AB",
-      "hsaIdentity": "hsaid55",
-      "competenceCode": "A",
-      "countyCode": "33",
-      "address": "Grönegatan 1C",
-      "postalCode": "22224",
-      "city": "Lund",
-      "phone": "070-738 76 66",
-      "eMail": "kontakt@servicewell.se",
-      "searchDateLimit": "2026-04-03T07:47:13.670028Z",
-      "childPatientThreshold": 20,
-      "isNewBookingAvailable": true,
-      "isRescheduleAvailable": true,
-      "isCancellationAvailable": true,
-      "costLocations": [
+{
+  "meta": {
+    "extractDate": "2025-10-23T09:19:00",
+    "sourceSystem": "Frenda"
+  },
+  "data": {
+    "getClinicTreatments": {
+      "clinic": {
+        "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "name": "Service Well AB",
+        "hsaIdentity": "hsaid55",
+        "competenceCode": "A",
+        "countyCode": "33",
+        "address": "Grönegatan 1C",
+        "postalCode": "22224",
+        "city": "Lund",
+        "phone": "070-738 76 66",
+        "eMail": "kontakt@servicewell.se",
+        "searchDateLimit": "2026-04-03T07:47:13.670028Z",
+        "childPatientThreshold": 20,
+        "isNewBookingAvailable": true,
+        "isRescheduleAvailable": true,
+        "isCancellationAvailable": true,
+        "costLocations": [
+          {
+            "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+            "name": "Klinik ServiceWell",
+            "number": "911920"
+          }
+        ]
+      },
+      "treatments": [
         {
-          "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
-          "name": "Klinik ServiceWell",
-          "number": "911920"
+          "treaterIds": [
+            "3dc38cf1-2039-40f1-b85f-6164f202c235"
+          ],
+          "allowAdults": true,
+          "allowChildren": false,
+          "id": "696b3685-dd39-4781-b410-0e700a8ba010",
+          "name": "Akut - vuxen",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för vuxna patienter"
+        },
+        {
+          "treaterIds": [
+            "3dc38cf1-2039-40f1-b85f-6164f202c235"
+          ],
+          "allowAdults": false,
+          "allowChildren": true,
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        {
+          "treaterIds": [
+            "3dc38cf1-2039-40f1-b85f-6164f202c235"
+          ],
+          "allowAdults": true,
+          "allowChildren": true,
+          "id": "949adf08-f5b9-4fca-8423-0e6824b1e3c7",
+          "name": "Undersökning",
+          "duration": 50,
+          "calendarTreatmentType": "Undersökning",
+          "description": "För ej akuta ärenden."
+        }
+      ],
+      "treaters": [
+        {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
         }
       ]
-    },
-    "treatments": [
-      {
-        "treaterIds": [
-          "3dc38cf1-2039-40f1-b85f-6164f202c235"
-        ],
-        "allowAdults": true,
-        "allowChildren": false,
-        "id": "696b3685-dd39-4781-b410-0e700a8ba010",
-        "name": "Akut - vuxen",
-        "duration": 30,
-        "calendarTreatmentType": "Akut",
-        "description": "Akuttid för vuxna patienter"
-      },
-      {
-        "treaterIds": [
-          "3dc38cf1-2039-40f1-b85f-6164f202c235"
-        ],
-        "allowAdults": false,
-        "allowChildren": true,
-        "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
-        "name": "Akut - barn",
-        "duration": 30,
-        "calendarTreatmentType": "Akut",
-        "description": "Akuttid för barnpatienter."
-      },
-      {
-        "treaterIds": [
-          "3dc38cf1-2039-40f1-b85f-6164f202c235"
-        ],
-        "allowAdults": true,
-        "allowChildren": true,
-        "id": "949adf08-f5b9-4fca-8423-0e6824b1e3c7",
-        "name": "Undersökning",
-        "duration": 50,
-        "calendarTreatmentType": "Undersökning",
-        "description": "För ej akuta ärenden."
-      }
-    ],
-    "treaters": [
-      {
-        "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
-        "name": "Utv Mattias Ekberg",
-        "firstName": "Mattias",
-        "lastName": "Ekberg",
-        "title": "Utv",
-        "hsaIdentity": "SE165560772419-10K8"
-      }
-    ]
+    }
   }
-]
+}

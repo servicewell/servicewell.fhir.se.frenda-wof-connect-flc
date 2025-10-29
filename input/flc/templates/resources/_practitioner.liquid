@@ -1,0 +1,81 @@
+{%- comment -%} Expects: treater, root {%- endcomment -%}
+
+{%- capture roleSeed -%}role|frenda|{{ root.clinic.id }}|{{ treater.id }}{%- endcapture -%}
+{%- assign roleId = roleSeed | generate_uuid -%}
+
+{
+  "resourceType": "Practitioner",
+  "id": "{{ treater.id }}",
+  "meta": {
+    {% comment %} Probably skip this for Frenda - no point in showing Now or stale date {% endcomment %}
+    "lastUpdated": "2025-08-25T12:16:00+00:00"
+  },
+  "contained": [
+    {
+      "resourceType": "PractitionerRole",
+      "id": "{{ roleId }}",
+      "active": true,
+      "practitioner": { 
+        "reference": "Practitioner/{{ treater.id }}", 
+        "display": "{{ treater.name }}" 
+      },
+      "organization": {
+        "reference": "Organization/{{ root.clinic.id }}"
+      },
+      "code": [
+        {
+          {% comment %} Not sure what this does, if anything {% endcomment %}
+          "coding": [
+            {
+              "system": "Frenda",
+              "code": "LnkEmployeeBusiness"
+            }
+          ],
+          "text": "WorksAt"
+        }
+      ],
+      "specialty": [
+        {
+          "coding": [
+            {
+              "system": "http://this_needs_a_new_system_for_frenda_or_we_ignore_treatment_code",
+              "code": "dentist"
+            }
+          ],
+          "text": "{{ treater.title }}"
+        }
+      ],
+      {% comment %} Not sure what this does, if anything {% endcomment %}
+      "endpoint": [
+        {
+          "reference": "http://...",
+          "display": "FrendaEndpoint"
+        }
+      ],
+      "location": []
+    }
+  ],
+  "identifier": [
+    { 
+      "system": "https://frenda.se/id/treater", 
+      "value": "{{ treater.id }}" 
+    }{% if treater.hsaIdentity %},
+    { 
+      "system": "https://hsa-id.se", 
+      "value": "{{ treater.hsaIdentity }}" 
+    }{% endif %}
+  ],
+  "active": true,
+  "name": [
+    {
+      {% capture fallbackName -%}
+        {{ treater.firstName }}{% if treater.firstName and treater.lastName %} {% endif %}{{ treater.lastName }}
+      {%- endcapture %}
+      "text": "{{ treater.name | default: fallbackName | strip }}",
+      "family": "{{ treater.lastName | default: '' }}",
+      "given": [ 
+        "{{ treater.firstName | default: '' }}" 
+      ]
+    }
+  ]
+}

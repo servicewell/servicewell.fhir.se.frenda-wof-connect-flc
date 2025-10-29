@@ -1,0 +1,67 @@
+{% comment %}
+==========================================================================
+Template:     Frenda GetPractitionerRolesBundle
+Purpose:      Generates a FHIR Collection Bundle with PractitionerRoles.
+Version:      0.0.1
+Author:       Service Well/@marcus.johnsson
+Date:         2025-10-08
+
+Context:
+  -FrendaGetAPIClinicTreatments from Frenda API
+
+Parameters:
+
+Output:
+  - FHIR Bundle resource with:
+      - PractitionerRoles
+==========================================================================
+{% endcomment %}
+{% assign bundle_id = msg.id | generate_id_input: "Bundle", false | generate_uuid -%}
+{% assign full_bundle_id = bundle_id | prepend: "urn:uuid:" -%}
+{% comment %} UTC-date {% endcomment %}
+{% comment %}{% assign timestamp = 'now' | date: "u" | replace: ' ', 'T' %}{% endcomment %}
+{% comment %} Local date with offset {% endcomment %}
+{% assign timestamp = 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "id": "{{ bundle_id }}",
+  "timestamp": "{{ timestamp }}",
+  "entry": [
+    {% assign first = true -%}
+    {% for root in msg -%}
+      {% assign seenRole = '' -%}
+      {%- comment -%}
+        seenRole: a string “set” of already-emitted (clinic|treater) keys.
+        We store each key surrounded by delimiters (|key|) so we can use
+        'contains' safely without substring collisions.
+      {%- endcomment -%}
+      {% for t in root.treatments -%}
+        {% for treaterId in t.treaterIds -%}
+          {%- comment -%}
+            roleKey = unique identity for a PractitionerRole at this clinic.
+            Using capture avoids repeating the concatenation everywhere.
+          {%- endcomment -%}
+          {% capture roleKey %}{{ root.clinic.id }}|{{ treaterId }}{% endcapture %}
+          {%- comment -%}
+            needle = the delimited token we’ll search for in seenRole.
+            Wrapping with '|' prevents false positives, e.g. 'ab|c' vs 'b|c'.
+          {%- endcomment -%}
+          {% capture needle %}|{{ roleKey }}|{% endcapture %}
+          {% unless seenRole contains needle -%}
+            {% unless first %},{% endunless %}{% assign first = false %}
+            { 
+              "resource": {% include "resources/practitionerrole", root: root, treaterId: treaterId %} 
+            }
+          {%- comment -%}
+            Append the token so subsequent iterations will skip duplicates.
+            (DotLiquid assigns persist across loop iterations.)
+          {%- endcomment -%}
+          {% assign seenRole = seenRole | append: needle -%}
+          {% endunless -%}
+        {% endfor -%}
+      {% endfor -%}
+    {% endfor -%}
+  ]
+}

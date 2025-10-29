@@ -1,0 +1,54 @@
+{% comment %}
+==========================================================================
+Template:     Frenda GetScheduleBundle
+Purpose:      Generates a FHIR Collection Bundle with schedules.
+Version:      0.0.2
+Author:       Service Well/@marcus.lindblom
+Date:         2025-10-24
+
+Context:
+  -LM: FrendaClinicTreatments
+  -API: /api/clinic/treatments
+
+Parameters:
+
+Output:
+  - FHIR Bundle resource with:
+      - Schedules
+==========================================================================
+{% endcomment %}
+{%- assign bundle_id = msg.id | generate_id_input: "Bundle", false | generate_uuid -%}
+
+{%- assign dataRoot = msg.data.getClinicTreatments -%}
+{%- assign metaRoot = msg.meta -%}
+
+{%- assign clinic     = dataRoot.clinic     -%}
+{%- assign treatments = dataRoot.treatments -%}
+{%- assign treaters   = dataRoot.treaters   -%}
+
+{%- assign sourceSystem = metaRoot.sourceSystem | default: "Unknown" -%}
+{%- assign extractDate  = metaRoot.extractDate  | default: 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "id": "{{ bundle_id }}",
+  "meta": {
+    "tag": [
+      { "system": "http://ki.purified.link/wof-portal/meta/source-system", "code": "{{ sourceSystem }}" },
+      { "system": "http://ki.purified.link/wof-portal/meta/extract-date",  "code": "{{ extractDate }}" }
+    ]
+  },
+  "timestamp": "{{ extractDate }}",
+  "entry": [
+    {%- assign first = true -%}
+    {%- for t in treatments -%}
+      {%- for treaterId in t.treaterIds -%}
+        {%- unless first %},{% endunless -%}{%- assign first = false -%}
+        {
+          "resource": {% include "resources/schedule", root: dataRoot, treatment: t, treater: treaterId %}
+        }
+      {%- endfor -%}
+    {%- endfor -%}
+  ]
+}

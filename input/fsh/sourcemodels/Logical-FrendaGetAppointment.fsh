@@ -1,13 +1,11 @@
 // ------------------------------------------------------------
-// Logical Model: FrendaAppointment
+// Logical Model: FrendaGetAppointment
 // ------------------------------------------------------------
-Logical: FrendaAPIAppointment
-Id: frenda-api-appointment
+Logical: FrendaGetAppointment
+Id: frenda-get-appointment
 Title: "Frenda Appointment (Logical Model)"
-Description: "Logisk modell av en Frenda-bokning, inkl. klinik, behandlare och behandling."
+Description: "Logisk modell av Frenda Get Appointment, inkl. klinik, behandlare och behandling."
 * ^status = #draft
-* ^kind = #logical
-* ^abstract = false
 * ^baseDefinition = "http://hl7.org/fhir/StructureDefinition/Element"
 * ^mapping[0].identity = "fhir"
 * ^mapping[0].name = "FHIR Appointment"
@@ -42,26 +40,7 @@ Description: "Logisk modell av en Frenda-bokning, inkl. klinik, behandlare och b
 * webCode 0..1 string "Extern kod för webbokning (om förekommer)"
 
 // --- Klinik (mappas i FHIR ofta som Organization/HealthcareService + participant(Location/Organization)) ---
-* clinic 1..1 BackboneElement "Klinikuppgifter"
-* clinic.id 0..1 string "Klinikens tekniska ID"
-* clinic.name 0..1 string "Kliniknamn"
-* clinic.hsaIdentity 0..1 string "HSA-id"
-* clinic.competenceCode 0..1 string "Kompetenskod"
-* clinic.countyCode 0..1 string "Länskod"
-* clinic.address 0..1 string "Adress"
-* clinic.postalCode 0..1 string "Postnummer"
-* clinic.city 0..1 string "Ort"
-* clinic.phone 0..1 string "Telefon"
-* clinic.eMail 0..1 string "E-post"
-* clinic.searchDateLimit 0..1 dateTime "Sökgräns datum/tid"
-* clinic.childPatientThreshold 0..1 integer "Åldersgräns för barnpatient"
-* clinic.isNewBookingAvailable 0..1 boolean "Nybokning möjlig"
-* clinic.isRescheduleAvailable 0..1 boolean "Ombokning möjlig"
-* clinic.isCancellationAvailable 0..1 boolean "Avbokning möjlig"
-* clinic.costLocations 0..* BackboneElement "Kostnadsställen/kostnadsenheter"
-* clinic.costLocations.id 0..1 string "Kostnadsställe-ID"
-* clinic.costLocations.name 0..1 string "Kostnadsställe-namn"
-* clinic.costLocations.number 0..1 string "Kostnadsställe-nummer"
+* clinic 1..1 FrendaClinic "Klinikuppgifter"
 
 // (Informell FHIR-mappning)
 * clinic ^mapping[0].identity = "fhir"

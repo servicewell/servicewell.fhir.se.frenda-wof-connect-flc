@@ -1,9 +1,10 @@
 {
   "resourceType": "Appointment",
-  "id": "ITBAppointmentExample",
+  "id": "{{ appt.id }}",
   "meta": {
     "extension": [
       {
+        {% comment %} Not available - make optional {% endcomment %}
         "extension": [
           {
             "url": "created",
@@ -17,21 +18,17 @@
         "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extWofMeta"
       }
     ],
+    {% comment %} Not available - make optional {% endcomment %}
     "lastUpdated": "2025-08-25T12:16:00+00:00",
     "tag": [
-      {% if apa.canAppointmentBeCancelled == true %}
       {
-        "code": "false",
-        "system": "http://portal.wof.purified.link/fhir/CodeSystem/csAvailableForCancellation"
+        "system": "http://portal.wof.purified.link/fhir/CodeSystem/csAvailableForCancellation",
+        "code": "{% if appt.canAppointmentBeCancelled %}true{% else %}false{% endif %}"
+      },
+      {
+        "system": "http://portal.wof.purified.link/fhir/CodeSystem/csAvailableForReschedule",
+        "code": "{% if appt.canAppointmentBeRescheduled %}true{% else %}false{% endif %}"
       }
-      {% endif %}
-      ,
-      {% if apa.canAppointmentBeRescheduled == true %}
-    {
-        "code": "false",
-        "system": "http://portal.wof.purified.link/fhir/CodeSystem/csAvailableForReschedule"
-      }
-      {% endif %}
     ]
   },
   "extension": [
@@ -49,36 +46,72 @@
           }
         ]
       },
-      "system": "[[baseurl]]/1C6D760E-4445-4ED9-99F8-7A70BD85011E/fhir/NamingSystem/nsbookingId",
-      "value": "{{apa.first.id}}"
+      {% comment %} System is not conformant with Frenda {% endcomment %}
+      "system": "[[baseurl]]/frenda/fhir/NamingSystem/nsbookingId",
+      "value": "{{ appt.id }}"
     }
   ],
-  "status": "booked",
+  {% assign apiStatus = appt.status | downcase -%}
+  {% case apiStatus -%}
+    {% when 'active' -%}
+      {% assign fhirStatus = 'booked' -%}
+    {% when 'complete' -%}
+      {% assign fhirStatus = 'booked' -%}
+      {% assign isExpiredByTime = true -%}
+    {% when 'cancelled' -%}
+      {% assign fhirStatus = 'cancelled' -%}
+    {% when 'canceled' -%}
+      {% assign fhirStatus = 'cancelled' -%}
+    {% else -%}
+      {% assign fhirStatus = 'proposed' -%}
+  {% endcase -%}
+  "status": "{{ fhirStatus }}",
+  {% comment %} Should probably be added to conformance {% endcomment %}
+  {% if isExpiredByTime -%}
+  "statusReason": {
+    "coding": [
+      {
+        "system": "http://portal.wof.purified.link/fhir/CodeSystem/csAppointmentStatusReason",
+        "code": "expired-by-time",
+        "display": "Expired by time"
+      }
+    ],
+    "text": "Expired by time"
+  },
+  {% endif -%}
   "serviceType": [
     {
+      {% comment %} Not sure on how to define the system {% endcomment %}
       "coding": [
         {
-          "code": "itb-not-defined",
           "system": "http://portal.wof.purified.link/fhir/CodeSystem/csServiceType",
-          "display": "Bokat besök online"
+          "code": "{% if appt.treatmentType %}{{ appt.treatmentType | downcase | replace: ' ', '-' }}{% elsif appt.treatment.calendarTreatmentType %}{{ appt.treatment.calendarTreatmentType | downcase | replace: ' ', '-' }}{% else %}itb-not-defined{% endif %}",
+          "display": "{{ appt.treatment.name | default: 'Bokat besök online' }}"
         }
       ],
-      "text": "Bokat besök online"
+      "text": "{{ appt.treatment.name | default: 'Bokat besök online' }}"
     }
   ],
-  "start": "2025-08-26T11:00:00+00:00",
-  "end": "2025-08-26T11:40:00+00:00",
+  {% comment %} Can be added to our conformance {% endcomment %}
+  "description": "{{ appt.reason | default: '' }}",
+  "start": "{{ appt.start }}",
+  "end": "{{ appt.start | date_add: appt.duration, 'minute' }}",
   "participant": [
     {
       "actor": {
-        "reference": "ITBHealthcareServiceExample",
-        "display": "Service O"
+        {% comment %}
+            Either we keep the non-fhir-conformant way below (atleast for an external non-fhir api), 
+            or we actually add the resources to the bundle and reference them as contained (best practice)
+        {% endcomment %}
+        "reference": "HealthcareService/{{ appt.clinic.id }}",
+        "display": "{{ appt.clinic.name }}"
       },
       "status": "accepted"
     },
     {
+      {% comment %} Patient comes from the accesstoken in Frenda {% endcomment %}
       "actor": {
-        "reference": "ITBPatientExample"
+        "reference": "Patient/"
       },
       "status": "accepted"
     },
@@ -95,11 +128,12 @@
         }
       ],
       "actor": {
-        "reference": "ITBPractitionerRoleExample",
-        "display": "Tandläkare Nils Nilsson"
+        "reference": "PractitionerRole/{{ appt.treater.id }}",
+        "display": "{{ appt.treater.name }}"
       },
       "status": "accepted"
     },
+    {% comment %} No device in Frenda, make optional {% endcomment %}
     {
       "actor": {
         "reference": "Device/17"
