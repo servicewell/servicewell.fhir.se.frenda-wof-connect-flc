@@ -1,0 +1,51 @@
+trigger: none
+
+pool:
+  name: 'Implementation Guide Build Pool'
+
+variables:
+  - group: WofPortalPipelineVariables
+  - name: shareName
+    value: flc-import
+
+steps:
+  - checkout: self
+    persistCredentials: true
+
+  - script: |
+      chmod +x ./_updatePublisher.sh \
+      && ./_updatePublisher.sh --yes \
+    displayName: Run updatePublisher
+    
+  - script: |
+      chmod +x ./_genonce.sh \
+      && ./_genonce.sh
+    displayName: Run genonce
+
+  - script: |    
+      SEARCH_DIR="$(System.DefaultWorkingDirectory)"
+      FILE_PATH=$(find "$SEARCH_DIR" -name "*package.tgz" | head -n 1)
+
+      if [ -z "$FILE_PATH" ]; then
+        echo "##vso[task.logissue type=error]No .tgz package found in $SEARCH_DIR"
+        echo "Current tree:"
+        find "$SEARCH_DIR" -maxdepth 3 -type f
+        exit 1
+      fi
+
+      NEW_FILE_PATH="$(System.DefaultWorkingDirectory)/servicewell.se.fhir.wof-connect-frenda#0.1.1.tgz"
+      mv "$FILE_PATH" "$NEW_FILE_PATH"
+
+      echo "Renamed package: $NEW_FILE_PATH"
+
+      # Set pipeline variable
+      echo "##vso[task.setvariable variable=packageName]$NEW_FILE_PATH"
+    displayName: Find name of package
+    
+  - task: AzureCLI@2
+    inputs:
+      azureSubscription: 'Service Well Prod'
+      scriptType: 'bash'
+      scriptLocation: 'inlineScript'
+      inlineScript: 'az storage file upload --source $(packageName) -s $(shareName) --connection-string "$(FLCTranformerFileshareConnectionString)"'
+      

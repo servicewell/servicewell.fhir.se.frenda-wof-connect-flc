@@ -2,12 +2,13 @@
 ==========================================================================
 Template:     Frenda GetPractitionerRolesBundle
 Purpose:      Generates a FHIR Collection Bundle with PractitionerRoles.
-Version:      0.0.1
-Author:       Service Well/@marcus.johnsson
-Date:         2025-10-08
+Version:      0.0.2
+Author:       Service Well/@marcus.johnsson & Service Well/@marcus.lindblom
+Date:         2025-11-05
 
-Context:
-  -FrendaGetAPIClinicTreatments from Frenda API
+Context:  
+  -LM: FrendaClinicTreatments
+  -API: /api/clinic/treatments
 
 Parameters:
 
@@ -16,52 +17,46 @@ Output:
       - PractitionerRoles
 ==========================================================================
 {% endcomment %}
-{% assign bundle_id = msg.id | generate_id_input: "Bundle", false | generate_uuid -%}
-{% assign full_bundle_id = bundle_id | prepend: "urn:uuid:" -%}
-{% comment %} UTC-date {% endcomment %}
-{% comment %}{% assign timestamp = 'now' | date: "u" | replace: ' ', 'T' %}{% endcomment %}
-{% comment %} Local date with offset {% endcomment %}
-{% assign timestamp = 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+
+{% include "variables/canonicals" -%}
+{%- assign bundle_id = msg.meta.requestId | generate_uuid -%}
+
+{%- assign data = msg.data -%}
+{%- assign metaRoot = msg.meta -%}
+
+{%- assign extractDate  = metaRoot.extractDate  | default: 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+{%- assign sourceSystem = metaRoot.sourceSystem | default: "none" -%}
+
+{%- assign visitedIds = '' -%}
+{%- assign count = 0 -%}
 
 {
   "resourceType": "Bundle",
-  "type": "collection",
-  "id": "{{ bundle_id }}",
-  "timestamp": "{{ timestamp }}",
+  "type": "searchset",
+  "id": "{{ bundle_id }}",  
+  "meta": {
+    "lastUpdated": "{{ extractDate }}",
+    "tag": [
+      { 
+        "system": "{{ wof-connect-codesystem-pms-system }}", 
+        "code": "{{ sourceSystem }}" 
+      }
+    ]
+  },
   "entry": [
-    {% assign first = true -%}
-    {% for root in msg -%}
-      {% assign seenRole = '' -%}
-      {%- comment -%}
-        seenRole: a string “set” of already-emitted (clinic|treater) keys.
-        We store each key surrounded by delimiters (|key|) so we can use
-        'contains' safely without substring collisions.
-      {%- endcomment -%}
-      {% for t in root.treatments -%}
-        {% for treaterId in t.treaterIds -%}
-          {%- comment -%}
-            roleKey = unique identity for a PractitionerRole at this clinic.
-            Using capture avoids repeating the concatenation everywhere.
-          {%- endcomment -%}
-          {% capture roleKey %}{{ root.clinic.id }}|{{ treaterId }}{% endcapture %}
-          {%- comment -%}
-            needle = the delimited token we’ll search for in seenRole.
-            Wrapping with '|' prevents false positives, e.g. 'ab|c' vs 'b|c'.
-          {%- endcomment -%}
-          {% capture needle %}|{{ roleKey }}|{% endcapture %}
-          {% unless seenRole contains needle -%}
-            {% unless first %},{% endunless %}{% assign first = false %}
-            { 
-              "resource": {% include "resources/practitionerrole", root: root, treaterId: treaterId %} 
-            }
-          {%- comment -%}
-            Append the token so subsequent iterations will skip duplicates.
-            (DotLiquid assigns persist across loop iterations.)
-          {%- endcomment -%}
-          {% assign seenRole = seenRole | append: needle -%}
-          {% endunless -%}
-        {% endfor -%}
-      {% endfor -%}
-    {% endfor -%}
-  ]
+    {%- for dataRoot in data.getClinicTreatments-%}
+      {%- assign visitedIds = '' -%}
+      {%- for t in dataRoot.treaters -%}
+        {%- capture key %}|{{ t.id }}|{% endcapture -%}
+        {%- unless visitedIds contains key -%}
+          {%- assign visitedIds = visitedIds | append: key -%}
+          {%- assign count = count | plus: 1 -%}
+          {
+            "resource": {% include "resources/practitionerrole", root: dataRoot, treater: t, extractDate: extractDate, sourceSystem: sourceSystem %}
+          }{% if forloop.last == false %},{% endif %}
+        {%- endunless -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  ],
+  "total": {{ count }}
 }

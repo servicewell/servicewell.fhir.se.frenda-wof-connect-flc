@@ -15,9 +15,18 @@ Usage: #definition
 * topic[+].text = "LIQUID"
 
 // liquid files
-* content[+].id = "ig-loader-_appointment.liquid" 
+//  ******************  templates/id *************************
+* content[+].id = "ig-loader-_practitionerrole_id.liquid" 
+* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/id"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_practitionerrole_id.liquid"
+
+//  ******************  templates/resources *************************
+* content[+].id = "ig-loader-_healthcareservice.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/resources"
-* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_appointment.liquid"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_healthcareservice.liquid"
+* content[+].id = "ig-loader-_activitydefinition.liquid" 
+* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/resources"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_activitydefinition.liquid"
 * content[+].id = "ig-loader-_organization.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/resources"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_organization.liquid"
@@ -33,10 +42,19 @@ Usage: #definition
 * content[+].id = "ig-loader-_schedule.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/resources"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_schedule.liquid"
-* content[+].id = "ig-loader-_slot.liquid" 
+* content[+].id = "ig-loader-_slotappointment.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/resources"
-* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_slot.liquid"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_slotappointment.liquid"
+* content[+].id = "ig-loader-_bookingappointment.liquid" 
+* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/resources"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_bookingappointment.liquid"
 
+//  ******************  templates/variables *************************
+* content[+].id = "ig-loader-_canonicals.liquid" 
+* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/variables"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_canonicals.liquid"
+
+//  ******************  templates *************************
 * content[+].id = "ig-loader-GetAppointments.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "GetAppointments.liquid"
@@ -52,15 +70,24 @@ Usage: #definition
 * content[+].id = "ig-loader-GetPractitioners.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "GetPractitioners.liquid"
+* content[+].id = "ig-loader-GetScheduleContextOp.liquid" 
+* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "GetScheduleContextOp.liquid"
 * content[+].id = "ig-loader-GetSchedules.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "GetSchedules.liquid"
-* content[+].id = "ig-loader-GetSlots.liquid" 
+* content[+].id = "ig-loader-GetAppointmentFindOp.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates"
-* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "GetSlots.liquid"
-* content[+].id = "ig-loader-PostCreateAppointment.liquid" 
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "GetAppointmentFindOp.liquid"
+* content[+].id = "ig-loader-AppointmentBookOpResult.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates"
-* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "PostCreateAppointment.liquid"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "AppointmentBookOpResult.liquid"
+* content[+].id = "ig-loader-GetAppointmentById.liquid" 
+* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "GetAppointmentById.liquid"
+* content[+].id = "ig-loader-GetAppointmentsByPatient.liquid" 
+* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "GetAppointmentsByPatient.liquid"
 
 // Code System
 * content[+].id = "ig-loader-codesystem.json"

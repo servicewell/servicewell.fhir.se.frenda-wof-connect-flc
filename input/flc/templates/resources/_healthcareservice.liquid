@@ -1,0 +1,150 @@
+{% comment %}
+Context:
+  -LM: clinic
+
+Parameters:
+  clinic        : object (required)
+  sourceSystem  : string (required)
+
+Output:
+      - WOF-Connect HealthcareService resource
+==========================================================================
+{%- endcomment -%}
+
+{
+  "resourceType": "HealthcareService",
+  "id": "{{ clinic.id }}",
+  "identifier": [
+    {
+      {% comment %} hsa-id's namespace-system {% endcomment %}
+      "system": "urn:oid:1.2.752.129.2.1.4.1",
+      "value": "{{ clinic.hsaIdentity }}"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "{{ wof-connect-codesystem-pms-system }}", 
+        "code": "{{ sourceSystem }}"
+      }
+    ],
+    "profile": [
+      "{{ wof-connect-profile-healthcareservice }}"
+    ]
+  },
+  "providedBy": {
+    "reference": "Organization/{{ clinic.id }}",
+    "display": "{{ clinic.name | escape }}"
+  },
+  "name": "{{ clinic.name | escape }}",
+
+  "telecom": [
+    {% assign tfirst = true %}
+    {%- if clinic.phone -%}
+      { "system": "phone", "value": "{{ clinic.phone }}", "use": "work" }
+      {% assign tfirst = false %}
+    {%- endif -%}
+    {%- if clinic.eMail -%}
+      {%- unless tfirst -%},{%- endunless -%}
+      { "system": "email", "value": "{{ clinic.eMail }}", "use": "work" }
+      {% assign tfirst = false %}
+    {%- endif -%}
+  ],
+  "location": [
+    {
+      "reference": "#adressId"
+    }
+  ],
+  {% comment %} Egenskaper/karaktäristik baserat på inkommande fält {% endcomment %}
+  "characteristic": [
+    {% assign cfirst = true %}
+    {%- if clinic.childPatientThreshold != nil -%}
+      {%- unless cfirst -%},{%- endunless -%}
+      {
+        "text": "Child Patient Threshold",
+        "extension": [
+          {
+            "url": "{{ wof-connect-extension-wofconnect-characteristic }}",
+            "extension": [              
+              {
+                "url": "scheduling",
+                "extension": [
+                  {
+                    "url": "childPatientThreshold",
+                    "valueInteger": {{ clinic.childPatientThreshold }}
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+      {% assign cfirst = false %}
+    {%- endif -%}
+    {%- if clinic.isNewBookingAvailable != nil -%}
+      {%- unless cfirst -%},{%- endunless -%}
+      {
+        "coding": [
+          {
+            "system": "{{ wof-connect-codesystem-wccharacteristic }}",
+            "code": "scheduling-accepts-new",
+            "display": "New booking available"
+          }
+        ]
+      }
+      {% assign cfirst = false %}
+    {%- endif -%}
+
+    {%- if clinic.isRescheduleAvailable != nil -%}
+      {%- unless cfirst -%},{%- endunless -%}
+      {
+        "coding": [
+          {
+            "system": "{{ wof-connect-codesystem-wccharacteristic  }}",
+            "code": "scheduling-accepts-reschedule",
+            "display": "Reschedule available"
+          }
+        ]
+      }
+      {% assign cfirst = false %}
+    {%- endif -%}
+
+    {%- if clinic.isCancellationAvailable != nil -%}
+      {%- unless cfirst -%},{%- endunless -%}
+      {
+        "coding": [
+          {
+            "system": "{{ wof-connect-codesystem-wccharacteristic}}",
+            "code": "scheduling-accepts-cancellation",
+            "display": "Cancellation available"
+          }
+        ]
+      }
+      {% assign cfirst = false %}
+    {%- endif -%}
+  ],
+  "contained": [
+    {
+      "resourceType": "Location",
+      "id": "adressId",
+      "physicalType": {
+        "text": "Site",
+        "coding": [
+          {
+            "system": "urn:oid:2.16.840.1.113883.4.642.3.328",
+            "code": "si"
+          }
+        ]
+      },
+      "address": {
+        "use": "work",
+        "line": [
+          "{{ clinic.address }}"
+        ],
+        "city": "{{ clinic.city }}",
+        "postalCode": "{{ clinic.postalCode }}",
+        "district": "{{ clinic.countyCode }}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+    "resourceType": "Bundle",
+    "type": "searchset",
+    "id": "39b02f0a-b72e-f1b7-4bae-7170805c5f26",
+    "meta": {
+        "lastUpdated": "2025-10-23T09:19:00+02:00",
+        "tag": [
+            {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+                "code": "frenda"
+            },
+            {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/endpoint-id",
+                "code": "c531616c-3696-491d-ace7-ce4f186ea788"
+            }
+        ]
+    },
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "Schedule",
+                "id": "ea80a74c-7e6c-86fc-00e1-d9fe9cc5df59",
+                "meta": {
+                    "lastUpdated": "2025-10-23T09:19:00+02:00",
+                    "tag": [
+                        {
+                            "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+                            "code": "frenda"
+                        }
+                    ],
+                    "profile": [
+                        "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-schedule"
+                    ]
+                },
+                "serviceType": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                                "code": "696b3685-dd39-4781-b410-0e700a8ba010",
+                                "display": "Akut - vuxen"
+                            },
+                            {
+                                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/endpoint-id",
+                                "code": "c531616c-3696-491d-ace7-ce4f186ea788",
+                                "display": "FHIR Endpoint ID"
+                            }
+                        ],
+                        "text": "Akuttid för vuxna patienter"
+                    },
+                    {
+                        "coding": [
+                            {
+                                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                                "code": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+                                "display": "Akut - barn"
+                            },
+                            {
+                                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/endpoint-id",
+                                "code": "c531616c-3696-491d-ace7-ce4f186ea788",
+                                "display": "FHIR Endpoint ID"
+                            }
+                        ],
+                        "text": "Akuttid för barnpatienter."
+                    },
+                    {
+                        "coding": [
+                            {
+                                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                                "code": "949adf08-f5b9-4fca-8423-0e6824b1e3c7",
+                                "display": "Undersökning"
+                            },
+                            {
+                                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/endpoint-id",
+                                "code": "c531616c-3696-491d-ace7-ce4f186ea788",
+                                "display": "FHIR Endpoint ID"
+                            }
+                        ],
+                        "text": "För ej akuta ärenden."
+                    }
+                ],
+                "actor": [
+                    {
+                        "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+                        "display": "Service Well AB"
+                    },
+                    {
+                        "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+                        "display": "Utv Mattias Ekberg"
+                    },
+                    {
+                        "reference": "PractitionerRole/2087a288-8831-835d-c99f-e53aa04c0d9e",
+                        "display": "Utv Mattias Ekberg"
+                    }
+                ],
+                "planningHorizon": {
+                    "start": "2025-10-31",
+                    "end": "2026-04-03"
+                }
+            }
+        }
+    ],
+    "total": 1
+}

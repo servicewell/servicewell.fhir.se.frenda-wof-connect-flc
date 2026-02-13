@@ -1,44 +1,68 @@
-{%- comment -%} Expects: organization {%- endcomment -%}
+{% comment %}
+Context:
+  -LM: FrendaClinic
 
-{%- assign nameAsCode = organization.name | downcase | strip | replace: ' ','-' | replace: 'å','a' | replace: 'ä','a' | replace: 'ö','o' -%}
+Parameters:
+  clinic        : object (required)
+  sourceSystem  : string (required)
 
-{%- assign tenant = "_TO_BE_DECIDED_" -%}
+Output:
+      - WOF-Connect EconomyOrganization resource
+==========================================================================
+{%- endcomment -%}
+
+{%- assign nameAsCode = clinic.name | downcase | strip | replace: ' ','-' | replace: 'å','a' | replace: 'ä','a' | replace: 'ö','o' -%}
 
 {
   "resourceType": "Organization",
-  {%- comment -%}
-  Not sure how these extensions should be populated
+  "id": "{{ clinic.id }}",
+  "meta": {
+    "tag": [
+      { 
+        "system": "{{ wof-connect-codesystem-pms-system }}", 
+        "code": "{{ sourceSystem }}"
+      }
+    ],
+    "profile": [ 
+      "{{wof-connect-profile-economyorganization}}" 
+    ]
+  },
+  "name": "{{ clinic.name }}", 
   
-  "extension": [
+  {% comment %}
+    Bygg alias-lista från costLocations (namn), om de finns
+  {% endcomment %}
+
+
+  "identifier": [
+    {% assign first = true %}
+
+    {%- if clinic.hsaIdentity -%}
+      { "system": "urn:oid:1.2.752.129.2.1.4.1", "value": "{{ clinic.hsaIdentity }}" }
+      {% assign first = false %}
+    {%- endif -%}
+  ],
+  "telecom": [
+    {% assign tfirst = true %}
+    {%- if clinic.phone -%}
+      { "system": "phone", "value": "{{ clinic.phone }}", "use": "work" }
+      {% assign tfirst = false %}
+    {%- endif -%}
+    {%- if clinic.eMail -%}
+      {%- unless tfirst -%},{%- endunless -%}
+      { "system": "email", "value": "{{ clinic.eMail }}", "use": "work" }
+      {% assign tfirst = false %}
+    {%- endif -%}
+  ],
+
+  "address": [
     {
-      "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extCreated",
-      "valueDateTime": "{{ 'now'| date: 'yyyy-MM-dd'T'HH:mm:sszzz' }}"
-    },
-    {
-      "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extNameAsCode",
-      "valueString": "{{ nameAsCode }}"
-    }{% if tenant %},
-    {
-      "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extTenantIdenfier",
-      "valueString": "{{ tenant }}"
-    }{% endif %},
-    {
-      "url": "http://portal.wof.purified.link/fhir/StructureDefinition/extAttachment",
-      "valueAttachment": { }
+      "use": "work",
+      "type": "postal",
+      "line": [ "{{ clinic.address | escape }}" ],
+      "postalCode": "{{ clinic.postalCode }}",
+      "city": "{{ clinic.city | escape }}",
+      "country": "SE"
     }
   ]
-  {%- endcomment -%}
-  "id": "{{ organization.id }}",
-  "meta": {
-    "profile": [
-      "http://ki.purified.link/wof-portal/fhir/StructureDefinition/clinicalorganization"
-    ],
-    "lastUpdated": "2025-10-22T12:00:00+00:00"
-  },
-  "name": "{{ organization.name }}"
-  {%- comment -%}
-  Not sure if display and reference should be included or not. Organization will result in a WofReference, which has these props
-  "display": "Frenda Organization",
-  "reference": "Organization/{{ organization.id }}"
-  {%- endcomment -%}
 }

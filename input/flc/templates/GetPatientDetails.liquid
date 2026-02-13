@@ -3,18 +3,26 @@
 Template:     Frenda GetPatientDetails
 Purpose:      Generates a FHIR Patient.
 Version:      0.0.1
-Author:       Service Well/@marcus.johnsson
-Date:         2025-10-22
+Author:       Service Well
+Date:         2025-12-05
 
 Context:
-  -FrendaGetAPIPatientDetails from Frenda API
+-LM: PatientDetailsResponse via GetPatientDetails extract model
+-API: /api/patient/details
 
 Parameters:
 
 Output:
-  - FHIR resource with:
-      - Patient
+  - FHIR Patient resource
 ==========================================================================
 {% endcomment %}
 
-{% include "resources/patientdetails", patient: msg %}
+{% include "variables/canonicals" -%}
+{%- assign metaRoot = msg.meta -%}
+{%- assign dataRoot = msg.data -%}
+{%- assign sourceSystem = metaRoot.sourceSystem | default: "none" -%}
+{%- assign requestedIdentifier = metaRoot.requestedIdentifier -%}
+
+{%- assign patientdetails = dataRoot.patientdetails -%}
+
+{% include "resources/patientdetails", patient: patientdetails, requestedIdentifier: requestedIdentifier, sourceSystem: sourceSystem %}

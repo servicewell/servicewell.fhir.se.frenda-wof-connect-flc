@@ -1,6 +1,7 @@
 // ------------------------------------------------------------
 // Logical Model: FrendaTreater
-// Source: 	TreaterWeb
+// API: /api/clinic/treaters
+// Source model: TreaterWeb
 // ------------------------------------------------------------
 Logical: FrendaTreater
 Id: frenda-treater

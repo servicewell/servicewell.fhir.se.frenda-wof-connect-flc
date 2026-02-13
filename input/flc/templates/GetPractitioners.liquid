@@ -29,7 +29,6 @@ Output:
   "id": "{{ bundle_id }}",
   "timestamp": "{{ timestamp }}",
   "entry": [
-    {% assign first = true -%}
     {% assign seenPract = '' -%}
 
     {% for root in msg -%}
@@ -38,11 +37,9 @@ Output:
         {% capture needle %}|{{ key }}|{% endcapture %}
 
         {% unless seenPract contains needle -%}
-          {% unless first %},{% endunless %}{% assign first = false %}
-
           {
             "resource": {% include "resources/practitioner", treater: p, root: root %}
-          }
+          }{% if forloop.last == false %},{% endif %}
 
           {% assign seenPract = seenPract | append: needle -%}
         {% endunless -%}

@@ -38,7 +38,7 @@ dependencies:
 
 includeInIG:
   examples:
-    enabled: true
+    enabled: false
     # Allows this block to be disabled in production pipelines if needed
 
     autoGenerateOnTransform: true

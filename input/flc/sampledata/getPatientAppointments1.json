@@ -1,0 +1,1468 @@
+{
+  "meta": {
+    "requestId": "0c7ac285-e584-3e06-96ec-7fed87611ebd",
+    "extractDate": "2025-12-04T06:55:00+02:00",
+    "sourceSystem": "frenda",
+    "sourceSystemVersion": "1.7.23"
+  },
+  "data": {
+    "bookedAppointments": [
+      {
+        "id": "8f9073da-6e5c-467c-8464-132953582e41",
+        "start": "2025-12-05T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "7a1fc89d-5801-48be-adab-837ba310c7b6",
+        "start": "2025-12-05T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "5999d619-3f28-492d-ac78-12de072f4032",
+        "start": "2025-12-05T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "9bb0dcb5-2bbe-4d1b-a1ce-a111fe4faede",
+        "start": "2025-12-05T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "4f097f80-9e2a-4e3c-91e3-acc5cea06b38",
+        "start": "2025-12-05T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "76f90b2a-2c6a-4550-a4dc-e4aebd45538c",
+        "start": "2025-12-05T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "27171d93-67b7-43a8-beaf-f228720b24a2",
+        "start": "2025-12-05T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "aa57f0b5-a8fa-4ae4-98bb-502eaebe1712",
+        "start": "2025-12-05T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "5b02274a-7c38-4f52-b194-a192331b7721",
+        "start": "2025-12-05T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "c7174d69-a025-4926-b6d4-21ee9b915239",
+        "start": "2025-12-08T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 1,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "37713098-f6a9-4e17-98ef-db8dfe9dbe8d",
+        "start": "2025-12-08T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 1,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "fc4af407-47c5-4332-977a-0affbb8d0156",
+        "start": "2025-12-08T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 1,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "a0f52da9-5092-4dc0-ba50-a52a6e5b1cc5",
+        "start": "2025-12-08T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": "bN4W5w",
+        "isWebBooked": true,
+        "status": "Active",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": true,
+        "canAppointmentBeCancelled": true
+      },
+      {
+        "id": "6545b3af-e65c-4881-806f-61ead64f5b9a",
+        "start": "2025-12-08T08:30:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": "ZZJiTQ",
+        "isWebBooked": true,
+        "status": "Active",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": true,
+        "canAppointmentBeCancelled": true
+      },
+      {
+        "id": "9e3b7286-2e31-4f98-adb3-535c651099d8",
+        "start": "2025-12-08T09:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": "Ci3kRQ",
+        "isWebBooked": true,
+        "status": "Active",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": true,
+        "canAppointmentBeCancelled": true
+      },
+      {
+        "id": "ed24134d-7609-4819-b054-a54459cd3716",
+        "start": "2025-12-08T09:30:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": "9LA8yw",
+        "isWebBooked": true,
+        "status": "Active",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": true,
+        "canAppointmentBeCancelled": true
+      },
+      {
+        "id": "4e7c108c-eef9-401e-91ad-3d4fa1d46a38",
+        "start": "2025-12-09T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "a7cd3db1-9573-4500-aafe-7218370c82a0",
+        "start": "2025-12-09T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "bee06f7a-badd-477f-ad17-4eb0c70b1868",
+        "start": "2025-12-09T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "5fc7f306-1021-4ac1-a748-92fdc039b019",
+        "start": "2025-12-09T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "8a8409a3-ee35-480a-9a40-35350a6746c3",
+        "start": "2025-12-09T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "8999eea2-3f7e-4f77-9c02-4fbd8aa7a34b",
+        "start": "2025-12-09T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "7f63d657-b5bb-465e-91b8-618d5f733cd1",
+        "start": "2025-12-09T08:00:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 0,
+        "webReschedulingCountAllowed": 3,
+        "webCode": "iAAVIA",
+        "isWebBooked": true,
+        "status": "Active",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": true,
+        "canAppointmentBeCancelled": true
+      },
+      {
+        "id": "b5f994f6-e765-499a-b876-a7caa09c5d50",
+        "start": "2025-12-09T08:30:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 1,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "33cc85ed-f899-4c9d-8113-02c29ed0c0b6",
+        "start": "2025-12-09T08:30:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 1,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      },
+      {
+        "id": "6fc09454-03c5-499b-b970-8cf9fbf6bb46",
+        "start": "2025-12-09T08:30:00Z",
+        "duration": 30,
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-06-04T05:57:46.4927695Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treater": {
+          "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "name": "Utv Mattias Ekberg",
+          "firstName": "Mattias",
+          "lastName": "Ekberg",
+          "title": "Utv",
+          "hsaIdentity": "SE165560772419-10K8"
+        },
+        "treatment": {
+          "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+          "name": "Akut - barn",
+          "duration": 30,
+          "calendarTreatmentType": "Akut",
+          "description": "Akuttid för barnpatienter."
+        },
+        "isCancellationAvailable": true,
+        "isRescheduleAvailable": true,
+        "minChangeHours": 48,
+        "webReschedulingCount": 1,
+        "webReschedulingCountAllowed": 3,
+        "webCode": null,
+        "isWebBooked": true,
+        "status": "Cancelled",
+        "treatmentType": "Akut",
+        "reason": "",
+        "canAppointmentBeRescheduled": false,
+        "canAppointmentBeCancelled": false
+      }
+    ]
+  }
+}

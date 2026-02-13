@@ -1,0 +1,680 @@
+{
+  "meta": {
+    "requestId": "c94e2361-24d0-49a5-9133-f6d5a0f82474",
+    "extractDate": "2025-10-23T09:19:00",
+    "sourceSystem": "frenda",
+    "sourceSystemVersion": "1.7.23"
+  },
+  "data": {
+    "getClinicTreatments": [
+      {
+        "clinic": {
+          "id": "beb6d088-0ffe-4112-9dfc-f1ba5c6caab9",
+          "name": "Södertandläkarna Medborgarplatsen",
+          "hsaIdentity": "SE1234567890-ABCD",
+          "competenceCode": "A",
+          "countyCode": "0180",
+          "address": "Folkungagatan 49",
+          "postalCode": "11622",
+          "city": "Stockholm",
+          "phone": "08--4 42  1 1  60",
+          "eMail": "info@sodertandlakarna.se",
+          "searchDateLimit": "2026-06-12T08:44:29.4964792Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "44908b09-89eb-466a-b8e3-1ddb9302f741",
+              "name": "Södertandläkarna Medborgarplatsen",
+              "number": "100169"
+            }
+          ]
+        },
+        "treatments": [
+          {
+            "treaterIds": [
+              "8420227d-6452-48d0-af14-5fde7f14eeb1",
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "14e881ca-5c07-4315-b1d7-dbdb43708858"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "78049688-9ae8-4743-81e8-4ad7012ff79d",
+            "name": "Ny Patient Undersökning",
+            "duration": 30,
+            "calendarTreatmentType": "Undersökning",
+            "description": "Ny Besökare Undersökning"
+          },
+          {
+            "treaterIds": [
+              "74f220d2-eedf-44fa-a222-ac02663895e1"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "adfc0a93-b5c8-4398-8d4a-8678fb47cfc5",
+            "name": "invisalign",
+            "duration": 30,
+            "calendarTreatmentType": "Konsultation",
+            "description": "invisalign"
+          },
+          {
+            "treaterIds": [
+              "8420227d-6452-48d0-af14-5fde7f14eeb1",
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "14e881ca-5c07-4315-b1d7-dbdb43708858"
+            ],
+            "allowAdults": true,
+            "allowChildren": true,
+            "id": "30b3f151-0107-419f-bcdc-ebe4d1c89dee",
+            "name": "Akut tid",
+            "duration": 30,
+            "calendarTreatmentType": "Akut",
+            "description": "Akut tid"
+          },
+          {
+            "treaterIds": [
+              "0b8e3b0a-a89f-46ce-9496-734101681ec4",
+              "701e76bc-117c-4ab6-8f07-2e88242de54c"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "4c5288fb-5344-4826-bb90-e8a99effc5cc",
+            "name": "Tandhygienist - förebyggande tandvård",
+            "duration": 50,
+            "calendarTreatmentType": "Parodontologi",
+            "description": "Tandhygienist - förebyggande tandvård"
+          },
+          {
+            "treaterIds": [
+              "0b8e3b0a-a89f-46ce-9496-734101681ec4",
+              "701e76bc-117c-4ab6-8f07-2e88242de54c"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "851d44eb-b9a0-49c2-ac21-fc6ea010b4a3",
+            "name": "Airflow",
+            "duration": 30,
+            "calendarTreatmentType": "Profylax",
+            "description": "Airflow"
+          },
+          {
+            "treaterIds": [
+              "8420227d-6452-48d0-af14-5fde7f14eeb1",
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "14e881ca-5c07-4315-b1d7-dbdb43708858"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "ba709db4-79f8-4f96-a0d4-be0e8e28ebc7",
+            "name": "Undersökning",
+            "duration": 30,
+            "calendarTreatmentType": "Undersökning",
+            "description": "Undersökning"
+          },
+          {
+            "treaterIds": [
+              "0b8e3b0a-a89f-46ce-9496-734101681ec4",
+              "701e76bc-117c-4ab6-8f07-2e88242de54c"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "bda74c1c-be11-4fb6-8aff-7973fdc6ac71",
+            "name": "Tandhygienist - förebyggande tandvård fylld 67år",
+            "duration": 40,
+            "calendarTreatmentType": "Parodontologi",
+            "description": "Tandhygienist - förebyggande tandvård fylld 67år"
+          },
+          {
+            "treaterIds": [
+              "0b8e3b0a-a89f-46ce-9496-734101681ec4",
+              "b608fb33-8dcb-41b7-81c3-413362b462ee",
+              "e028ae6f-ab7a-41d9-a4a4-afe8e0ebe75e",
+              "6d5aed5b-2cac-4efb-8f06-b7bbe0c45385",
+              "701e76bc-117c-4ab6-8f07-2e88242de54c"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "bd191df5-5a5c-43b7-a5ad-6facb28a5ffb",
+            "name": " Ny patient Tandhygienist - förebyggande tandvård",
+            "duration": 60,
+            "calendarTreatmentType": "Undersökning",
+            "description": " Ny patient Tandhygienist - förebyggande tandvård"
+          },
+          {
+            "treaterIds": [
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "a6169afe-1cb9-45c6-b9ba-5096c15523a0",
+              "8f1e1d38-969d-49dd-b333-b16f5c4c5da7"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "ce601247-4cb5-45a5-a61d-79670fd76791",
+            "name": "Konsultation Implantat",
+            "duration": 30,
+            "calendarTreatmentType": "Konsultation",
+            "description": "Konsultation Implantat"
+          }
+        ],
+        "treaters": [
+          {
+            "id": "8420227d-6452-48d0-af14-5fde7f14eeb1",
+            "name": "Tandläkare Behandlare Nilsson",
+            "firstName": "Behandlare",
+            "lastName": "Nilsson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-BCDE"
+          },
+          {
+            "id": "74f220d2-eedf-44fa-a222-ac02663895e1",
+            "name": "Tandläkare Behandlare Andersson",
+            "firstName": "Behandlare",
+            "lastName": "Andersson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-CDEF"
+          },
+          {
+            "id": "14e881ca-5c07-4315-b1d7-dbdb43708858",
+            "name": "Tandläkare Behandlare Jönsson",
+            "firstName": "Behandlare",
+            "lastName": "Jönsson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-DEFG"
+          },
+          {
+            "id": "0b8e3b0a-a89f-46ce-9496-734101681ec4",
+            "name": "Tandhygienist Behandlare Svensson",
+            "firstName": "Behandlare",
+            "lastName": "Svensson",
+            "title": "Tandhygienist",
+            "hsaIdentity": "197001239297"
+          },
+          {
+            "id": "701e76bc-117c-4ab6-8f07-2e88242de54c",
+            "name": "Tandhygienist Behandlare Olsson",
+            "firstName": "Behandlare",
+            "lastName": "Olsson",
+            "title": "Tandhygienist",
+            "hsaIdentity": "197001239297"
+          },
+          {
+            "id": "b608fb33-8dcb-41b7-81c3-413362b462ee",
+            "name": "Tandhygienist Behandlare Johansson",
+            "firstName": "Behandlare",
+            "lastName": "Johansson",
+            "title": "Tandhygienist",
+            "hsaIdentity": "197001239297"
+          },
+          {
+            "id": "e028ae6f-ab7a-41d9-a4a4-afe8e0ebe75e",
+            "name": "Tandhygienist Behandlare Karlsson",
+            "firstName": "Behandlare",
+            "lastName": "Karlsson",
+            "title": "Tandhygienist",
+            "hsaIdentity": "SE1234567890-HD1T"
+          },
+          {
+            "id": "6d5aed5b-2cac-4efb-8f06-b7bbe0c45385",
+            "name": "Tandhygienist Behandlare Eriksson",
+            "firstName": "Behandlare",
+            "lastName": "Eriksson",
+            "title": "Tandhygienist",
+            "hsaIdentity": "SE1234567890-BSV5"
+          },
+          {
+            "id": "a6169afe-1cb9-45c6-b9ba-5096c15523a0",
+            "name": "Tandläkare Behandlare Larsson",
+            "firstName": "Behandlare",
+            "lastName": "Larsson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-B3DG"
+          },
+          {
+            "id": "8f1e1d38-969d-49dd-b333-b16f5c4c5da7",
+            "name": "Tandläkare Behandlare Persson",
+            "firstName": "Behandlare",
+            "lastName": "Persson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-8T8T"
+          }
+        ]
+      },
+      {
+        "clinic": {
+          "id": "9bef346f-7264-4f96-86cd-3f0e7f9186bb",
+          "name": "Södertandläkarna Bågen",
+          "hsaIdentity": "SE1234567890-FD78",
+          "competenceCode": "A",
+          "countyCode": "0180",
+          "address": "Fatburs Brunnsgata 29",
+          "postalCode": "11828",
+          "city": "Stockholm",
+          "phone": "08--4 42  1 1  60",
+          "eMail": "bagen@sodertandlakarna.se",
+          "searchDateLimit": "2026-06-12T08:44:29.4964792Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "b25664aa-4eae-46fb-99c3-a2d5b6240b4c",
+              "name": "Södertandläkarna Bågen",
+              "number": "100170"
+            }
+          ]
+        },
+        "treatments": [
+          {
+            "treaterIds": [
+              "b608fb33-8dcb-41b7-81c3-413362b462ee"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "0a2a4f2a-aa05-4cfd-a4ae-cd6ebcd95df4",
+            "name": "Airflow",
+            "duration": 30,
+            "calendarTreatmentType": "Profylax",
+            "description": "Airflow"
+          },
+          {
+            "treaterIds": [
+              "8420227d-6452-48d0-af14-5fde7f14eeb1",
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "8265ea17-9df3-4b64-bf4b-f232f92061d0",
+              "8f1e1d38-969d-49dd-b333-b16f5c4c5da7"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "01080b0c-3731-414c-a2f6-7743d32fa14e",
+            "name": "Akut tid",
+            "duration": 30,
+            "calendarTreatmentType": "Akut",
+            "description": "Akut tid"
+          },
+          {
+            "treaterIds": [
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "8265ea17-9df3-4b64-bf4b-f232f92061d0"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "63a9b4c1-b2dc-4005-968d-75561d4f40db",
+            "name": "Invisalign",
+            "duration": 30,
+            "calendarTreatmentType": "Konsultation",
+            "description": "Invisalign"
+          },
+          {
+            "treaterIds": [
+              "b608fb33-8dcb-41b7-81c3-413362b462ee",
+              "412a1945-3765-4941-8b5d-c0e8db6da3e6"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "a90e5d60-bac5-445a-99ff-458b3a179b1b",
+            "name": "Tandhygienist - förebyggande tandvård",
+            "duration": 50,
+            "calendarTreatmentType": "Parodontologi",
+            "description": "Tandhygienist - förebyggande tandvård"
+          },
+          {
+            "treaterIds": [
+              "8420227d-6452-48d0-af14-5fde7f14eeb1",
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "8265ea17-9df3-4b64-bf4b-f232f92061d0",
+              "8f1e1d38-969d-49dd-b333-b16f5c4c5da7"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "47e0e80f-8a22-42ee-80f5-6c3b5a79ad23",
+            "name": "Ny Patient Undersökning",
+            "duration": 30,
+            "calendarTreatmentType": "Undersökning",
+            "description": "Ny Patient Undersökning"
+          },
+          {
+            "treaterIds": [
+              "8420227d-6452-48d0-af14-5fde7f14eeb1",
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "8265ea17-9df3-4b64-bf4b-f232f92061d0",
+              "8f1e1d38-969d-49dd-b333-b16f5c4c5da7"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "a348c1d0-473c-4254-88f5-c69f9c5494a2",
+            "name": "Undersökning",
+            "duration": 30,
+            "calendarTreatmentType": "Undersökning",
+            "description": "Undersökning"
+          },
+          {
+            "treaterIds": [
+              "8f1e1d38-969d-49dd-b333-b16f5c4c5da7"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "1e2d208f-82b0-4fef-a095-96a685f0be89",
+            "name": "Apnèskena med remiss",
+            "duration": 60,
+            "calendarTreatmentType": "Behandling",
+            "description": "Apnèskena med remiss"
+          },
+          {
+            "treaterIds": [
+              "8f1e1d38-969d-49dd-b333-b16f5c4c5da7"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "a6353b54-a664-4d61-b5d2-f55343601f4f",
+            "name": "Undersökning snark/bettskena utan remiss",
+            "duration": 30,
+            "calendarTreatmentType": "Undersökning",
+            "description": "Undersökning snark/bettskena utan remiss"
+          },
+          {
+            "treaterIds": [
+              "b608fb33-8dcb-41b7-81c3-413362b462ee"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "23cf9434-bfdf-4ae6-8e4a-afb0a8f5f699",
+            "name": "Tandhygienist - förebyggande tandvård fylld 67år",
+            "duration": 40,
+            "calendarTreatmentType": "Parodontologi",
+            "description": "Tandhygienist - förebyggande tandvård fylld 67år"
+          },
+          {
+            "treaterIds": [
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "a6169afe-1cb9-45c6-b9ba-5096c15523a0",
+              "8f1e1d38-969d-49dd-b333-b16f5c4c5da7"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "7d0c57ce-8d67-4c19-bdfa-4ba077866e4e",
+            "name": "Konsultation Implantat",
+            "duration": 30,
+            "calendarTreatmentType": "Konsultation",
+            "description": "Konsultation Implantat"
+          },
+          {
+            "treaterIds": [
+              "0b8e3b0a-a89f-46ce-9496-734101681ec4",
+              "b608fb33-8dcb-41b7-81c3-413362b462ee",
+              "6d5aed5b-2cac-4efb-8f06-b7bbe0c45385",
+              "701e76bc-117c-4ab6-8f07-2e88242de54c"
+            ],
+            "allowAdults": true,
+            "allowChildren": true,
+            "id": "b878b74e-423f-43f7-b571-4cfcbd05ffba",
+            "name": " Ny patient Tandhygienist - förebyggande tandvård",
+            "duration": 60,
+            "calendarTreatmentType": "Profylax",
+            "description": " Ny patient Tandhygienist - förebyggande tandvård"
+          }
+        ],
+        "treaters": [
+          {
+            "id": "b608fb33-8dcb-41b7-81c3-413362b462ee",
+            "name": "Tandhygienist Behandlare Nilsson",
+            "firstName": "Behandlare",
+            "lastName": "Nilsson",
+            "title": "Tandhygienist",
+            "hsaIdentity": "197001239297"
+          },
+          {
+            "id": "8420227d-6452-48d0-af14-5fde7f14eeb1",
+            "name": "Tandläkare Behandlare Andersson",
+            "firstName": "Behandlare",
+            "lastName": "Andersson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-BCDE"
+          },
+          {
+            "id": "74f220d2-eedf-44fa-a222-ac02663895e1",
+            "name": "Tandläkare Behandlare Jönsson",
+            "firstName": "Behandlare",
+            "lastName": "Jönsson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-CDEF"
+          },
+          {
+            "id": "8265ea17-9df3-4b64-bf4b-f232f92061d0",
+            "name": "Tandläkare Behandlare Svensson",
+            "firstName": "Behandlare",
+            "lastName": "Svensson ",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-BHC9"
+          },
+          {
+            "id": "8f1e1d38-969d-49dd-b333-b16f5c4c5da7",
+            "name": "Tandläkare Behandlare Olsson",
+            "firstName": "Behandlare",
+            "lastName": "Olsson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-8T8T"
+          },
+          {
+            "id": "412a1945-3765-4941-8b5d-c0e8db6da3e6",
+            "name": "Tandhygienist Behandlare Johansson",
+            "firstName": "Behandlare",
+            "lastName": "Johansson",
+            "title": "Tandhygienist ",
+            "hsaIdentity": "SE1234567890-4FL0"
+          },
+          {
+            "id": "a6169afe-1cb9-45c6-b9ba-5096c15523a0",
+            "name": "Tandläkare Behandlare Karlsson",
+            "firstName": "Behandlare",
+            "lastName": "Karlsson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-B3DG"
+          },
+          {
+            "id": "0b8e3b0a-a89f-46ce-9496-734101681ec4",
+            "name": "Tandhygienist Behandlare Eriksson",
+            "firstName": "Behandlare",
+            "lastName": "Eriksson",
+            "title": "Tandhygienist",
+            "hsaIdentity": "197001239297"
+          },
+          {
+            "id": "6d5aed5b-2cac-4efb-8f06-b7bbe0c45385",
+            "name": "Tandhygienist Behandlare Larsson",
+            "firstName": "Behandlare",
+            "lastName": "Larsson",
+            "title": "Tandhygienist",
+            "hsaIdentity": "SE1234567890-BSV5"
+          },
+          {
+            "id": "701e76bc-117c-4ab6-8f07-2e88242de54c",
+            "name": "Tandhygienist Behandlare Persson",
+            "firstName": "Behandlare",
+            "lastName": "Persson",
+            "title": "Tandhygienist",
+            "hsaIdentity": "197001239297"
+          }
+        ]
+      },
+      {
+        "clinic": {
+          "id": "5a979608-32b2-43eb-9c8a-ad883e57eacf",
+          "name": "Södertandläkarna Gränden",
+          "hsaIdentity": "SE1234567890-GXDV",
+          "competenceCode": "A",
+          "countyCode": "0180",
+          "address": "Västgötagränd 9",
+          "postalCode": "11828",
+          "city": "Stockholm",
+          "phone": "08--4 42  1 1  60",
+          "eMail": "Granden@sodertandlakarna.se",
+          "searchDateLimit": "2026-06-12T08:44:29.4964792Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1e038e44-b2e2-4b53-9a4c-c471d43fa61c",
+              "name": "Södertandläkarna Gränden ",
+              "number": "100173"
+            }
+          ]
+        },
+        "treatments": [
+          {
+            "treaterIds": [
+              "e028ae6f-ab7a-41d9-a4a4-afe8e0ebe75e"
+            ],
+            "allowAdults": true,
+            "allowChildren": true,
+            "id": "1084df37-cb92-43bf-a698-a44a06ed4e68",
+            "name": "Airflow",
+            "duration": 30,
+            "calendarTreatmentType": "Profylax",
+            "description": "Airflow"
+          },
+          {
+            "treaterIds": [
+              "8420227d-6452-48d0-af14-5fde7f14eeb1",
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "a6169afe-1cb9-45c6-b9ba-5096c15523a0"
+            ],
+            "allowAdults": true,
+            "allowChildren": true,
+            "id": "9036a76a-b366-4454-8a97-647064d30031",
+            "name": "Akut tid",
+            "duration": 30,
+            "calendarTreatmentType": "Akut",
+            "description": "Akut tid"
+          },
+          {
+            "treaterIds": [
+              "74f220d2-eedf-44fa-a222-ac02663895e1"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "a67c9765-0f71-46d0-a395-d0ff4809b824",
+            "name": "Invisalign",
+            "duration": 30,
+            "calendarTreatmentType": "Konsultation",
+            "description": "Invisalign"
+          },
+          {
+            "treaterIds": [
+              "8420227d-6452-48d0-af14-5fde7f14eeb1",
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "a6169afe-1cb9-45c6-b9ba-5096c15523a0"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "142da7a5-11bf-49c0-8fcf-50c78035130a",
+            "name": "Ny Patient Undersökning",
+            "duration": 30,
+            "calendarTreatmentType": "Undersökning",
+            "description": "Ny Patient Undersökning"
+          },
+          {
+            "treaterIds": [
+              "e028ae6f-ab7a-41d9-a4a4-afe8e0ebe75e"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "05a8843c-3bd3-42d9-9fda-9f5832726157",
+            "name": "Tandhygienist - förebyggande tandvård",
+            "duration": 50,
+            "calendarTreatmentType": "Parodontologi",
+            "description": "Tandhygienist - förebyggande tandvård"
+          },
+          {
+            "treaterIds": [
+              "8420227d-6452-48d0-af14-5fde7f14eeb1",
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "a6169afe-1cb9-45c6-b9ba-5096c15523a0"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "8cc0745b-c812-45e0-a3dc-c64eeea2bf25",
+            "name": "Undersökning",
+            "duration": 30,
+            "calendarTreatmentType": "Undersökning",
+            "description": "Undersökning"
+          },
+          {
+            "treaterIds": [
+              "e028ae6f-ab7a-41d9-a4a4-afe8e0ebe75e"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "f12117f2-d4ba-420b-b1c0-07e6e8c0b3de",
+            "name": "Tandhygienist - förebyggande tandvård fylld 67år",
+            "duration": 40,
+            "calendarTreatmentType": "Parodontologi",
+            "description": "Tandhygienist - förebyggande tandvård fylld 67år"
+          },
+          {
+            "treaterIds": [
+              "74f220d2-eedf-44fa-a222-ac02663895e1",
+              "a6169afe-1cb9-45c6-b9ba-5096c15523a0"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "253b9856-6e6e-4195-934d-77096b7adc07",
+            "name": "Konsultation Implantat",
+            "duration": 30,
+            "calendarTreatmentType": "Konsultation",
+            "description": "Konsultation Implantat"
+          },
+          {
+            "treaterIds": [
+              "e028ae6f-ab7a-41d9-a4a4-afe8e0ebe75e"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "5749b876-c04d-456f-b7b5-7b0cdcf150e0",
+            "name": " Ny patient Tandhygienist - förebyggande tandvård",
+            "duration": 60,
+            "calendarTreatmentType": "Profylax",
+            "description": " Ny patient Tandhygienist - förebyggande tandvård"
+          }
+        ],
+        "treaters": [
+          {
+            "id": "e028ae6f-ab7a-41d9-a4a4-afe8e0ebe75e",
+            "name": "Tandhygienist Behandlare Svensson",
+            "firstName": "Behandlare",
+            "lastName": "Svensson",
+            "title": "Tandhygienist",
+            "hsaIdentity": "SE1234567890-HD1T"
+          },
+          {
+            "id": "8420227d-6452-48d0-af14-5fde7f14eeb1",
+            "name": "Tandläkare Behandlare Nilsson",
+            "firstName": "Behandlare",
+            "lastName": "Nilsson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-BCDE"
+          },
+          {
+            "id": "74f220d2-eedf-44fa-a222-ac02663895e1",
+            "name": "Tandläkare Behandlare Andersson",
+            "firstName": "Behandlare",
+            "lastName": "Andersson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-CDEF"
+          },
+          {
+            "id": "a6169afe-1cb9-45c6-b9ba-5096c15523a0",
+            "name": "Tandläkare Behandlare Jönsson",
+            "firstName": "Behandlare",
+            "lastName": "Jönsson",
+            "title": "Tandläkare",
+            "hsaIdentity": "SE1234567890-B3DG"
+          }
+        ]
+      }
+    ]
+  }
+}

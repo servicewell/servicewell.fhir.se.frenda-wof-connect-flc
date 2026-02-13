@@ -1,3 +1,25 @@
+{%- comment -%}
+==========================================================================
+Template:     Frenda _patientdetails
+Purpose:      Generates patient.
+Version:      0.0.1
+Author:       Service Well
+Date:         2025-12-05
+
+Context:
+  -LM:  FrendaPatientDetails
+  -API: /api/patient/details
+
+Parameters:
+  patient             : object (required)
+  requestedIdentifier : string(required)
+  sourceSystem        : string (required)
+
+Output:
+      - Patient resource
+==========================================================================
+{%- endcomment -%}
+
 {%- capture idSeed -%}patient|frenda|{{ patient.firstname }}|{{ patient.lastname }}|{{ patient.eMail | default: '' }}{%- endcapture -%}
 {%- assign patientId = idSeed | generate_uuid -%}
 
@@ -8,32 +30,23 @@
 {
   "resourceType": "Patient",
   "id": "{{ patientId }}",
-  "meta": {
-    "profile": [
-      "http://hl7.se/fhir/ig/base/StructureDefinition/SEBasePatient"
-    ]
-  },
   "identifier": [
     {
-      {% comment %} NIN is not part of the response, but probably the token {% endcomment %}
       "system": "urn:oid:1.2.752.129.2.1.3.1",
-      "value": "121212-1212"
+      "value": "{{ requestedIdentifier }}"
     }
-    {% comment %} Frenda does not output the internal patient identifier {% endcomment %}
-    {% comment %},
-    {
-      "type": {
-        "coding": [
-          {
-            "system": "http://opusdental.purified.link/fhir/CodeSystem/csOpusIdentifier",
-            "code": "patientId"
-          }
-        ]
-      },
-      "system": "itbDev-colosseum-opus-nationaltheatret/fhir/NamingSystem/nspatientId",
-      "value": ""
-    }{% endcomment %}
   ],
+  "meta": {
+    "tag": [
+      {
+        "system": "{{ wof-connect-codesystem-pms-system }}",
+        "code": "{{ sourceSystem }}"
+      }
+    ],
+    "profile": [
+      "{{ wof-connect-profile-patient }}"
+    ]
+  },
   "name": [
     {
       "text": "{% if patient.firstname %}{{ patient.firstname | strip }}{% endif %}{% if patient.firstname and patient.lastname %} {% endif %}{% if patient.lastname %}{{ patient.lastname | strip }}{% endif %}",

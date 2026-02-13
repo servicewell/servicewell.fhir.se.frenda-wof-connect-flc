@@ -1,0 +1,76 @@
+{%- comment -%}
+==========================================================================
+Template:     Frenda _slotappointment
+Purpose:      Generates available booking slots.
+Version:      0.0.2
+Author:       Service Well
+Date:         2025-11-17
+
+Context:
+  -LM:  FrendaAvailableSlot
+  -API: /api/appointment/availableslots
+
+Parameters:
+  slot          : object (required)
+  sourceSystem  : string (required)
+
+Output:
+      - Appointment resource
+==========================================================================
+{%- endcomment -%}
+
+{%- assign appointmentSeed = 'appointment|frenda|' | append: slot.slotId -%}
+{%- assign appointmentId = appointmentSeed | generate_uuid -%}
+
+{
+  "resourceType": "Appointment",
+  "id": "{{ appointmentId }}",
+  "meta": {
+    "tag": [
+      {
+        "system": "{{ wof-connect-codesystem-pms-system }}",
+        "code": "{{ sourceSystem }}"
+      }
+    ],
+    "profile": [
+      "{{ wof-connect-profile-slot-appointment }}",
+      "{{ ihe-profile-appointment }}"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "{{ wof-connect-codesystem-identifier-slotid }}",
+      "value": "{{ slot.slotId }}"
+    }
+  ],
+  "serviceType": [{
+    "coding": [
+      {
+        "system": "{{ wof-connect-identifiercodesystem-service-type-id }}",
+        "code": "{{ slot.treatmentId }}"
+      }
+    ]
+  }],
+  "status": "proposed",
+  "start": "{{ slot.startDateTime }}",
+  "end": "{{ slot.endDateTime }}",
+  "requestedPeriod": [{
+    "start": "{{ slot.startDateTime }}",
+    "end": "{{ slot.endDateTime }}"
+  }],
+  "participant": [
+    {
+      "actor": {
+        "reference": "Practitioner/{{ slot.treaterId }}",
+        "display": "{{ slot.treaterNameWithTitle | default: slot.treaterId }}"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Organization/{{ slot.clinicId }}"
+      },
+      "status": "accepted"
+    }
+  ]
+}

@@ -6,62 +6,13 @@
 {
   "resourceType": "Practitioner",
   "id": "{{ treater.id }}",
-  "meta": {
-    {% comment %} Probably skip this for Frenda - no point in showing Now or stale date {% endcomment %}
-    "lastUpdated": "2025-08-25T12:16:00+00:00"
-  },
-  "contained": [
-    {
-      "resourceType": "PractitionerRole",
-      "id": "{{ roleId }}",
-      "active": true,
-      "practitioner": { 
-        "reference": "Practitioner/{{ treater.id }}", 
-        "display": "{{ treater.name }}" 
-      },
-      "organization": {
-        "reference": "Organization/{{ root.clinic.id }}"
-      },
-      "code": [
-        {
-          {% comment %} Not sure what this does, if anything {% endcomment %}
-          "coding": [
-            {
-              "system": "Frenda",
-              "code": "LnkEmployeeBusiness"
-            }
-          ],
-          "text": "WorksAt"
-        }
-      ],
-      "specialty": [
-        {
-          "coding": [
-            {
-              "system": "http://this_needs_a_new_system_for_frenda_or_we_ignore_treatment_code",
-              "code": "dentist"
-            }
-          ],
-          "text": "{{ treater.title }}"
-        }
-      ],
-      {% comment %} Not sure what this does, if anything {% endcomment %}
-      "endpoint": [
-        {
-          "reference": "http://...",
-          "display": "FrendaEndpoint"
-        }
-      ],
-      "location": []
-    }
-  ],
   "identifier": [
     { 
       "system": "https://frenda.se/id/treater", 
       "value": "{{ treater.id }}" 
     }{% if treater.hsaIdentity %},
     { 
-      "system": "https://hsa-id.se", 
+      "system": "urn:oid:1.2.752.129.2.1.4.1", 
       "value": "{{ treater.hsaIdentity }}" 
     }{% endif %}
   ],

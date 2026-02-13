@@ -1,0 +1,155 @@
+{%- comment -%}
+==========================================================================
+Template:     Frenda _bookingappointment
+Purpose:      Generates booked appointment.
+Version:      0.0.1
+Author:       Service Well
+Date:         2025-11-25
+
+Context:
+  -LM:  FrendaBookingResponse
+  -API: /api/appointment/createappointment
+        /api/appointment/updateappointment
+        /api/appointment/booking
+
+Parameters:
+  appointment   : object (required)
+  sourceSystem  : string (required)
+
+Output:
+      - Appointment resource
+==========================================================================
+{%- endcomment -%}
+
+{%- assign appointmentStatus = "booked" -%}
+{%- if appointment.status == "Cancelled" -%}
+  {%- assign appointmentStatus = "cancelled" -%}
+{%- elsif appointment.status == "Complete" -%}
+  {%- assign appointmentStatus = "fulfilled" -%}
+{%- endif -%}
+
+{%- assign durationSeconds = appointment.duration | times: 60 -%}
+{%- assign endDateTime = appointment.start | add_seconds: durationSeconds -%}
+
+{
+  "resourceType": "Appointment",
+  "id": "{{ appointment.id }}",
+  "meta": {
+    "tag": [
+      {
+        "system": "{{ wof-connect-codesystem-pms-system }}",
+        "code": "{{ sourceSystem }}"
+      }
+    ],
+    "profile": [
+      "{{ wof-connect-profile-booking-appointment }}",
+      "{{ ihe-profile-appointment }}"
+    ]
+  },
+  "extension": [
+    {
+      "url": "{{ wof-connect-extension-wofconnect-characteristic }}",
+      "extension": [
+        {
+          "url": "scheduling",
+          "extension": [
+            {
+              "url": "minChangeHours",
+              "valueInteger": {{ appointment.minChangeHours }}
+            },
+            {
+              "url": "webReschedulingCountAllowed",
+              "valueInteger": {{ appointment.webReschedulingCountAllowed }}
+            }
+            {%- assign hasCancel = appointment.isCancellationAvailable -%}
+            {%- assign hasReschedule = appointment.isRescheduleAvailable -%}
+            {%- if hasCancel or hasReschedule -%},
+            {
+              "url": "schedulingAvailability",
+              "valueCodeableConcept": {
+                "coding": [
+                  {%- assign first = true -%}
+                  {%- if hasCancel -%}
+                  {
+                    "system": "{{ wof-connect-codesystem-wccharacteristic }}",
+                    "code": "scheduling-accepts-cancellation",
+                    "display": "Cancellation available"
+                  }
+                  {%- assign first = false -%}
+                  {%- endif -%}
+                  {%- if hasReschedule -%}
+                  {%- unless first -%},{%- endunless -%}
+                  {
+                    "system": "{{ wof-connect-codesystem-wccharacteristic }}",
+                    "code": "scheduling-accepts-reschedule",
+                    "display": "Reschedule available"
+                  }
+                  {%- endif -%}
+                ]
+              }
+            }
+            {%- endif -%}
+          ]
+        }
+      ]
+    },
+    {
+      "url": "{{ wof-connect-extension-appointment-update }}",
+      "extension": [
+        {
+          "url": "webReschedulingCount",
+          "valueInteger": {{ appointment.webReschedulingCount }}
+        },
+        {
+          "url": "canBeRescheduled",
+          "valueBoolean": {{ appointment.canAppointmentBeRescheduled }}
+        },
+        {
+          "url": "canBeCancelled",
+          "valueBoolean": {{ appointment.canAppointmentBeCancelled }}
+        }
+      ]
+    }
+  ],
+  "serviceType": [{
+    "coding": [
+      {
+        "system": "{{ wof-connect-identifiercodesystem-service-type-id }}",
+        "code": "{{ appointment.treatment.id }}",
+        "display": "{{ appointment.treatment.description }}"
+      }
+    ],
+    "text": "{{ appointment.treatment.description }}"
+  }],
+  "status": "{{ appointmentStatus }}",
+  "description": "{{ appointment.treatmentType }}",
+  "reasonCode": [
+    {
+      "text": "{{ appointment.reason }}"
+    }
+  ],
+  "start": "{{ appointment.start }}",
+  "end": "{{ endDateTime }}",
+  "requestedPeriod": [
+    {
+      "start": "{{ appointment.start }}",
+      "end": "{{ endDateTime }}"
+    }
+  ],
+  "participant": [
+    {
+      "actor": {
+        "reference": "Practitioner/{{ appointment.treater.id }}",
+        "display": "{{ appointment.treater.name }}"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Organization/{{ appointment.clinic.id }}",
+        "display": "{{ appointment.clinic.name }}"
+      },
+      "status": "accepted"
+    }
+  ]
+}

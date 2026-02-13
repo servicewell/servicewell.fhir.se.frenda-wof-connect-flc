@@ -1,23 +1,62 @@
-{%- assign scheduleSeed = 'schedule|frenda|' | append: root.clinic.id | append: '|' | append: treatment.id | append: '|' | append: treater -%}
+{% comment %}
+==========================================================================
+Template:     Frenda _schedule
+Purpose:      Generates a  schedules.
+Version:      0.0.2
+Author:       Service Well/@olof.mattsson
+Date:         2025-10-30
+
+Context:
+  -LM: FrendaClinicTreatments
+  -API: /api/clinic/treatments
+
+Parameters:
+  root: dataRoot: msg.data.getClinicTreatments, 
+  treater: data.getClinicTreatments.treaters (instance)
+Output:
+      - Schedule resource
+==========================================================================
+{% endcomment %}
+{%- assign scheduleSeed = 'schedule|frenda|' | append: root.clinic.id  | append: '|' | append: treater.id -%}
 {%- assign scheduleId   = scheduleSeed | generate_uuid -%}
-{%- assign treaterMatch = root.treaters | where: "id", treater | first -%}
+{% evaluate practionerRoleId using 'id/practitionerrole_id' param_clinicId: root.clinic.id , param_treaterId: treater.id,param_costLocationId: root.clinic.costLocations[0].id -%}   
+
+
 {
   "resourceType": "Schedule",
   "id": "{{ scheduleId }}",
+  "meta": {
+    "tag": [
+      { "system": "{{wof-connect-codesystem-pms-system}}", "code": "{{ sourceSystem }}" }
+    ],
+    "profile": [
+      "{{wof-connect-profile-schedule}}"
+    ]
+  },  
   "serviceType": [
-    {
-      "coding": [
+    {% assign first = true %}
+    {%- for t in root.treatments -%}
+      {%- assign hasMatch = false -%}
+      {%- for id in t.treaterIds -%}
+        {%- if id == treater.id -%}
+          {%- assign hasMatch = true -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if hasMatch -%}
+        {%- unless first -%},{%- endunless -%}
         {
-          {% comment %} System is not conformant with Frenda {% endcomment %}
-          "system": "http://portal.wof.purified.link/fhir/CodeSystem/csServiceType",
-          "code": "{{ treatment.calendarTreatmentType | downcase | replace: ' ', '-' }}",
-          {% comment %} Should be added to conformance {% endcomment %}
-          "display": "{{ treatment.name }}"
+          "coding": [
+            {
+              "system": "{{wof-connect-identifiercodesystem-service-type-id}}",
+              "code": "{{ t.id }}",
+              "display": "{{ t.name }}"
+            }            
+          ],
+          "text": "{{ t.description }}"
         }
-      ],
-      {% comment %} Should be added to conformance {% endcomment %}
-      "text": "{{ treatment.name }}"
-    }
+        {% assign first = false %}
+      {%- endif -%}
+    {%- endfor -%}
   ],
   "actor": [
     {
@@ -25,22 +64,16 @@
       "display": "{{ root.clinic.name }}"
     },
     {
-      {% comment %} For Frenda, PractitionerRole should suffice {% endcomment %}
-      "reference": "Practitioner/{{ treater }}",
-      "display": "{{ treaterMatch.name | default: treater }}"
+      "reference": "Practitioner/{{ treater.id }}",
+      "display": "{{ treater.name | default: treater.id }}"
     },
     {
-      {% comment %} Not applicable for Frenda {% endcomment %}
-      "reference": "itbDev-colosseum-opus-sandvika/fhir/Organization/578",
-      "display": ""
-    },
-    {
-      "reference": "PractitionerRole/{{ treater }}",
-      "display": "{{ treaterMatch.name | default: treater }}"
+      "reference": "PractitionerRole/{{ practionerRoleId }}",
+      "display": "{{ treater.name | default: treater.id }}"
     }
   ],
   "planningHorizon": {
-    {% comment %} Start is not available from Frenda, should we set it to Now? {% endcomment %}
-    "end": "{{ root.clinic.searchDateLimit }}"
+    "start": "{{  'now' | date: 'yyyy-MM-dd' }}",
+    "end": "{{ root.clinic.searchDateLimit  | date: 'yyyy-MM-dd'}}"
   }
 }

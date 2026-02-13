@@ -3,9 +3,9 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: servicewell.se.fhir.frenda-wof-flc
-canonical: http://puri.fhir.link/servicewell/frenda-wof-flc
-name: frenda-wof-flc
+id: servicewell.se.fhir.wof-connect-frenda
+canonical: http://canonical.fhir.link/servicewell/wof-connect-frenda
+name:  wof-connect-frenda
 # title: Example Title
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
@@ -26,6 +26,9 @@ publisher:
 #
 dependencies:
   ihe.iti.scheduling: 1.0.0
+  hl7.fhir.uv.extensions.r4: 5.2.0
+  flc.fhir.base: 0.2.3
+  servicewell.fhir.wof-connect: 0.1.0
 
 #
 #
@@ -60,7 +63,7 @@ dependencies:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
 parameters:
-  path-binary: [input\flc\templates, input\flc\sampledata, input\flc\templates\codesystem, input\flc\templates\resources]
+  path-binary: [input\flc\templates, input\flc\sampledata, input\flc\templates\codesystem, input\flc\templates\resources, input\flc\templates\id, input\flc\examples, input\flc\templates\variables]
   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #
@@ -126,11 +129,11 @@ menu:
 # The following are simple examples to demonstrate what this might
 # look like:
 #
-# resources:
-#   Patient/my-example-patient:
-#     name: My Example Patient
-#     description: An example Patient
-#     exampleBoolean: true
+resources:
+  Bundle/39b02f0a-b72e-f1b7-4bae-7170805c5f26:
+    name: GetScheduleExample1
+    description: An FLC output example Schedule resource for getting schedules from Frenda WOF Connect
+    exampleBoolean: true
 #   Patient/bad-example: omit
 #
 #
