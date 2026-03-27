@@ -3,9 +3,9 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: servicewell.se.fhir.wof-connect-frenda
-canonical: http://canonical.fhir.link/servicewell/wof-connect-frenda
-name:  wof-connect-frenda
+id: servicewell.fhir.se.frenda-wof-connect-flc
+canonical: https://canonical.fhir.link/servicewell/fhir.se.frenda-wof-connect-flc
+name:  servicewell.fhir.se.frenda-wof-connect-flc
 # title: Example Title
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
