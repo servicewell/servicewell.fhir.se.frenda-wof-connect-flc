@@ -21,7 +21,7 @@ Instance: 48e428b0-fb37-4224-84df-5783a301a9da
 InstanceOf: Organization
 Usage: #inline
 * meta.tag = $pms-system#frenda
-* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructurDefinition/wof-connect-economy-organization"
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-economy-organization"
 * name = "Service Well AB"
 * identifier.system = "urn:oid:1.2.752.129.2.1.4.1"
 * identifier.value = "hsaid55"
@@ -98,7 +98,7 @@ Instance: 2087a288-8831-835d-c99f-e53aa04c0d9e
 InstanceOf: PractitionerRole
 Usage: #inline
 * meta.tag = $pms-system#frenda
-* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructurDefinition/wof-connect-practitionerrole"
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-practitionerrole"
 * active = true
 * period.start = "2025-10-23T09:19:00+02:00"
 * practitioner = Reference(3dc38cf1-2039-40f1-b85f-6164f202c235) "Utv Mattias Ekberg"

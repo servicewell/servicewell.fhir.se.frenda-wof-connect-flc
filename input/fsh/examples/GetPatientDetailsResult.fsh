@@ -4,7 +4,7 @@ Instance: GetPatientDetailsResultExample
 InstanceOf: Patient
 Usage: #example
 * meta.tag = $pms-system#frenda
-* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructurDefinition/wof-connect-patient"
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-patient"
 * name.text = "Darth Vader"
 * name.family = "Vader"
 * name.given = "Darth"
