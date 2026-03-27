@@ -1,0 +1,80 @@
+{%- comment -%}
+==========================================================================
+Template:     Frenda _patientdetails
+Purpose:      Generates patient.
+Version:      0.0.1
+Author:       Service Well
+Date:         2025-12-05
+
+Context:
+  -LM:  FrendaPatientDetails
+  -API: /api/patient/details
+
+Parameters:
+  patient             : object (required)
+  requestedIdentifier : string(required)
+  sourceSystem        : string (required)
+
+Output:
+      - Patient resource
+==========================================================================
+{%- endcomment -%}
+
+{%- capture idSeed -%}patient|frenda|{{ patient.firstname }}|{{ patient.lastname }}|{{ patient.eMail | default: '' }}{%- endcapture -%}
+{%- assign patientId = idSeed | generate_uuid -%}
+
+{%- assign hasEmail = patient.eMail and patient.eMail != '' -%}
+{%- assign hasPhone = patient.phoneNumber and patient.phoneNumber != '' -%}
+{%- assign hasTelecom = hasEmail or hasPhone -%}
+
+{
+  "resourceType": "Patient",
+  "id": "{{ patientId }}",
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.752.129.2.1.3.1",
+      "value": "{{ requestedIdentifier }}"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "{{ wof-connect-codesystem-pms-system }}",
+        "code": "{{ sourceSystem }}"
+      }
+    ],
+    "profile": [
+      "{{ wof-connect-profile-patient }}"
+    ]
+  },
+  "name": [
+    {
+      "text": "{% if patient.firstname %}{{ patient.firstname | strip }}{% endif %}{% if patient.firstname and patient.lastname %} {% endif %}{% if patient.lastname %}{{ patient.lastname | strip }}{% endif %}",
+      "family": "{{ patient.lastname | default: '' | strip }}",
+      "given": [
+        "{{ patient.firstname | default: '' | strip }}"
+      ]
+    }
+  ]{% if hasTelecom %},
+  "telecom": [
+    {% assign first = true -%}
+    {% if hasEmail -%}
+      { 
+        "system": "email", 
+        "value": "{{ patient.eMail }}", 
+        "use": "home" 
+      }
+      {% assign first = false -%}
+    {%- endif -%}
+    {% if hasPhone -%}
+      {% unless first %},{% endunless -%}
+      { 
+        "system": "phone", 
+        "value": "{{ patient.phoneNumber }}", 
+        "use": "mobile" 
+      }
+    {%- endif -%}
+  ]{% endif %}
+  {% comment %} Frenda does not output the birthDate, but we could parse it from NIN in token {% endcomment %}
+  {% comment %}"birthDate": "1984-03-11"{% endcomment %}
+}

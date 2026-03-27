@@ -1,0 +1,26 @@
+{% comment %}
+==========================================================================
+Template:     id/_practitionerrole_id.liquid
+Purpose:      Generates a uuid from a.
+Version:      1.0.0
+Author:       Service Well Ab / @olof.mattsson
+Date:         2025-11-11
+
+
+Parameters:
+  param_clinicId          : object (required)
+  param_treaterId         : object (required)
+   param_costLocationId   : object (required)
+
+
+Output:
+      - PractitionerRole.id 
+
+Usage:
+   {% evaluate practitionerrole_id using 'id/_practitionerrole_id' param_clinicId: root.clinic.id , param_treaterId: treater.id,param_costLocationId: root.clinic.costLocations[0].id -%}   
+==========================================================================
+{% endcomment %}
+
+
+{%- assign practionerSeed =   param_clinicId | append: param_treaterId | append: param_costLocationId  -%}
+{{ practionerSeed |  generate_uuid -}}

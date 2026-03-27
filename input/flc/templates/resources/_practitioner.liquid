@@ -1,0 +1,32 @@
+{%- comment -%} Expects: treater, root {%- endcomment -%}
+
+{%- capture roleSeed -%}role|frenda|{{ root.clinic.id }}|{{ treater.id }}{%- endcapture -%}
+{%- assign roleId = roleSeed | generate_uuid -%}
+
+{
+  "resourceType": "Practitioner",
+  "id": "{{ treater.id }}",
+  "identifier": [
+    { 
+      "system": "https://frenda.se/id/treater", 
+      "value": "{{ treater.id }}" 
+    }{% if treater.hsaIdentity %},
+    { 
+      "system": "urn:oid:1.2.752.129.2.1.4.1", 
+      "value": "{{ treater.hsaIdentity }}" 
+    }{% endif %}
+  ],
+  "active": true,
+  "name": [
+    {
+      {% capture fallbackName -%}
+        {{ treater.firstName }}{% if treater.firstName and treater.lastName %} {% endif %}{{ treater.lastName }}
+      {%- endcapture %}
+      "text": "{{ treater.name | default: fallbackName | strip }}",
+      "family": "{{ treater.lastName | default: '' }}",
+      "given": [ 
+        "{{ treater.firstName | default: '' }}" 
+      ]
+    }
+  ]
+}

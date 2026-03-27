@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "requestId": "0c7ac285-e584-3e06-96ec-7fed87611ebd",
+    "extractDate": "2025-12-04T06:55:00+02:00",
+    "sourceSystem": "frenda",
+    "sourceSystemVersion": "1.7.23"
+  },
+  "data": {
+    "patientdetails": {
+      "lastname": "Tester",
+      "firstname": "Integration",
+      "eMail": "integration.tester@example.invalid",
+      "phoneNumber": "0763002510"
+    }
+  }
+}

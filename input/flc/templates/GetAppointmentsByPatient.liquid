@@ -1,0 +1,49 @@
+{% comment %}
+==========================================================================
+Template:     GetAppointmentsByPatient.liquid
+Purpose:      Transform list of Frenda bookings to FHIR Appointments
+Version:      0.0.1
+Author:       Service Well
+Date:         2025-12-04
+
+Context:
+- LM: FrendaBookingResponse via GetAppointmentsByPatient extract model
+- API: /api/patient/appointments (used for both GetAll and GetByHealthcareService)
+
+Output:
+  - Bundle with FHIR Appointments or OperationOutcome resource
+==========================================================================
+{% endcomment %}
+{% include "variables/canonicals" -%}
+{%- assign bundle_id = msg.meta.requestId  | generate_uuid -%}
+
+{%- assign metaRoot = msg.meta -%}
+{%- assign dataRoot = msg.data -%}
+
+{%- assign sourceSystem = metaRoot.sourceSystem | default: "none" -%}
+{%- assign extractDate  = metaRoot.extractDate  | default: 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+
+{%- assign count = 0 -%}
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "id": "{{ bundle_id }}",
+  "meta": {
+    "lastUpdated": "{{ extractDate }}",
+    "tag": [
+      { "system": "{{wof-connect-codesystem-pms-system}}", "code": "{{ sourceSystem }}" }
+    ],
+    "profile": [ 
+      "{{ ihe-sched-avail-bundle }}"
+    ]
+  },
+  "entry": [
+    {%- for appointment in dataRoot.bookedAppointments -%}
+      {%- assign count = count | plus: 1 -%}
+      {
+        "resource": {% include "resources/bookingappointment", appointment: appointment, sourceSystem: sourceSystem %}
+      }{% if forloop.last == false %},{% endif %}
+    {%- endfor -%}
+  ],
+  "total": {{ count }}
+}

@@ -1,0 +1,62 @@
+{% comment %}
+==========================================================================
+Template:     Frenda GetPractitionerRolesBundle
+Purpose:      Generates a FHIR Collection Bundle with PractitionerRoles.
+Version:      0.0.2
+Author:       Service Well/@marcus.johnsson & Service Well/@marcus.lindblom
+Date:         2025-11-05
+
+Context:  
+  -LM: FrendaClinicTreatments
+  -API: /api/clinic/treatments
+
+Parameters:
+
+Output:
+  - FHIR Bundle resource with:
+      - PractitionerRoles
+==========================================================================
+{% endcomment %}
+
+{% include "variables/canonicals" -%}
+{%- assign bundle_id = msg.meta.requestId | generate_uuid -%}
+
+{%- assign data = msg.data -%}
+{%- assign metaRoot = msg.meta -%}
+
+{%- assign extractDate  = metaRoot.extractDate  | default: 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+{%- assign sourceSystem = metaRoot.sourceSystem | default: "none" -%}
+
+{%- assign visitedIds = '' -%}
+{%- assign count = 0 -%}
+
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "id": "{{ bundle_id }}",  
+  "meta": {
+    "lastUpdated": "{{ extractDate }}",
+    "tag": [
+      { 
+        "system": "{{ wof-connect-codesystem-pms-system }}", 
+        "code": "{{ sourceSystem }}" 
+      }
+    ]
+  },
+  "entry": [
+    {%- for dataRoot in data.getClinicTreatments-%}
+      {%- assign visitedIds = '' -%}
+      {%- for t in dataRoot.treaters -%}
+        {%- capture key %}|{{ t.id }}|{% endcapture -%}
+        {%- unless visitedIds contains key -%}
+          {%- assign visitedIds = visitedIds | append: key -%}
+          {%- assign count = count | plus: 1 -%}
+          {
+            "resource": {% include "resources/practitionerrole", root: dataRoot, treater: t, extractDate: extractDate, sourceSystem: sourceSystem %}
+          }{% if forloop.last == false %},{% endif %}
+        {%- endunless -%}
+      {%- endfor -%}
+    {%- endfor -%}
+  ],
+  "total": {{ count }}
+}

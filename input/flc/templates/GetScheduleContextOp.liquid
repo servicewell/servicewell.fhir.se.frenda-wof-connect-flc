@@ -1,0 +1,74 @@
+{% comment %}
+==========================================================================
+Template:     Frenda GetScheduleBundle
+Purpose:      Generates a FHIR searchset Bundle with Organization, HealthcareService, ActivityDefinition, Schedule, Practitioner, PractitionerRole
+Version:      0.0.3
+Author:       Service Well
+Date:         2025-11-12
+
+Context:
+  -LM: FrendaClinicTreatments
+  -API: /api/clinic/treatments
+
+Output:
+  - FHIR Bundle resource with:
+      - Schedules
+==========================================================================
+{% endcomment %}
+{% include "variables/canonicals" -%}
+{%- assign bundle_id = msg.meta.requestId  | generate_uuid -%}
+
+{%- assign data = msg.data -%}
+{%- assign metaRoot = msg.meta -%}
+
+{%- assign sourceSystem = metaRoot.sourceSystem | default: "none" -%}
+{%- assign extractDate  = metaRoot.extractDate  | default: 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+
+{%- assign count = 0 -%}
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "id": "{{ bundle_id }}",
+  "meta": {
+    "lastUpdated": "{{ extractDate }}",
+    "tag": [
+      { "system": "{{wof-connect-codesystem-pms-system}}", "code": "{{ sourceSystem }}" }
+    ],
+    "profile": [ 
+      "{{wof-connect-profile-schedule-context-operation-response}}" 
+    ]
+  },
+  "entry": [
+    {% assign firstEntry = true %}
+
+    {%- for dataRoot in data.getClinicTreatments -%}
+      {%- assign clinic = dataRoot.clinic -%}
+
+      {% comment %} Organization {% endcomment %}
+      {%- assign count = count | plus: 1 -%}
+      {%- unless firstEntry -%},{%- endunless -%}
+      { "resource": {% include "resources/organization", root: dataRoot, clinic: clinic %} }
+      {% assign firstEntry = false %}
+
+      {% comment %} HealthcareService {% endcomment %}
+      {%- assign count = count | plus: 1 -%}
+      ,{ "resource": {% include "resources/healthcareservice", clinic: clinic %} }
+
+      {% comment %} ActivityDefinitions {% endcomment %}
+      {%- for t in dataRoot.treatments -%}
+        {%- assign count = count | plus: 1 -%}
+        ,{ "resource": {% include "resources/activitydefinition", root: dataRoot, treatment: t, sourceSystem: sourceSystem, extractDate: extractDate %} }
+      {%- endfor -%}
+      
+      {% comment %} Schedule + Practitioner + PractitionerRole per treater {% endcomment %}
+      {%- for t in dataRoot.treaters -%}
+        {%- assign count = count | plus: 3 -%}
+        ,{ "resource": {% include "resources/schedule", root: dataRoot, treater: t %} }
+        ,{ "resource": {% include "resources/practitioner", root: dataRoot, treater: t %} }
+        ,{ "resource": {% include "resources/practitionerrole", root: dataRoot, treater: t %} }
+      {%- endfor -%}
+
+    {%- endfor -%}
+  ],
+  "total": {{ count }}
+}

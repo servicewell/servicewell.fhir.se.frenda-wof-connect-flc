@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "requestId": "0c7ac285-e584-3e06-96ec-7fed87611ebd",
+    "extractDate": "2025-11-26T06:55:00+02:00",
+    "sourceSystem": "frenda",
+    "sourceSystemVersion": "1.7.23"
+  },
+  "data": {
+    "bookingAppointment": {
+      "id": "7e299d6d-1729-4f04-9abd-a69d23da79dd",
+      "start": "2025-12-01T09:00:00Z",
+      "duration": 30,
+      "clinic": {
+        "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "name": "Service Well AB",
+        "hsaIdentity": "hsaid55",
+        "competenceCode": "A",
+        "countyCode": "33",
+        "address": "Grönegatan 1C",
+        "postalCode": "22224",
+        "city": "Lund",
+        "phone": "070-738 76 66",
+        "eMail": "kontakt@servicewell.se",
+        "searchDateLimit": "2026-05-26T09:29:22.0354616Z",
+        "childPatientThreshold": 20,
+        "isNewBookingAvailable": true,
+        "isRescheduleAvailable": true,
+        "isCancellationAvailable": true,
+        "costLocations": [{
+          "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+          "name": "Klinik ServiceWell",
+          "number": "911920" 
+        }]
+      },
+      "treater": {
+        "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "name": "Utv Mattias Ekberg",
+        "firstName": "Mattias",
+        "lastName": "Ekberg",
+        "title": "Utv",
+        "hsaIdentity": "SE165560772419-10K8"
+      },
+      "treatment": {
+        "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "name": "Akut - barn",
+        "duration": 30,
+        "calendarTreatmentType": "Akut",
+        "description": "Akuttid för barnpatienter."
+      },
+      "isCancellationAvailable": true,
+      "isRescheduleAvailable": true,
+      "minChangeHours": 48,
+      "webReschedulingCount": 0,
+      "webReschedulingCountAllowed": 3,
+      "webCode": "ETQpFg",
+      "isWebBooked": true,
+      "status": "Active",
+      "treatmentType": "Akut",
+      "reason": "integration-test create",
+      "canAppointmentBeRescheduled": true,
+      "canAppointmentBeCancelled": true
+    }    
+  }
+}

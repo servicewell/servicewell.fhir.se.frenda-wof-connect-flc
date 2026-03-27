@@ -1,0 +1,25 @@
+{% comment %}
+==========================================================================
+Template:     GetAppointmentById.liquid
+Purpose:      Transform FrendaBookingResponse (single booking) to a FHIR Appointment
+Version:      0.0.1
+Author:       Service Well
+Date:         2025-12-03
+
+Context:
+-LM: FrendaBookingResponse via GetAppointmentById extract model
+-API: /api/appointment/booking
+
+Output:
+  - FHIR Appointment or OperationOutcome resource
+==========================================================================
+
+{% endcomment %}
+{% include "variables/canonicals" -%}
+{%- assign metaRoot = msg.meta -%}
+{%- assign dataRoot = msg.data -%}
+{%- assign sourceSystem = metaRoot.sourceSystem | default: "none" -%}
+
+{%- assign appointment = dataRoot.appointment -%}
+
+{% include "resources/bookingappointment", appointment: appointment, sourceSystem: sourceSystem %}

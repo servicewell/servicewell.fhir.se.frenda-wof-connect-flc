@@ -1,0 +1,51 @@
+{% comment %}
+==========================================================================
+Template:     Frenda GetScheduleBundle
+Purpose:      Generates a FHIR Collection Bundle with schedules.
+Version:      0.0.2
+Author:       Service Well/@marcus.lindblom
+Date:         2025-10-24
+
+Context:
+  -LM: FrendaClinicTreatments
+  -API: /api/clinic/treatments
+
+Parameters:
+
+Output:
+  - FHIR Bundle resource with:
+      - Schedules
+==========================================================================
+{% endcomment %}
+{% include "variables/canonicals" -%}
+{%- assign bundle_id = msg.meta.requestId  | generate_uuid -%}
+
+{%- assign data = msg.data -%}
+{%- assign metaRoot = msg.meta -%}
+
+{%- assign sourceSystem = metaRoot.sourceSystem | default: "none" -%}
+{%- assign extractDate  = metaRoot.extractDate  | default: 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+
+{%- assign count = 0 -%}
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "id": "{{ bundle_id }}",
+  "meta": {
+    "lastUpdated": "{{ extractDate }}",
+    "tag": [
+      { "system": "{{wof-connect-codesystem-pms-system}}", "code": "{{ sourceSystem }}" }
+    ]
+  },
+  "entry": [    
+    {%- for dataRoot in data.getClinicTreatments-%}
+      {%- for t in dataRoot.treaters -%}
+        {
+          {%- assign count = count | plus: 1 -%}
+          "resource": {% include "resources/schedule", root: dataRoot, treater: t %}
+        }{% if forloop.last == false %},{% endif %}
+      {%- endfor -%}
+    {%- endfor -%}
+  ],
+  "total": {{ count }}
+}

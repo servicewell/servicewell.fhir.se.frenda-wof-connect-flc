@@ -1,0 +1,48 @@
+{% comment %}
+==========================================================================
+Template:     Frenda BookAppointmentResultBundle
+Purpose:      Generates a FHIR Collection Bundle with the requested booked Appointment resource and MAY also contain an OperationOutcome with errors, warnings or information as a result of processing the operation.
+Version:      0.0.1
+Author:       Service Well
+Date:         2025-11-25
+
+Context:
+-LM: FrendaBookingResponse
+-API: /api/appointment/createappointment
+
+Output:
+  - FHIR Bundle resource (searchset) with:
+      - Appointment
+      - OperationOutcome (optional)
+==========================================================================
+
+{% endcomment %}
+{% include "variables/canonicals" -%}
+{%- assign bundle_id = msg.meta.requestId  | generate_uuid -%}
+
+{%- assign metaRoot = msg.meta -%}
+{%- assign dataRoot = msg.data -%}
+
+{%- assign sourceSystem = metaRoot.sourceSystem | default: "none" -%}
+{%- assign extractDate  = metaRoot.extractDate  | default: 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+
+{%- assign count = 0 -%}
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "id": "{{ bundle_id }}",
+  "meta": {
+    "lastUpdated": "{{ extractDate }}",
+    "tag": [
+      { "system": "{{wof-connect-codesystem-pms-system}}", "code": "{{ sourceSystem }}" }
+    ],
+    "profile": [ 
+      "{{ ihe-sched-avail-bundle }}" 
+    ]
+  },
+  "entry": [
+    {
+      "resource": {% include "resources/bookingappointment", appointment: dataRoot.bookingAppointment, sourceSystem: sourceSystem %}
+    }
+  ]
+}

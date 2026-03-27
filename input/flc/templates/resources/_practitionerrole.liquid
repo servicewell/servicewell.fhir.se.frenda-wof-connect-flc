@@ -1,0 +1,78 @@
+{% comment %}
+==========================================================================
+Template:     Frenda _practitionerrole
+Purpose:      Generates practitioner roles.
+Version:      0.0.2
+Author:       Service Well/@marcus.lindblom
+Date:         2025-11-05
+
+Context:
+  -LM: FrendaTreater
+  -API: /api/clinic/treaters
+
+Parameters:
+  root          :
+  treater       : object (required)
+  sourceSystem  : string (required)
+
+Output:
+      - PractitionerRole resource
+==========================================================================
+{%- endcomment -%}
+
+{% evaluate practionerRoleId using 'id/practitionerrole_id' param_clinicId: root.clinic.id , param_treaterId: treater.id,param_costLocationId: root.clinic.costLocations[0].id -%}   
+
+{%- assign clinic =  root.clinic -%}
+
+{
+  "resourceType": "PractitionerRole",
+  "id": "{{ practionerRoleId }}",
+  "meta": {
+    "tag": [
+      { 
+        "system": "{{ wof-connect-codesystem-pms-system }}", 
+        "code": "{{ sourceSystem }}"
+      }
+    ],
+    "profile": [ 
+      "{{wof-connect-profile-practitionerrole}}" 
+    ]
+  },
+  "active": true,
+  "period": { "start": "{{ extractDate }}" },
+  "practitioner": {
+    "reference": "Practitioner/{{ treater.id }}",
+    "display": "{{ treater.name | default: treater.id }}"
+  },
+  "organization": {
+    "reference": "Organization/{{ clinic.id }}",
+    "display": "{{ clinic.name | default: clinic.id }}"
+  },
+  "healthcareService": [{
+    "reference": "HealthcareService/{{ clinic.id }}",
+    "display": "{{ clinic.name | default: clinic.id }}"
+    }],
+  {%- comment -%}
+    TODO: Add csPractitionerRole?
+  {%- endcomment -%}
+  "code": [
+    {
+      "coding": [
+        {
+          "system": "http://portal.wof.purified.link/fhir/CodeSystem/csPractitionerRole",
+          "code": "{{ treater.title | default: treater.name | default: 'Practitioner' }}",
+          "display": "{{ treater.title | default: treater.name | default: 'Practitioner' }}"
+        }
+      ],
+      "text": "{{ treater.title | default: treater.name | default: 'Practitioner' }}"
+    }
+  ]
+  
+  {%- comment -%}
+    TODO: Add contained?
+  {%- endcomment -%}  
+  
+  {%- comment -%}
+   TODO: Add extension? (Missing from Frenda. Should perhaps be possible to set from our backoffice, to complete the model.)
+  {%- endcomment -%}
+}

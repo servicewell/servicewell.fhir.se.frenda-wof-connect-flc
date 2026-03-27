@@ -1,0 +1,68 @@
+{% comment %}
+Context:
+  -LM: FrendaClinic
+
+Parameters:
+  clinic        : object (required)
+  sourceSystem  : string (required)
+
+Output:
+      - WOF-Connect EconomyOrganization resource
+==========================================================================
+{%- endcomment -%}
+
+{%- assign nameAsCode = clinic.name | downcase | strip | replace: ' ','-' | replace: 'å','a' | replace: 'ä','a' | replace: 'ö','o' -%}
+
+{
+  "resourceType": "Organization",
+  "id": "{{ clinic.id }}",
+  "meta": {
+    "tag": [
+      { 
+        "system": "{{ wof-connect-codesystem-pms-system }}", 
+        "code": "{{ sourceSystem }}"
+      }
+    ],
+    "profile": [ 
+      "{{wof-connect-profile-economyorganization}}" 
+    ]
+  },
+  "name": "{{ clinic.name }}", 
+  
+  {% comment %}
+    Bygg alias-lista från costLocations (namn), om de finns
+  {% endcomment %}
+
+
+  "identifier": [
+    {% assign first = true %}
+
+    {%- if clinic.hsaIdentity -%}
+      { "system": "urn:oid:1.2.752.129.2.1.4.1", "value": "{{ clinic.hsaIdentity }}" }
+      {% assign first = false %}
+    {%- endif -%}
+  ],
+  "telecom": [
+    {% assign tfirst = true %}
+    {%- if clinic.phone -%}
+      { "system": "phone", "value": "{{ clinic.phone }}", "use": "work" }
+      {% assign tfirst = false %}
+    {%- endif -%}
+    {%- if clinic.eMail -%}
+      {%- unless tfirst -%},{%- endunless -%}
+      { "system": "email", "value": "{{ clinic.eMail }}", "use": "work" }
+      {% assign tfirst = false %}
+    {%- endif -%}
+  ],
+
+  "address": [
+    {
+      "use": "work",
+      "type": "postal",
+      "line": [ "{{ clinic.address | escape }}" ],
+      "postalCode": "{{ clinic.postalCode }}",
+      "city": "{{ clinic.city | escape }}",
+      "country": "SE"
+    }
+  ]
+}

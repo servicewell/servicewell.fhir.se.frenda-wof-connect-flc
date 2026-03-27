@@ -1,0 +1,117 @@
+{%- comment -%}
+==========================================================================
+Template:     Frenda _activitydefinition
+Purpose:      Generates activity definitions.
+Version:      0.0.2
+Author:       Service Well
+Date:         2025-11-21
+
+Context:
+  -LM: TBD
+  -API: /api/clinic/treaters
+
+Parameters:
+  root          :
+  treatment     : object (required)
+  sourceSystem  : string (required)
+  extractDate   :
+
+Output:
+      - ActivityDefinition resource
+==========================================================================
+{%- endcomment -%}
+
+{%- assign name = treatment.name | default: treatment.calendarTreatmentType | default: 'activity' -%}
+{%- assign duration = treatment.duration | default: 0 -%}
+
+{%- assign participants_json = '' -%}
+{%- for treater in root.treaters -%}
+  {%- if treatment.treaterIds contains treater.id -%}
+    {%- if participants_json != '' -%}{%- assign participants_json = participants_json | append: ',' -%}{%- endif -%}
+    {%- capture participant_json -%}
+      { "type": "practitioner",
+        "role": {
+          "coding": [{
+            "system": "{{ wof-connect-codesystem-practitioner-role }}",
+            "code": "{{ treater.title | downcase | strip }}",
+            "display": "{{ treater.title | default: 'Practitioner' }}"
+          }],
+          "text": "{{ treater.title | default: 'Practitioner' }}"
+        }
+      }
+    {%- endcapture -%}
+    {%- assign participants_json = participants_json | append: participant_json -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if participants_json == '' -%}
+  {%- assign participants_json = '{ "type": "practitioner", "role": { "text": "Practitioner" } }' -%}
+{%- endif -%}
+
+{
+  "resourceType": "ActivityDefinition",
+  "id": "{{ treatment.id }}",
+  "meta": {
+    "tag": [
+      {
+        "system": "{{ wof-connect-codesystem-pms-system }}",
+        "code": "{{ sourceSystem }}"
+      }
+    ],
+    "profile": [
+      "{{ wof-connect-profile-activitydefinition }}"
+    ]
+  },
+  "status": "active",
+  "name": "{{ name }}",
+  "title": "{{ name }}",
+  "description": "{{ treatment.description | default: name }}",
+  "code": {
+    "coding": [
+      {
+        "system": "{{ wof-connect-codesystem-service-type }}",
+        "code": "{{ treatment.calendarTreatmentType | default: name | downcase | strip | replace: ' ', '-' | replace: 'å','a' | replace: 'ä','a' | replace: 'ö','o' }}",
+        "display": "{{ name }}"
+      },
+      {
+        "system": "{{ wof-connect-identifiercodesystem-service-type-id }}",
+        "code": "{{ treatment.id }}",
+        "display": "{{ treatment.name }}"
+      }
+    ],
+    "text": "{{ treatment.description | default: name }}"
+  },
+  "timingDuration": {
+    "value": {{ duration }},
+    "unit": "minute",
+    "system": "http://unitsofmeasure.org",
+    "code": "min"
+  },
+  "participant": [ {{ participants_json }} ],
+  "contained": [
+    {
+      "resourceType": "List",
+      "id": "HealthcareServiceListId",
+      "status": "current",
+      "mode": "working",
+      "meta": {
+        "profile": ["{{ wof-connect-profile-healthcareservice-list }}"]
+      },
+      "entry": [
+        {
+          "item": {
+            "reference": "HealthcareService/{{ root.clinic.id }}",
+            "display": "{{ root.clinic.name }}"
+          }
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "{{ wof-connect-extension-list-reference }}",
+      "valueReference": {
+        "reference": "#HealthcareServiceListId"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{% comment %}
+==========================================================================
+Template:     Frenda GetWofCapabilitiesOp
+Purpose:      Generates a static FHIR Bundle for WofCapabilities operation.
+Version:      0.0.2
+Author:       Service Well
+Date:         2025-11-11
+
+Context:
+
+Parameters:
+
+Output:
+  - FHIR Bundle resource with:
+      - Schedules
+==========================================================================
+{% endcomment %}
+{% include "variables/canonicals" -%}
+{
+  "resourceType": "Basic",
+  "id": "wof-capabilities-example",
+  "meta": {
+    "profile": [
+      "{{wof-connect-profile-capabilities-carrier}}"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wofconnect-characteristic",
+      "extension": [
+        {
+          "url": "workflow",
+          "extension": [
+            {
+              "url": "deviceBookingAvailable",
+              "valueBoolean": false
+            },
+            {
+              "url": "healthcareServiceAvailable",
+              "valueBoolean": true
+            }
+          ]
+        },
+        {
+          "url": "security",
+          "extension": [
+            {
+              "url": "requiresNativeIdPLogin",
+              "valueBoolean": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

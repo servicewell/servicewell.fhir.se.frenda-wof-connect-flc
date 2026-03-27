@@ -1,0 +1,26 @@
+[
+  {
+    "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+    "name": "Service Well AB",
+    "hsaIdentity": "hsaid55",
+    "competenceCode": "A",
+    "countyCode": "33",
+    "address": "Grönegatan 1C",
+    "postalCode": "22224",
+    "city": "Lund",
+    "phone": "070-738 76 66",
+    "eMail": "kontakt@servicewell.se",
+    "searchDateLimit": "2026-04-03T07:41:06.508834Z",
+    "childPatientThreshold": 20,
+    "isNewBookingAvailable": true,
+    "isRescheduleAvailable": true,
+    "isCancellationAvailable": true,
+    "costLocations": [
+      {
+        "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+        "name": "Klinik ServiceWell",
+        "number": "911920"
+      }
+    ]
+  }
+]

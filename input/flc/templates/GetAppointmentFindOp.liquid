@@ -1,0 +1,50 @@
+{% comment %}
+==========================================================================
+Template:     Frenda GetSlotsBundle
+Purpose:      Generates a FHIR Collection Bundle with slots.
+Version:      0.0.2
+Author:       Service Well
+Date:         2025-11-14
+
+Context:
+  -LM: FrendaAvailableSlot
+  -API: /api/appointment/availableslots
+
+Output:
+  - FHIR Bundle resource with:
+      - Slots
+==========================================================================
+{% endcomment %}
+{% include "variables/canonicals" -%}
+{%- assign bundle_id = msg.meta.requestId  | generate_uuid -%}
+
+{%- assign metaRoot = msg.meta -%}
+{%- assign dataRoot = msg.data -%}
+
+{%- assign sourceSystem = metaRoot.sourceSystem | default: "none" -%}
+{%- assign extractDate  = metaRoot.extractDate  | default: 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+
+{%- assign count = 0 -%}
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "id": "{{ bundle_id }}",
+  "meta": {
+    "lastUpdated": "{{ extractDate }}",
+    "tag": [
+      { "system": "{{wof-connect-codesystem-pms-system}}", "code": "{{ sourceSystem }}" }
+    ],
+    "profile": [ 
+      "{{ ihe-sched-avail-bundle }}" 
+    ]
+  },
+  "entry": [
+    {%- for slot in dataRoot.getAvailableSlots -%}
+      {%- assign count = count | plus: 1 -%}
+      {
+        "resource": {% include "resources/slotappointment", slot: slot, sourceSystem: sourceSystem %}
+      }{% if forloop.last == false %},{% endif %}
+    {%- endfor -%}
+  ],
+  "total": {{ count }}
+}

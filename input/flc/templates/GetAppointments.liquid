@@ -1,0 +1,39 @@
+{% comment %}
+==========================================================================
+Template:     Frenda GetAppointmentBundle
+Purpose:      Generates a FHIR SearchSet Bundle with appointments.
+Version:      0.0.1
+Author:       Service Well/@olof.mattsson
+Date:         2025-10-07
+
+Context:
+  -FrendaGetAPIAppointment from Frenda API
+
+Parameters:
+
+Output:
+  - FHIR Bundle resource with:
+      - Appointments
+==========================================================================
+{% endcomment %}
+{% assign bundle_id = msg.id | generate_id_input: "Bundle", false | generate_uuid -%}
+{% assign full_bundle_id = bundle_id | prepend: "urn:uuid:" -%}
+{% comment %} UTC-date {% endcomment %}
+{% comment %}{% assign timestamp = 'now' | date: "u" | replace: ' ', 'T' %}{% endcomment %}
+{% comment %} Local date with offset {% endcomment %}
+{% assign timestamp = 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "id": "{{ bundle_id }}",
+  "timestamp": "{{ timestamp }}",
+  "entry": [
+    {% for itemAppt in msg -%}
+      {
+        "resource": {% include "resources/appointment", appt: itemAppt %}
+      }
+     {% if forloop.last == false %},{% endif %}
+    {% endfor -%}
+  ]
+}

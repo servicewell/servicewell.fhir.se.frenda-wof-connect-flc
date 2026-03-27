@@ -1,0 +1,49 @@
+{% comment %}
+==========================================================================
+Template:     Frenda GetPractitionersBundle
+Purpose:      Generates a FHIR Collection Bundle with Practitioners.
+Version:      0.0.1
+Author:       Service Well/@marcus.johnsson
+Date:         2025-10-08
+
+Context:
+  -FrendaGetAPIClinicTreatments from Frenda API
+
+Parameters:
+
+Output:
+  - FHIR Bundle resource with:
+      - Practitioners
+==========================================================================
+{% endcomment %}
+{% assign bundle_id = msg.id | generate_id_input: "Bundle", false | generate_uuid -%}
+{% assign full_bundle_id = bundle_id | prepend: "urn:uuid:" -%}
+{% comment %} UTC-date {% endcomment %}
+{% comment %}{% assign timestamp = 'now' | date: "u" | replace: ' ', 'T' %}{% endcomment %}
+{% comment %} Local date with offset {% endcomment %}
+{% assign timestamp = 'now' | date: "yyyy-MM-dd'T'HH:mm:sszzz" -%}
+
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "id": "{{ bundle_id }}",
+  "timestamp": "{{ timestamp }}",
+  "entry": [
+    {% assign seenPract = '' -%}
+
+    {% for root in msg -%}
+      {% for p in root.treaters -%}
+        {% capture key %}{{ p.id }}{% endcapture %}
+        {% capture needle %}|{{ key }}|{% endcapture %}
+
+        {% unless seenPract contains needle -%}
+          {
+            "resource": {% include "resources/practitioner", treater: p, root: root %}
+          }{% if forloop.last == false %},{% endif %}
+
+          {% assign seenPract = seenPract | append: needle -%}
+        {% endunless -%}
+      {% endfor -%}
+    {% endfor -%}
+  ]
+}
