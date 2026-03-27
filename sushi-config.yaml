@@ -28,7 +28,7 @@ dependencies:
   ihe.iti.scheduling: 1.0.0
   hl7.fhir.uv.extensions.r4: 5.2.0
   flc.fhir.base: 0.2.3
-  servicewell.fhir.wof-connect: 0.1.0
+  servicewell.fhir.wof-connect: 0.1.2
 
 #
 #
