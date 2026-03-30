@@ -17,7 +17,7 @@
 {% assign wof-portal-codesystem- = "http://canonical.fhir.link/servicewell/wof-portal/CodeSystem/" %}
 {% assign wof-portal-profile- = "http://canonical.fhir.link/servicewell/wof-portal/StructureDefinition/" %}
 {% assign wof-portal-extension- = "http://canonical.fhir.link/servicewell/wof-portal/StructureDefinition/" %} 
-
+ 
 {% endcomment %}
 
 {% comment %}   WOF CONNECT  {% endcomment %}
@@ -30,21 +30,28 @@
 {% assign wof-connect-profile-schedule-context-operation-response = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-schedule-context-operation-response" %}
 {% assign wof-connect-profile-capabilities-carrier = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-capabilities-carrier" %}
 {% assign wof-connect-profile-healthcareservice-list = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list" %}
-{% assign wof-connect-profile-slot-appointment = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment" %}
+{% assign wof-connect-profile-slot-appointment = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-appointment" %}
 {% assign wof-connect-profile-booking-appointment = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment" %}
+{% assign wof-connect-profile-booking-appointment-bundle-response = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-find-appointment" %}
+{% assign wof-connect-profile-wof-connect-practitioner = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-practitioner" %}
 
 {% assign wof-connect-codesystem-pms-system = "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system" %}
 {% assign wof-connect-codesystem-costlocation-system = "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/cost-location" %}
 {% assign wof-connect-codesystem-wccharacteristic = "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/wc-characteristic" %}
 {% assign wof-connect-codesystem-practitioner-role = "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role" %}
-{% assign wof-connect-codesystem-service-type = "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/service-type" %}
+{% assign wof-connect-codesystem-service-type = "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/cs-service-type" %}
 {% assign wof-connect-codesystem-identifier-slotid = "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id" %}
+{% assign wof-connect-codesystem-wof-personal-number = "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/wof-personal-number-system" %}
 
-{% assign wof-connect-identifiercodesystem-service-type-id = "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id" %}
+{% assign wof-connect-identifiercodesystem-service-type-id = "http://canonical.fhir.link/servicewell/wof-connect/NamingSystem/service-type-id" %}
+
+{% assign wof-connect-namingsystem-wof-personal-number = "http://canonical.fhir.link/servicewell/wof-connect/NamingSystem/WofConnectPersonalNumbers" %}
+{% assign wof-connect-namingsystem-service-type-id = "http://canonical.fhir.link/servicewell/wof-connect/NamingSystem/service-type-id" %}
 
 {% assign wof-connect-extension-wofconnect-characteristic = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wofconnect-characteristic" %}
 {% assign wof-connect-extension-list-reference = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference" %}
 {% assign wof-connect-extension-appointment-update = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wofconnect-appointment-update" %}
+{% assign wof-connect-extension-consentToMarketing = "http://portal.wof.purified.link/fhir/StructureDefinition/extConsentToMarketing" %}
 
 {% comment %}   IHE International {% endcomment %}
 {% assign ihe-sched-avail-bundle = "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle" %}
