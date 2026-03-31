@@ -10,6 +10,17 @@
                 "code": "female", 
                 "display": "Female", 
                 "system": "http://hl7.org/fhir/administrative-gender"
+            },
+            "CodeSystem/temp": {
+            "M": {
+                "code": "temp-m", 
+                "display": "Temp", 
+                "system": "none"
+            }, 
+            "F": {
+                "code": "temp-f", 
+                "display": "Temp", 
+                "system": "none"
             }
         }
     }
