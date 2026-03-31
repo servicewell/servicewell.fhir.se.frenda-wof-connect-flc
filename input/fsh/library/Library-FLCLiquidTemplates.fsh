@@ -90,7 +90,7 @@ Usage: #definition
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "GetAppointmentsByPatient.liquid"
 
 // Code System
-* content[+].id = "ig-loader-codesystem.json"
+* content[+].id = "ig-loader-codeSystem.json"
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/codesystem"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "codeSystem.json"
 
