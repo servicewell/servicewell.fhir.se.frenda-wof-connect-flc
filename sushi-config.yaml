@@ -63,7 +63,7 @@ dependencies:
 # http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
 #
 parameters:
-  path-binary: [input\flc\templates, input\flc\sampledata, input\flc\templates\Codesystem, input\flc\templates\resources, input\flc\templates\id, input\flc\examples, input\flc\templates\variables]
+  path-binary: [input\flc\templates, input\flc\sampledata, input\flc\templates\codesystem, input\flc\templates\resources, input\flc\templates\id, input\flc\examples, input\flc\templates\variables]
   excludettl: true
 #   validation: [allow-any-extensions, no-broken-links]
 #

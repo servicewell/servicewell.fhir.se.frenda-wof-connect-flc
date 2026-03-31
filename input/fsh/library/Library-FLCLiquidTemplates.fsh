@@ -91,7 +91,7 @@ Usage: #definition
 
 // Code System
 * content[+].id = "ig-loader-codesystem.json"
-* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/Codesystem"
+* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/codesystem"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "codesystem.json"
 
 // Example data
