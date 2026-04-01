@@ -1,0 +1,30 @@
+{
+    "name": "servicewell.fhir.se.frenda-wof-connect-flc",
+    "version": "0.1.1",
+    "type": "IG",
+    "canonical": "https://canonical.fhir.link/servicewell/fhir.se.frenda-wof-connect-flc",
+    "url": "https://canonical.fhir.link/servicewell/fhir.se.frenda-wof-connect-flc/ImplementationGuide/servicewell.fhir.se.frenda-wof-connect-flc",
+    "title": "Frenda Flc ig for Wof-Connect",
+    "description": "Service Well’s FHIR Liquid Conversion (FLC) implementation for Frenda to WOF Connect",
+    "fhirVersions": [ "4.0.1" ],
+    "dependencies": {
+        "ihe.iti.scheduling": "1.0.0",
+        "hl7.fhir.uv.extensions.r4": "5.2.0",
+        "flc.fhir.base": "0.2.3",
+        "servicewell.fhir.wof-connect": "0.1.2"
+    },
+    "keywords": [
+        "wof",
+        "connect",
+        "frenda",
+        "flc"
+    ],
+    "author": "Service Well AB",
+    "maintainers": [
+      {
+        "name": "Service Well",
+        "email": "support@servicewell.se" 
+      }
+    ],
+    "license": "CC0-1.0"
+  }
