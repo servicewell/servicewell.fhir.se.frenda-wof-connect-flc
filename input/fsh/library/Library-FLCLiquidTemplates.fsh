@@ -48,9 +48,6 @@ Usage: #definition
 * content[+].id = "ig-loader-_bookingappointment.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/resources"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_bookingappointment.liquid"
-* content[+].id = "ig-loader-_billingorganization.liquid" 
-* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/resources"
-* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_billingorganization.liquid"
 
 //  ******************  templates/variables *************************
 * content[+].id = "ig-loader-_canonicals.liquid" 
@@ -93,9 +90,9 @@ Usage: #definition
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "GetAppointmentsByPatient.liquid"
 
 // Code System
-* content[+].id = "ig-loader-codeSystem.json"
+* content[+].id = "ig-loader-codesystem.json"
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/codesystem"
-* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "codeSystem.json"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "codesystem.json"
 
 // Example data
 // * content[+].id = "ig-loader-ExamplePatient.json"

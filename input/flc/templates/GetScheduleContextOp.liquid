@@ -50,11 +50,6 @@ Output:
       { "resource": {% include "resources/organization", root: dataRoot, clinic: clinic %} }
       {% assign firstEntry = false %}
 
-      {% for billingorganization in clinic.costLocations %}
-        {%- assign count = count | plus: 1 -%}
-        ,{ "resource": {% include "resources/billingorganization", root: clinic, billingorg: billingorganization, sourceSystem: sourceSystem  %} }
-      {% endfor %}
-
       {% comment %} HealthcareService {% endcomment %}
       {%- assign count = count | plus: 1 -%}
       ,{ "resource": {% include "resources/healthcareservice", clinic: clinic %} }

@@ -7,7 +7,7 @@ Parameters:
   sourceSystem  : string (required)
 
 Output:
-      - WOF-Connect Organization resource
+      - WOF-Connect EconomyOrganization resource
 ==========================================================================
 {%- endcomment -%}
 
@@ -24,7 +24,7 @@ Output:
       }
     ],
     "profile": [ 
-      "https://hl7.org/fhir/R4/organization.html" 
+      "{{wof-connect-profile-economyorganization}}" 
     ]
   },
   "name": "{{ clinic.name }}", 
