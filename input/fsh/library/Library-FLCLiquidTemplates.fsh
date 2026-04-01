@@ -48,6 +48,9 @@ Usage: #definition
 * content[+].id = "ig-loader-_bookingappointment.liquid" 
 * content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/resources"
 * content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_bookingappointment.liquid"
+* content[+].id = "ig-loader-_billingorganization.liquid" 
+* content[=].extension[attachment-folder-structure].extension[folder-path].valueString = "templates/resources"
+* content[=].extension[attachment-folder-structure].extension[logical-filename].valueString = "_billingorganization.liquid"
 
 //  ******************  templates/variables *************************
 * content[+].id = "ig-loader-_canonicals.liquid" 
