@@ -10,5 +10,5 @@
    "title": "Frenda Flc ig for Wof-Connect",
    "ci-build": "https://build.fhir.org/ig/servicewell/servicewell.fhir.se.frenda-wof-connect-flc",
    "category": "FLC",
-   "introduction": "This IG describes Service Well’s FHIR Liquid Conversion (FLC) implementation for Frenda via WOF Connect, enabling template-driven transformation of Frenda data into standards-compliant FHIR"
+   "introduction": "This IG describes Service Well’s FHIR Liquid Conversion (FLC) implementation for Frenda to WOF Connect, enabling template-driven transformation of Frenda data into standards-compliant FHIR"
 }
