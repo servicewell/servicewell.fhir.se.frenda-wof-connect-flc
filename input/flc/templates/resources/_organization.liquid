@@ -7,7 +7,7 @@ Parameters:
   sourceSystem  : string (required)
 
 Output:
-      - WOF-Connect billingorganization resource
+      - WOF-Connect Organization resource
 ==========================================================================
 {%- endcomment -%}
 
@@ -24,7 +24,7 @@ Output:
       }
     ],
     "profile": [ 
-      "{{wof-connect-profile-billingorganization}}" 
+      "https://hl7.org/fhir/R4/organization.html" 
     ]
   },
   "name": "{{ clinic.name }}", 
