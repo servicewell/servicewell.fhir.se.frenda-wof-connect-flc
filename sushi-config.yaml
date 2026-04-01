@@ -6,13 +6,13 @@
 id: servicewell.fhir.se.frenda-wof-connect-flc
 canonical: https://canonical.fhir.link/servicewell/fhir.se.frenda-wof-connect-flc
 name:  servicewell.fhir.se.frenda-wof-connect-flc
-# title: Example Title
-# description: Example Implementation Guide for getting started with SUSHI
-status: draft # draft | active | retired | unknown
+title: Frenda Wof-Connect FLC
+description: Service Well’s FHIR Liquid Conversion (FLC) implementation for Frenda via WOF Connect, enabling template-driven transformation of Frenda data into standards-compliant FHIR
+status: active # draft | active | retired | unknown
 version: 0.1.1
 fhirVersion: 4.0.1
 copyrightYear: 2025+
-releaseLabel: ci-build
+releaseLabel: Init release - stable
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
