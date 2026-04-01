@@ -1,0 +1,44 @@
+{% comment %}
+Context:
+
+
+Parameters:
+  root          : object (required)
+  billingorg    : object (required)
+  sourceSystem  : string (required)
+
+Output:
+      - WOF-Connect BillingOrganization resource
+==========================================================================
+{%- endcomment -%}
+
+{%- assign nameAsCode = billingorg.name | downcase | strip | replace: ' ','-' | replace: 'å','a' | replace: 'ä','a' | replace: 'ö','o' -%}
+
+{
+  "resourceType": "Organization",
+  "id": "{{ billingorg.id }}",
+  "meta": {
+    "tag": [
+      { 
+        "system": "{{ wof-connect-codesystem-pms-system }}", 
+        "code": "{{ sourceSystem }}"
+      }
+    ],
+    "profile": [ 
+      "{{wof-connect-profile-billingorganization}}" 
+    ]
+  },
+  "name": "{{ billingorg.name }}", 
+  
+  "partOf": [
+    {
+      "reference": "Organization/{{ root.id }}",
+      "display": "{{ root.name }}"
+    }
+  ],
+
+
+  "identifier": [
+    { "system": "{{ wof-connect-codesystem-costlocation-system }}", "value": "{{ billingorg.number }}" }
+  ],
+}
