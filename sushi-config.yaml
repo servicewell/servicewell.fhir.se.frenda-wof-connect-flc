@@ -3,9 +3,9 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: servicewell.fhir.se.frenda-wof-connect-flc
-canonical: https://canonical.fhir.link/servicewell/fhir.se.frenda-wof-connect-flc
-name:  servicewell.fhir.se.frenda-wof-connect-flc
+id: servicewell.fhir.frenda-wof-connect-flc
+canonical: https://canonical.fhir.link/servicewell/frenda-wof-connect-flc
+name:  Frenda-wof-connect-flc
 title: Frenda Wof-Connect FLC
 description: Service Well’s FHIR Liquid Conversion (FLC) implementation for Frenda to WOF Connect, enabling template-driven transformation of Frenda data into standards-compliant FHIR
 status: active # draft | active | retired | unknown
