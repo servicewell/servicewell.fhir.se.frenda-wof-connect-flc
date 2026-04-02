@@ -9,7 +9,7 @@ name:  servicewell.fhir.se.frenda-wof-connect-flc
 title: Frenda Wof-Connect FLC
 description: Service Well’s FHIR Liquid Conversion (FLC) implementation for Frenda to WOF Connect, enabling template-driven transformation of Frenda data into standards-compliant FHIR
 status: draft # draft | active | retired | unknown
-version: 0.1.2 -ci
+version: 0.1.2
 fhirVersion: 4.0.1
 copyrightYear: 2025+
 releaseLabel: ci-build [WIP]
