@@ -8,11 +8,11 @@ canonical: https://canonical.fhir.link/servicewell/fhir.se.frenda-wof-connect-fl
 name:  servicewell.fhir.se.frenda-wof-connect-flc
 title: Frenda Wof-Connect FLC
 description: Service Well’s FHIR Liquid Conversion (FLC) implementation for Frenda to WOF Connect, enabling template-driven transformation of Frenda data into standards-compliant FHIR
-status: active # draft | active | retired | unknown
-version: 0.1.1
+status: draft # draft | active | retired | unknown
+version: 0.1.2 -ci
 fhirVersion: 4.0.1
 copyrightYear: 2025+
-releaseLabel: Init release - stable
+releaseLabel: ci-build [WIP]
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
@@ -28,7 +28,7 @@ dependencies:
   ihe.iti.scheduling: 1.0.0
   hl7.fhir.uv.extensions.r4: 5.2.0
   flc.fhir.base: 0.2.3
-  servicewell.fhir.wof-connect: 0.1.2
+  servicewell.fhir.wof-connect: 0.1.3
 
 #
 #
