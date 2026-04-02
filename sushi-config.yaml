@@ -3,16 +3,16 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: servicewell.se.fhir.wof-connect-frenda
-canonical: http://canonical.fhir.link/servicewell/wof-connect-frenda
-name:  wof-connect-frenda
-# title: Example Title
-# description: Example Implementation Guide for getting started with SUSHI
-status: draft # draft | active | retired | unknown
+id: servicewell.fhir.se.frenda-wof-connect-flc
+canonical: https://canonical.fhir.link/servicewell/fhir.se.frenda-wof-connect-flc
+name:  servicewell.fhir.se.frenda-wof-connect-flc
+title: Frenda Wof-Connect FLC
+description: Service Well’s FHIR Liquid Conversion (FLC) implementation for Frenda to WOF Connect, enabling template-driven transformation of Frenda data into standards-compliant FHIR
+status: active # draft | active | retired | unknown
 version: 0.1.1
 fhirVersion: 4.0.1
 copyrightYear: 2025+
-releaseLabel: ci-build
+releaseLabel: Init release - stable
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
