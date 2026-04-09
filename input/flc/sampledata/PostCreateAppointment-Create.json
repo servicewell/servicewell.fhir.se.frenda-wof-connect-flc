@@ -1,14 +1,14 @@
 {
   "meta": {
-    "requestId": "0c7ac285-e584-3e06-96ec-7fed87611ebd",
-    "extractDate": "2025-11-26T06:55:00+02:00",
+    "requestId": "1d7e3db9-9e4e-4b97-ac57-eb13f1a0f314",
+    "extractDate": "2026-04-09T05:57:55Z",
     "sourceSystem": "frenda",
-    "sourceSystemVersion": "1.7.23"
+    "sourceSystemVersion": "1.0.0"
   },
   "data": {
-    "appointment": {
-      "id": "7e299d6d-1729-4f04-9abd-a69d23da79dd",
-      "start": "2025-12-01T09:00:00Z",
+    "bookingAppointment": {
+      "id": "ba05c46a-d683-4d22-b048-4bb13bde4787",
+      "start": "2026-04-13T07:00:00Z",
       "duration": 30,
       "clinic": {
         "id": "48e428b0-fb37-4224-84df-5783a301a9da",
@@ -16,21 +16,23 @@
         "hsaIdentity": "hsaid55",
         "competenceCode": "A",
         "countyCode": "33",
-        "address": "Grönegatan 1C",
+        "address": "Gr\u00F6negatan 1C",
         "postalCode": "22224",
         "city": "Lund",
         "phone": "070-738 76 66",
         "eMail": "kontakt@servicewell.se",
-        "searchDateLimit": "2026-05-26T09:29:22.0354616Z",
+        "searchDateLimit": "2026-10-09T05:57:54.4041241Z",
         "childPatientThreshold": 20,
         "isNewBookingAvailable": true,
         "isRescheduleAvailable": true,
         "isCancellationAvailable": true,
-        "costLocations": [{
-          "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
-          "name": "Klinik ServiceWell",
-          "number": "911920" 
-        }]
+        "costLocations": [
+          {
+            "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+            "name": "Klinik ServiceWell",
+            "number": "911920"
+          }
+        ]
       },
       "treater": {
         "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
@@ -45,20 +47,20 @@
         "name": "Akut - barn",
         "duration": 30,
         "calendarTreatmentType": "Akut",
-        "description": "Akuttid för barnpatienter."
+        "description": "Akuttid f\u00F6r barnpatienter."
       },
       "isCancellationAvailable": true,
       "isRescheduleAvailable": true,
       "minChangeHours": 48,
       "webReschedulingCount": 0,
       "webReschedulingCountAllowed": 3,
-      "webCode": "ETQpFg",
+      "webCode": "Gh3F7w",
       "isWebBooked": true,
       "status": "Active",
       "treatmentType": "Akut",
-      "reason": "integration-test create",
+      "reason": "",
       "canAppointmentBeRescheduled": true,
       "canAppointmentBeCancelled": true
-    }    
+    }
   }
 }

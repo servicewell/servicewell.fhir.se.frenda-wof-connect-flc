@@ -1,0 +1,17 @@
+{
+  "meta": {
+    "requestId": "ecad7ff1-dbd0-4bb0-9cf5-362678ff9656",
+    "extractDate": "2026-04-08T13:53:42Z",
+    "sourceSystem": "frenda",
+    "sourceSystemVersion": "1.0.0",
+    "requestedIdentifier": "199001072397"
+  },
+  "data": {
+    "patientdetails": {
+      "lastname": "Vader",
+      "firstname": "Darth",
+      "eMail": "darth.vader@example.invalid",
+      "phoneNumber": "0763002510"
+    }
+  }
+}
