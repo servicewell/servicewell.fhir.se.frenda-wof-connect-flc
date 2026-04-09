@@ -1,0 +1,1225 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "id": "c483eca8-e7af-b936-6601-b744ba70df44",
+  "meta": {
+    "lastUpdated": "2026-04-08T14:39:42+02:00",
+    "tag": [
+      {
+        "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+        "code": "frenda"
+      }
+    ],
+    "profile": [
+      "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-schedule-context-operation-response"
+    ]
+  },
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-economy-organization"
+          ]
+        },
+        "name": "Service Well AB",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.752.129.2.1.4.1",
+            "value": "hsaid55"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "070-738 76 66",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "kontakt@servicewell.se",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "use": "work",
+            "type": "postal",
+            "line": [
+              "Gr&#246;negatan 1C"
+            ],
+            "postalCode": "22224",
+            "city": "Lund",
+            "country": "SE"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.752.129.2.1.4.1",
+            "value": "hsaid55"
+          }
+        ],
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice"
+          ]
+        },
+        "providedBy": {
+          "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da",
+          "display": "Service Well AB"
+        },
+        "name": "Service Well AB",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "070-738 76 66",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "kontakt@servicewell.se",
+            "use": "work"
+          }
+        ],
+        "location": [
+          {
+            "reference": "#adressId"
+          }
+        ],
+        "characteristic": [
+          {
+            "text": "Child Patient Threshold",
+            "extension": [
+              {
+                "url": "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wofconnect-characteristic",
+                "extension": [
+                  {
+                    "url": "scheduling",
+                    "extension": [
+                      {
+                        "url": "childPatientThreshold",
+                        "valueInteger": 20
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/wc-characteristic",
+                "code": "scheduling-accepts-new",
+                "display": "New booking available"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/wc-characteristic",
+                "code": "scheduling-accepts-reschedule",
+                "display": "Reschedule available"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/wc-characteristic",
+                "code": "scheduling-accepts-cancellation",
+                "display": "Cancellation available"
+              }
+            ]
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Location",
+            "id": "adressId",
+            "physicalType": {
+              "text": "Site",
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.4.642.3.328",
+                  "code": "si"
+                }
+              ]
+            },
+            "address": {
+              "use": "work",
+              "line": [
+                "Grönegatan 1C"
+              ],
+              "city": "Lund",
+              "postalCode": "22224",
+              "district": "33"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ActivityDefinition",
+        "id": "696b3685-dd39-4781-b410-0e700a8ba010",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+          ]
+        },
+        "status": "active",
+        "name": "Akut - vuxen",
+        "title": "Akut - vuxen",
+        "description": "Akuttid för vuxna patienter",
+        "code": {
+          "coding": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/service-type",
+              "code": "akut",
+              "display": "Akut - vuxen"
+            },
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+              "code": "696b3685-dd39-4781-b410-0e700a8ba010",
+              "display": "Akut - vuxen"
+            }
+          ],
+          "text": "Akuttid för vuxna patienter"
+        },
+        "timingDuration": {
+          "value": 30,
+          "unit": "minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "min"
+        },
+        "participant": [
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utv",
+                  "display": "Utv"
+                }
+              ],
+              "text": "Utv"
+            }
+          },
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utvecklare",
+                  "display": "Utvecklare"
+                }
+              ],
+              "text": "Utvecklare"
+            }
+          },
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utvecklare",
+                  "display": "Utvecklare"
+                }
+              ],
+              "text": "Utvecklare"
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "List",
+            "id": "HealthcareServiceListId",
+            "status": "current",
+            "mode": "working",
+            "meta": {
+              "profile": [
+                "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+              ]
+            },
+            "entry": [
+              {
+                "item": {
+                  "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+                  "display": "Service Well AB"
+                }
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference",
+            "valueReference": {
+              "reference": "#HealthcareServiceListId"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ActivityDefinition",
+        "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+          ]
+        },
+        "status": "active",
+        "name": "Akut - barn",
+        "title": "Akut - barn",
+        "description": "Akuttid för barnpatienter.",
+        "code": {
+          "coding": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/service-type",
+              "code": "akut",
+              "display": "Akut - barn"
+            },
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+              "code": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+              "display": "Akut - barn"
+            }
+          ],
+          "text": "Akuttid för barnpatienter."
+        },
+        "timingDuration": {
+          "value": 30,
+          "unit": "minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "min"
+        },
+        "participant": [
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utv",
+                  "display": "Utv"
+                }
+              ],
+              "text": "Utv"
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "List",
+            "id": "HealthcareServiceListId",
+            "status": "current",
+            "mode": "working",
+            "meta": {
+              "profile": [
+                "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+              ]
+            },
+            "entry": [
+              {
+                "item": {
+                  "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+                  "display": "Service Well AB"
+                }
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference",
+            "valueReference": {
+              "reference": "#HealthcareServiceListId"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ActivityDefinition",
+        "id": "949adf08-f5b9-4fca-8423-0e6824b1e3c7",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+          ]
+        },
+        "status": "active",
+        "name": "Undersökning",
+        "title": "Undersökning",
+        "description": "För ej akuta ärenden.",
+        "code": {
+          "coding": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/service-type",
+              "code": "undersokning",
+              "display": "Undersökning"
+            },
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+              "code": "949adf08-f5b9-4fca-8423-0e6824b1e3c7",
+              "display": "Undersökning"
+            }
+          ],
+          "text": "För ej akuta ärenden."
+        },
+        "timingDuration": {
+          "value": 50,
+          "unit": "minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "min"
+        },
+        "participant": [
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utv",
+                  "display": "Utv"
+                }
+              ],
+              "text": "Utv"
+            }
+          },
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utvecklare",
+                  "display": "Utvecklare"
+                }
+              ],
+              "text": "Utvecklare"
+            }
+          },
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utvecklare",
+                  "display": "Utvecklare"
+                }
+              ],
+              "text": "Utvecklare"
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "List",
+            "id": "HealthcareServiceListId",
+            "status": "current",
+            "mode": "working",
+            "meta": {
+              "profile": [
+                "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+              ]
+            },
+            "entry": [
+              {
+                "item": {
+                  "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+                  "display": "Service Well AB"
+                }
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference",
+            "valueReference": {
+              "reference": "#HealthcareServiceListId"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ActivityDefinition",
+        "id": "70de741d-8dd9-40e8-b72a-98b1e2e15381",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+          ]
+        },
+        "status": "active",
+        "name": "Tappad fyllning",
+        "title": "Tappad fyllning",
+        "description": "Tappad fyllning utan smärta",
+        "code": {
+          "coding": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/service-type",
+              "code": "fyllningsterapi",
+              "display": "Tappad fyllning"
+            },
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+              "code": "70de741d-8dd9-40e8-b72a-98b1e2e15381",
+              "display": "Tappad fyllning"
+            }
+          ],
+          "text": "Tappad fyllning utan smärta"
+        },
+        "timingDuration": {
+          "value": 30,
+          "unit": "minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "min"
+        },
+        "participant": [
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utvecklare",
+                  "display": "Utvecklare"
+                }
+              ],
+              "text": "Utvecklare"
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "List",
+            "id": "HealthcareServiceListId",
+            "status": "current",
+            "mode": "working",
+            "meta": {
+              "profile": [
+                "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+              ]
+            },
+            "entry": [
+              {
+                "item": {
+                  "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+                  "display": "Service Well AB"
+                }
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference",
+            "valueReference": {
+              "reference": "#HealthcareServiceListId"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ActivityDefinition",
+        "id": "b358da0c-19e8-4c21-b534-e21133c700ce",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+          ]
+        },
+        "status": "active",
+        "name": "Extraktion",
+        "title": "Extraktion",
+        "description": "Extraktion",
+        "code": {
+          "coding": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/service-type",
+              "code": "extraktion",
+              "display": "Extraktion"
+            },
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+              "code": "b358da0c-19e8-4c21-b534-e21133c700ce",
+              "display": "Extraktion"
+            }
+          ],
+          "text": "Extraktion"
+        },
+        "timingDuration": {
+          "value": 40,
+          "unit": "minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "min"
+        },
+        "participant": [
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utvecklare",
+                  "display": "Utvecklare"
+                }
+              ],
+              "text": "Utvecklare"
+            }
+          },
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utvecklare",
+                  "display": "Utvecklare"
+                }
+              ],
+              "text": "Utvecklare"
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "List",
+            "id": "HealthcareServiceListId",
+            "status": "current",
+            "mode": "working",
+            "meta": {
+              "profile": [
+                "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+              ]
+            },
+            "entry": [
+              {
+                "item": {
+                  "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+                  "display": "Service Well AB"
+                }
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference",
+            "valueReference": {
+              "reference": "#HealthcareServiceListId"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ActivityDefinition",
+        "id": "907d178f-e59d-4eee-8529-df62c8a8d1be",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+          ]
+        },
+        "status": "active",
+        "name": "Airflow - kampanj",
+        "title": "Airflow - kampanj",
+        "description": "Airflow - kampanj",
+        "code": {
+          "coding": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/service-type",
+              "code": "behandling",
+              "display": "Airflow - kampanj"
+            },
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+              "code": "907d178f-e59d-4eee-8529-df62c8a8d1be",
+              "display": "Airflow - kampanj"
+            }
+          ],
+          "text": "Airflow - kampanj"
+        },
+        "timingDuration": {
+          "value": 30,
+          "unit": "minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "min"
+        },
+        "participant": [
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utvecklare",
+                  "display": "Utvecklare"
+                }
+              ],
+              "text": "Utvecklare"
+            }
+          },
+          {
+            "type": "practitioner",
+            "role": {
+              "coding": [
+                {
+                  "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role",
+                  "code": "utvecklare",
+                  "display": "Utvecklare"
+                }
+              ],
+              "text": "Utvecklare"
+            }
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "List",
+            "id": "HealthcareServiceListId",
+            "status": "current",
+            "mode": "working",
+            "meta": {
+              "profile": [
+                "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+              ]
+            },
+            "entry": [
+              {
+                "item": {
+                  "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+                  "display": "Service Well AB"
+                }
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference",
+            "valueReference": {
+              "reference": "#HealthcareServiceListId"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Schedule",
+        "id": "ea80a74c-7e6c-86fc-00e1-d9fe9cc5df59",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-schedule"
+          ]
+        },
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010",
+                "display": "Akut - vuxen"
+              }
+            ],
+            "text": "Akuttid för vuxna patienter"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+                "display": "Akut - barn"
+              }
+            ],
+            "text": "Akuttid för barnpatienter."
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "949adf08-f5b9-4fca-8423-0e6824b1e3c7",
+                "display": "Undersökning"
+              }
+            ],
+            "text": "För ej akuta ärenden."
+          }
+        ],
+        "actor": [
+          {
+            "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+            "display": "Service Well AB"
+          },
+          {
+            "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+            "display": "Utv Mattias Ekberg"
+          },
+          {
+            "reference": "PractitionerRole/2087a288-8831-835d-c99f-e53aa04c0d9e",
+            "display": "Utv Mattias Ekberg"
+          }
+        ],
+        "planningHorizon": {
+          "start": "2026-04-09",
+          "end": "2026-04-03"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "identifier": [
+          {
+            "system": "https://frenda.se/id/treater",
+            "value": "3dc38cf1-2039-40f1-b85f-6164f202c235"
+          },
+          {
+            "system": "urn:oid:1.2.752.129.2.1.4.1",
+            "value": "SE165560772419-10K8"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "text": "Utv Mattias Ekberg",
+            "family": "Ekberg",
+            "given": [
+              "Mattias"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "2087a288-8831-835d-c99f-e53aa04c0d9e",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-practitionerrole"
+          ]
+        },
+        "active": true,
+        "period": {
+          "start": "2026-04-08T14:39:42+02:00"
+        },
+        "practitioner": {
+          "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+          "display": "Utv Mattias Ekberg"
+        },
+        "organization": {
+          "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da",
+          "display": "Service Well AB"
+        },
+        "healthcareService": [
+          {
+            "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+            "display": "Service Well AB"
+          }
+        ],
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "http://portal.wof.purified.link/fhir/CodeSystem/csPractitionerRole",
+                "code": "Utv",
+                "display": "Utv"
+              }
+            ],
+            "text": "Utv"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Schedule",
+        "id": "679e6b0a-0f5e-c873-ad31-faa0e4b9f1bd",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-schedule"
+          ]
+        },
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010",
+                "display": "Akut - vuxen"
+              }
+            ],
+            "text": "Akuttid för vuxna patienter"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "949adf08-f5b9-4fca-8423-0e6824b1e3c7",
+                "display": "Undersökning"
+              }
+            ],
+            "text": "För ej akuta ärenden."
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "70de741d-8dd9-40e8-b72a-98b1e2e15381",
+                "display": "Tappad fyllning"
+              }
+            ],
+            "text": "Tappad fyllning utan smärta"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "b358da0c-19e8-4c21-b534-e21133c700ce",
+                "display": "Extraktion"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "907d178f-e59d-4eee-8529-df62c8a8d1be",
+                "display": "Airflow - kampanj"
+              }
+            ]
+          }
+        ],
+        "actor": [
+          {
+            "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+            "display": "Service Well AB"
+          },
+          {
+            "reference": "Practitioner/8a6057fa-3dce-413f-8da1-379b4c7d63d4",
+            "display": "Utvecklare Matilda Clevesköld"
+          },
+          {
+            "reference": "PractitionerRole/866f2aca-10f8-152b-4b51-bbfda4b8966d",
+            "display": "Utvecklare Matilda Clevesköld"
+          }
+        ],
+        "planningHorizon": {
+          "start": "2026-04-09",
+          "end": "2026-04-03"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "8a6057fa-3dce-413f-8da1-379b4c7d63d4",
+        "identifier": [
+          {
+            "system": "https://frenda.se/id/treater",
+            "value": "8a6057fa-3dce-413f-8da1-379b4c7d63d4"
+          },
+          {
+            "system": "urn:oid:1.2.752.129.2.1.4.1",
+            "value": "HSA4824"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "text": "Utvecklare Matilda Clevesköld",
+            "family": "Clevesköld",
+            "given": [
+              "Matilda"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "866f2aca-10f8-152b-4b51-bbfda4b8966d",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-practitionerrole"
+          ]
+        },
+        "active": true,
+        "period": {
+          "start": "2026-04-08T14:39:42+02:00"
+        },
+        "practitioner": {
+          "reference": "Practitioner/8a6057fa-3dce-413f-8da1-379b4c7d63d4",
+          "display": "Utvecklare Matilda Clevesköld"
+        },
+        "organization": {
+          "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da",
+          "display": "Service Well AB"
+        },
+        "healthcareService": [
+          {
+            "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+            "display": "Service Well AB"
+          }
+        ],
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "http://portal.wof.purified.link/fhir/CodeSystem/csPractitionerRole",
+                "code": "Utvecklare",
+                "display": "Utvecklare"
+              }
+            ],
+            "text": "Utvecklare"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Schedule",
+        "id": "f108f69f-23dd-8b34-b12e-4a44a42d4b84",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-schedule"
+          ]
+        },
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010",
+                "display": "Akut - vuxen"
+              }
+            ],
+            "text": "Akuttid för vuxna patienter"
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "949adf08-f5b9-4fca-8423-0e6824b1e3c7",
+                "display": "Undersökning"
+              }
+            ],
+            "text": "För ej akuta ärenden."
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "b358da0c-19e8-4c21-b534-e21133c700ce",
+                "display": "Extraktion"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "907d178f-e59d-4eee-8529-df62c8a8d1be",
+                "display": "Airflow - kampanj"
+              }
+            ]
+          }
+        ],
+        "actor": [
+          {
+            "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+            "display": "Service Well AB"
+          },
+          {
+            "reference": "Practitioner/61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8",
+            "display": "Utvecklare Marcus Johnsson"
+          },
+          {
+            "reference": "PractitionerRole/13db6244-e8ab-a507-402b-8602203da705",
+            "display": "Utvecklare Marcus Johnsson"
+          }
+        ],
+        "planningHorizon": {
+          "start": "2026-04-09",
+          "end": "2026-04-03"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8",
+        "identifier": [
+          {
+            "system": "https://frenda.se/id/treater",
+            "value": "61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8"
+          },
+          {
+            "system": "urn:oid:1.2.752.129.2.1.4.1",
+            "value": "HSA3970"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "text": "Utvecklare Marcus Johnsson",
+            "family": "Johnsson",
+            "given": [
+              "Marcus"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "13db6244-e8ab-a507-402b-8602203da705",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-practitionerrole"
+          ]
+        },
+        "active": true,
+        "period": {
+          "start": "2026-04-08T14:39:42+02:00"
+        },
+        "practitioner": {
+          "reference": "Practitioner/61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8",
+          "display": "Utvecklare Marcus Johnsson"
+        },
+        "organization": {
+          "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da",
+          "display": "Service Well AB"
+        },
+        "healthcareService": [
+          {
+            "reference": "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da",
+            "display": "Service Well AB"
+          }
+        ],
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "http://portal.wof.purified.link/fhir/CodeSystem/csPractitionerRole",
+                "code": "Utvecklare",
+                "display": "Utvecklare"
+              }
+            ],
+            "text": "Utvecklare"
+          }
+        ]
+      }
+    }
+  ],
+  "total": 17
+}

@@ -1,0 +1,129 @@
+{
+    "resourceType": "Bundle",
+    "type": "searchset",
+    "id": "2da62793-f516-e2d8-caa8-b628a31c52f8",
+    "meta": {
+        "lastUpdated": "2026-04-09T07:57:55+02:00",
+        "tag": [
+            {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+                "code": "frenda"
+            }
+        ],
+        "profile": [
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle"
+        ]
+    },
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "Appointment",
+                "id": "ba05c46a-d683-4d22-b048-4bb13bde4787",
+                "meta": {
+                    "tag": [
+                        {
+                            "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+                            "code": "frenda"
+                        }
+                    ],
+                    "profile": [
+                        "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment",
+                        "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+                    ]
+                },
+                "extension": [
+                    {
+                        "url": "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wofconnect-characteristic",
+                        "extension": [
+                            {
+                                "url": "scheduling",
+                                "extension": [
+                                    {
+                                        "url": "minChangeHours",
+                                        "valueInteger": 48
+                                    },
+                                    {
+                                        "url": "webReschedulingCountAllowed",
+                                        "valueInteger": 3
+                                    },
+                                    {
+                                        "url": "schedulingAvailability",
+                                        "valueCodeableConcept": {
+                                            "coding": [
+                                                {
+                                                    "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/wc-characteristic",
+                                                    "code": "scheduling-accepts-cancellation",
+                                                    "display": "Cancellation available"
+                                                },
+                                                {
+                                                    "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/wc-characteristic",
+                                                    "code": "scheduling-accepts-reschedule",
+                                                    "display": "Reschedule available"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "url": "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wofconnect-appointment-update",
+                        "extension": [
+                            {
+                                "url": "webReschedulingCount",
+                                "valueInteger": 0
+                            },
+                            {
+                                "url": "canBeRescheduled",
+                                "valueBoolean": true
+                            },
+                            {
+                                "url": "canBeCancelled",
+                                "valueBoolean": true
+                            }
+                        ]
+                    }
+                ],
+                "serviceType": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                                "code": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+                                "display": "Akuttid för barnpatienter."
+                            }
+                        ],
+                        "text": "Akuttid för barnpatienter."
+                    }
+                ],
+                "status": "booked",
+                "description": "Akut",
+                "start": "2026-04-13T07:00:00Z",
+                "end": "2026-04-13T07:30:00Z",
+                "requestedPeriod": [
+                    {
+                        "start": "2026-04-13T07:00:00Z",
+                        "end": "2026-04-13T07:30:00Z"
+                    }
+                ],
+                "participant": [
+                    {
+                        "actor": {
+                            "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+                            "display": "Utv Mattias Ekberg"
+                        },
+                        "status": "accepted"
+                    },
+                    {
+                        "actor": {
+                            "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da",
+                            "display": "Service Well AB"
+                        },
+                        "status": "accepted"
+                    }
+                ]
+            }
+        }
+    ]
+}
