@@ -21,7 +21,13 @@ Output:
 {%- assign metaRoot = msg.meta -%}
 {%- assign dataRoot = msg.data -%}
 {%- assign sourceSystem = metaRoot.sourceSystem | default: "none" -%}
-{%- assign requestedIdentifier = metaRoot.requestedIdentifier -%}
+{%- assign requestedIdentifier = nil -%}
+{%- for queryParam in metaRoot.FhirQueryParam -%}
+  {%- if queryParam.name == "identifier" -%}
+    {%- assign requestedIdentifier = queryParam.value -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
 
 {%- assign patientdetails = dataRoot.patientdetails -%}
 
