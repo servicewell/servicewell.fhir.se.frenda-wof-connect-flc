@@ -3,7 +3,13 @@
     "requestId": "d85f99e9-e269-4952-9ee7-d0ca29a3a7b7",
     "extractDate": "2026-05-06T11:34:28Z",
     "sourceSystem": "frenda",
-    "sourceSystemVersion": "1.0.0"
+    "sourceSystemVersion": "1.0.0",
+    "FhirQueryParam": [
+      {
+        "name": "identifier",
+        "value": "199001072397"
+      }
+    ]
   },
   "data": {
     "patientdetails": {
