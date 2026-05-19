@@ -9,7 +9,9 @@
         "name": "identifier",
         "value": "199001072397"
       }
-    ]
+    ],
+    "resourceSubPath": "Patient",
+    "interaction": "GetPatientDetails"
   },
   "data": {
     "patientdetails": {

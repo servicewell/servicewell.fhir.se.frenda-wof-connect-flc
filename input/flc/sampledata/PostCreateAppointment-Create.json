@@ -3,7 +3,15 @@
     "requestId": "1d7e3db9-9e4e-4b97-ac57-eb13f1a0f314",
     "extractDate": "2026-04-09T05:57:55Z",
     "sourceSystem": "frenda",
-    "sourceSystemVersion": "1.0.0"
+    "sourceSystemVersion": "1.0.0",
+    "FhirQueryParam": [
+      {
+        "name": "treatment",
+        "value": "4e10ed9b-814e-41c9-999f-3866de9d5343"
+      }
+    ],
+    "resourceSubPath": "Appointment",
+    "interaction": "AppointmentBook"
   },
   "data": {
     "bookingAppointment": {
