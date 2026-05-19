@@ -3,15 +3,7 @@
     "requestId": "a1bf3ae2-5aa5-43f0-a942-dbe2ff99a339",
     "extractDate": "2026-04-08T12:39:42Z",
     "sourceSystem": "frenda",
-    "sourceSystemVersion": "1.0.0",
-    "FhirQueryParam": [
-      {
-        "name": "clinic",
-        "value": "48e428b0-fb37-4224-84df-5783a301a9da"
-      }
-    ],
-    "resourceSubPath": "Schedule",
-    "interaction": "GetClinicTreatments"
+    "sourceSystemVersion": "1.0.0"
   },
   "data": {
     "getClinicTreatments": [{

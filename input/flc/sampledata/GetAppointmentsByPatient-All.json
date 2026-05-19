@@ -3,15 +3,7 @@
     "requestId": "820c3e22-5ac9-4f9c-9700-85c33c29c02b",
     "extractDate": "2026-04-08T13:59:58Z",
     "sourceSystem": "frenda",
-    "sourceSystemVersion": "1.0.0",
-    "FhirQueryParam": [
-      {
-        "name": "patient",
-        "value": "199001072397"
-      }
-    ],
-    "resourceSubPath": "Appointment",
-    "interaction": "GetAppointmentsByPatient"
+    "sourceSystemVersion": "1.0.0"
   },
   "data": {
     "bookedAppointments": [

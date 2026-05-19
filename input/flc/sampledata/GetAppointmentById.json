@@ -3,15 +3,7 @@
     "requestId": "de884fb8-49d3-4ed6-9789-d2ca4040705d",
     "extractDate": "2026-04-08T13:40:01Z",
     "sourceSystem": "frenda",
-    "sourceSystemVersion": "1.0.0",
-    "FhirQueryParam": [
-      {
-        "name": "id",
-        "value": "5052cc88-45ed-4c89-9d02-94e1fef79483"
-      }
-    ],
-    "resourceSubPath": "Appointment",
-    "interaction": "GetAppointmentById"
+    "sourceSystemVersion": "1.0.0"
   },
   "data": {
     "appointment": {

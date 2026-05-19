@@ -3,15 +3,7 @@
     "requestId": "690dfeac-100c-4006-948f-c79b0c9884af",
     "extractDate": "2026-04-09T06:00:36Z",
     "sourceSystem": "frenda",
-    "sourceSystemVersion": "1.0.0",
-    "FhirQueryParam": [
-      {
-        "name": "id",
-        "value": "ba05c46a-d683-4d22-b048-4bb13bde4787"
-      }
-    ],
-    "resourceSubPath": "Appointment",
-    "interaction": "AppointmentBook"
+    "sourceSystemVersion": "1.0.0"
   },
   "data": {
     "bookingAppointment": {

@@ -3,15 +3,7 @@
     "requestId": "0a226d32-0d17-45af-a9bc-bcfeac689439",
     "extractDate": "2026-04-09T06:03:22Z",
     "sourceSystem": "frenda",
-    "sourceSystemVersion": "1.0.0",
-    "FhirQueryParam": [
-      {
-        "name": "appointmentId",
-        "value": "5052cc88-45ed-4c89-9d02-94e1fef79483"
-      }
-    ],
-    "resourceSubPath": "Slot",
-    "interaction": "GetSlots"
+    "sourceSystemVersion": "1.0.0"
   },
   "data": {
     "getAvailableSlots": [
