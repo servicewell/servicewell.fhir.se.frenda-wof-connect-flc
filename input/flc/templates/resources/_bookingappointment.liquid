@@ -123,11 +123,7 @@ Output:
   }],
   "status": "{{ appointmentStatus }}",
   "description": "{{ appointment.treatmentType }}",
-  "reasonCode": [
-    {
-      "text": "{{ appointment.reason }}"
-    }
-  ],
+  "comment": "{{ appointment.reason }}",
   "start": "{{ appointment.start }}",
   "end": "{{ endDateTime }}",
   "requestedPeriod": [

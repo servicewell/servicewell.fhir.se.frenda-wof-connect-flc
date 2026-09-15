@@ -99,6 +99,7 @@
                 ],
                 "status": "booked",
                 "description": "Akut",
+                "comment": "teestar",
                 "start": "2026-04-13T07:00:00Z",
                 "end": "2026-04-13T07:30:00Z",
                 "requestedPeriod": [
