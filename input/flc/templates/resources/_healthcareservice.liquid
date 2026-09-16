@@ -34,7 +34,7 @@ Output:
   },
   "providedBy": {
     "reference": "Organization/{{ clinic.id }}",
-    "display": "{{ clinic.name | escape }}"
+    "display": {{ clinic.name | escape | to_json_string | default: 'null' }}
   },
   "name": "{{ clinic.name | escape }}",
 

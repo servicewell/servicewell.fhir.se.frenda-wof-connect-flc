@@ -33,7 +33,7 @@ Output:
   "partOf": [
     {
       "reference": "Organization/{{ root.id }}",
-      "display": "{{ root.name }}"
+      "display": {{ root.name | to_json_string | default: 'null' }}
     }
   ],
 }

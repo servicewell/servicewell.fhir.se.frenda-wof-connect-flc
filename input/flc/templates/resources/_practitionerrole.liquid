@@ -42,15 +42,15 @@ Output:
   "period": { "start": "{{ extractDate }}" },
   "practitioner": {
     "reference": "Practitioner/{{ treater.id }}",
-    "display": "{{ treater.name | default: treater.id }}"
+    "display": {{ treater.name | default: treater.id | to_json_string | default: 'null' }}
   },
   "organization": {
     "reference": "Organization/{{ clinic.id }}",
-    "display": "{{ clinic.name | default: clinic.id }}"
+    "display": {{ clinic.name | default: clinic.id | to_json_string | default: 'null' }}
   },
   "healthcareService": [{
     "reference": "HealthcareService/{{ clinic.id }}",
-    "display": "{{ clinic.name | default: clinic.id }}"
+    "display": {{ clinic.name | default: clinic.id | to_json_string | default: 'null' }}
     }],
   {%- comment -%}
     TODO: Add csPractitionerRole?
@@ -61,7 +61,7 @@ Output:
         {
           "system": "http://portal.wof.purified.link/fhir/CodeSystem/csPractitionerRole",
           "code": "{{ treater.title | default: treater.name | default: 'Practitioner' }}",
-          "display": "{{ treater.title | default: treater.name | default: 'Practitioner' }}"
+          "display": {{ treater.title | default: treater.name | default: 'Practitioner' | to_json_string | default: 'null' }}
         }
       ],
       "text": "{{ treater.title | default: treater.name | default: 'Practitioner' }}"
