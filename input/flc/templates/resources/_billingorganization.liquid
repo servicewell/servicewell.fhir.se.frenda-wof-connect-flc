@@ -16,7 +16,7 @@ Output:
 
 {
   "resourceType": "Organization",
-  "id": "{{ billingorg.id }}",
+  "id": "{{- billingorg.id -}}",
   "meta": {
     "tag": [
       { 
@@ -33,12 +33,7 @@ Output:
   "partOf": [
     {
       "reference": "Organization/{{ root.id }}",
-      "display": "{{ root.name }}"
+      "display": {{ root.name | to_json_string | default: 'null' }}
     }
-  ],
-
-
-  "identifier": [
-    { "system": "{{ wof-connect-codesystem-costlocation-system }}", "value": "{{ billingorg.number }}" }
   ],
 }

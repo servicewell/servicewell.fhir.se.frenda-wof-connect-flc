@@ -34,7 +34,7 @@ Output:
           "coding": [{
             "system": "{{ wof-connect-codesystem-practitioner-role }}",
             "code": "{{ treater.title | downcase | strip }}",
-            "display": "{{ treater.title | default: 'Practitioner' }}"
+            "display": {{ treater.title | default: 'Practitioner' | to_json_string | default: 'null' }}
           }],
           "text": "{{ treater.title | default: 'Practitioner' }}"
         }
@@ -62,7 +62,6 @@ Output:
     ]
   },
   "status": "active",
-  "name": "{{ name }}",
   "title": "{{ name }}",
   "description": "{{ treatment.description | default: name }}",
   "code": {
@@ -70,12 +69,12 @@ Output:
       {
         "system": "{{ wof-connect-codesystem-service-type }}",
         "code": "{{ treatment.calendarTreatmentType | default: name | downcase | strip | replace: ' ', '-' | replace: 'å','a' | replace: 'ä','a' | replace: 'ö','o' }}",
-        "display": "{{ name }}"
+        "display": {{ name | to_json_string | default: 'null' }}
       },
       {
         "system": "{{ wof-connect-identifiercodesystem-service-type-id }}",
         "code": "{{ treatment.id }}",
-        "display": "{{ treatment.name }}"
+        "display": {{ treatment.name | to_json_string | default: 'null' }}
       }
     ],
     "text": "{{ treatment.description | default: name }}"
@@ -100,7 +99,7 @@ Output:
         {
           "item": {
             "reference": "HealthcareService/{{ root.clinic.id }}",
-            "display": "{{ root.clinic.name }}"
+            "display": {{ root.clinic.name | to_json_string | default: 'null' }}
           }
         }
       ]

@@ -116,18 +116,14 @@ Output:
       {
         "system": "{{ wof-connect-identifiercodesystem-service-type-id }}",
         "code": "{{ appointment.treatment.id }}",
-        "display": "{{ appointment.treatment.description }}"
+        "display": {{ appointment.treatment.description | to_json_string | default: 'null' }}
       }
     ],
     "text": "{{ appointment.treatment.description }}"
   }],
   "status": "{{ appointmentStatus }}",
   "description": "{{ appointment.treatmentType }}",
-  "reasonCode": [
-    {
-      "text": "{{ appointment.reason }}"
-    }
-  ],
+  "comment": {{ appointment.reason | to_json_string | default: 'null' }},
   "start": "{{ appointment.start }}",
   "end": "{{ endDateTime }}",
   "requestedPeriod": [
@@ -140,14 +136,14 @@ Output:
     {
       "actor": {
         "reference": "Practitioner/{{ appointment.treater.id }}",
-        "display": "{{ appointment.treater.name }}"
+        "display": {{ appointment.treater.name | to_json_string | default: 'null' }}
       },
       "status": "accepted"
     },
     {
       "actor": {
         "reference": "Organization/{{ appointment.clinic.id }}",
-        "display": "{{ appointment.clinic.name }}"
+        "display": {{ appointment.clinic.name | to_json_string | default: 'null' }}
       },
       "status": "accepted"
     }

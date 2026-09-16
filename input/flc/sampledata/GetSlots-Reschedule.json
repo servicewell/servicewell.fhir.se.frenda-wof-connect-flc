@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "requestId": "0a226d32-0d17-45af-a9bc-bcfeac689439",
+    "extractDate": "2026-04-09T06:03:22Z",
+    "sourceSystem": "frenda",
+    "sourceSystemVersion": "1.0.0"
+  },
+  "data": {
+    "getAvailableSlots": [
+      {
+        "startDateTime": "2026-04-13T07:30:00Z",
+        "endDateTime": "2026-04-13T08:00:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTMgMDc6MzA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-13T08:00:00Z",
+        "endDateTime": "2026-04-13T08:30:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTMgMDg6MDA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-13T08:30:00Z",
+        "endDateTime": "2026-04-13T09:00:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTMgMDg6MzA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-14T07:00:00Z",
+        "endDateTime": "2026-04-14T07:30:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTQgMDc6MDA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-14T07:30:00Z",
+        "endDateTime": "2026-04-14T08:00:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTQgMDc6MzA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-14T08:00:00Z",
+        "endDateTime": "2026-04-14T08:30:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTQgMDg6MDA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-14T08:30:00Z",
+        "endDateTime": "2026-04-14T09:00:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTQgMDg6MzA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-15T07:00:00Z",
+        "endDateTime": "2026-04-15T07:30:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTUgMDc6MDA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-15T07:30:00Z",
+        "endDateTime": "2026-04-15T08:00:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTUgMDc6MzA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-15T08:00:00Z",
+        "endDateTime": "2026-04-15T08:30:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTUgMDg6MDA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-15T08:30:00Z",
+        "endDateTime": "2026-04-15T09:00:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTUgMDg6MzA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-16T07:00:00Z",
+        "endDateTime": "2026-04-16T07:30:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTYgMDc6MDA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-16T07:30:00Z",
+        "endDateTime": "2026-04-16T08:00:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTYgMDc6MzA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-16T08:00:00Z",
+        "endDateTime": "2026-04-16T08:30:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTYgMDg6MDA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-16T08:30:00Z",
+        "endDateTime": "2026-04-16T09:00:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTYgMDg6MzA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-17T08:00:00Z",
+        "endDateTime": "2026-04-17T08:30:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTcgMDg6MDA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      },
+      {
+        "startDateTime": "2026-04-17T08:30:00Z",
+        "endDateTime": "2026-04-17T09:00:00Z",
+        "clinicId": "48e428b0-fb37-4224-84df-5783a301a9da",
+        "treatmentId": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+        "treaterId": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+        "slotId": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzRlMTBlZDliLTgxNGUtNDFjOS05OTlmLTM4NjZkZTlkNTM0MzszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTcgMDg6MzA=",
+        "treaterNameWithTitle": "Utv Mattias Ekberg"
+      }
+    ]
+  }
+}

@@ -3,7 +3,6 @@ InstanceOf: FLCStructureMap
 Usage: #definition
 * name = "flc-patientdetails"
 * id = "flc-patientdetails"
-* version = "0.1.1"
 * title = "FLC Patient Details"
 * status = #draft
 * experimental = true

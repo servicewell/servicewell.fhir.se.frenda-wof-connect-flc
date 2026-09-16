@@ -1,0 +1,1412 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "id": "c8fb8359-ebb5-dfc9-0910-02a2489b91f9",
+  "meta": {
+    "lastUpdated": "2026-04-08T15:13:50+02:00",
+    "tag": [
+      {
+        "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+        "code": "frenda"
+      }
+    ],
+    "profile": [
+      "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle"
+    ]
+  },
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "b2269005-537c-31c3-b07e-ee5d58e7a985",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMDkgMDc6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-09T07:00:00Z",
+        "end": "2026-04-09T07:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-09T07:00:00Z",
+            "end": "2026-04-09T07:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "72625c73-d036-899b-c35b-c407715a72b9",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMDkgMDc6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-09T07:30:00Z",
+        "end": "2026-04-09T08:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-09T07:30:00Z",
+            "end": "2026-04-09T08:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "5b4387d4-c638-c670-cc3e-7eb4df196865",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMDkgMDg6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-09T08:00:00Z",
+        "end": "2026-04-09T08:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-09T08:00:00Z",
+            "end": "2026-04-09T08:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "36704f16-e733-2b81-2226-dc93840488c2",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMDkgMDg6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-09T08:30:00Z",
+        "end": "2026-04-09T09:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-09T08:30:00Z",
+            "end": "2026-04-09T09:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "b565be4e-5a7b-a288-b9c3-1e3cc2dcbdc0",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTAgMDc6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-10T07:00:00Z",
+        "end": "2026-04-10T07:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-10T07:00:00Z",
+            "end": "2026-04-10T07:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "37719a5d-1889-e4a1-55ea-27edf96ca50d",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTAgMDc6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-10T07:30:00Z",
+        "end": "2026-04-10T08:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-10T07:30:00Z",
+            "end": "2026-04-10T08:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "a003e0a3-a22d-de13-0d9e-eb12c21a77f7",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTAgMDg6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-10T08:00:00Z",
+        "end": "2026-04-10T08:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-10T08:00:00Z",
+            "end": "2026-04-10T08:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "2d09ca51-3766-0241-aefb-613967b46894",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTAgMDg6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-10T08:30:00Z",
+        "end": "2026-04-10T09:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-10T08:30:00Z",
+            "end": "2026-04-10T09:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "37f53793-0281-8b70-cabf-63db8058200a",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTMgMDc6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-13T07:00:00Z",
+        "end": "2026-04-13T07:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-13T07:00:00Z",
+            "end": "2026-04-13T07:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "15a1f655-9a00-c623-c7ca-fbe1ce84dda8",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTMgMDc6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-13T07:30:00Z",
+        "end": "2026-04-13T08:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-13T07:30:00Z",
+            "end": "2026-04-13T08:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "9aa2ad64-6a58-32e2-4b8a-4dbe0eb75ba2",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTMgMDg6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-13T08:00:00Z",
+        "end": "2026-04-13T08:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-13T08:00:00Z",
+            "end": "2026-04-13T08:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "082b83db-5cb6-18ce-3408-1cf64ba5693f",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTMgMDg6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-13T08:30:00Z",
+        "end": "2026-04-13T09:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-13T08:30:00Z",
+            "end": "2026-04-13T09:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "cbc63c21-b5e0-f1d7-aaca-f7fc4993a522",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTQgMDc6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-14T07:00:00Z",
+        "end": "2026-04-14T07:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-14T07:00:00Z",
+            "end": "2026-04-14T07:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "b3b94821-9816-aaaf-8efe-a753280d55f2",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTQgMDc6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-14T07:30:00Z",
+        "end": "2026-04-14T08:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-14T07:30:00Z",
+            "end": "2026-04-14T08:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "ec63e930-21a7-b50e-26a4-f969364ce78c",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTQgMDg6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-14T08:00:00Z",
+        "end": "2026-04-14T08:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-14T08:00:00Z",
+            "end": "2026-04-14T08:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "af0ddb72-e32c-c4ba-25a8-9662c76778aa",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTQgMDg6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-14T08:30:00Z",
+        "end": "2026-04-14T09:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-14T08:30:00Z",
+            "end": "2026-04-14T09:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "3a1421ca-7dba-3585-8570-bf745c74c333",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTUgMDc6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-15T07:00:00Z",
+        "end": "2026-04-15T07:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-15T07:00:00Z",
+            "end": "2026-04-15T07:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "20b124ce-8d10-91b2-9581-8438cb7156d1",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTUgMDc6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-15T07:30:00Z",
+        "end": "2026-04-15T08:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-15T07:30:00Z",
+            "end": "2026-04-15T08:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "d9e11300-2c7b-bf89-d2fa-9cf95bc71481",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTUgMDg6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-15T08:00:00Z",
+        "end": "2026-04-15T08:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-15T08:00:00Z",
+            "end": "2026-04-15T08:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "4723cade-9b92-b668-f80b-45f4362ea819",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTUgMDg6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-15T08:30:00Z",
+        "end": "2026-04-15T09:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-15T08:30:00Z",
+            "end": "2026-04-15T09:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "5af9875b-71fd-1191-4b63-419851589b9d",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTYgMDc6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-16T07:00:00Z",
+        "end": "2026-04-16T07:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-16T07:00:00Z",
+            "end": "2026-04-16T07:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "bfc02eda-313c-ef74-9d30-73bae658237d",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTYgMDc6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-16T07:30:00Z",
+        "end": "2026-04-16T08:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-16T07:30:00Z",
+            "end": "2026-04-16T08:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "b5716747-b800-787f-153c-d67c33005978",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTYgMDg6MDA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-16T08:00:00Z",
+        "end": "2026-04-16T08:30:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-16T08:00:00Z",
+            "end": "2026-04-16T08:30:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "9c9776f4-f412-e3c2-f7a6-b6cf6ca98bb3",
+        "meta": {
+          "tag": [
+            {
+              "system": "http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system",
+              "code": "frenda"
+            }
+          ],
+          "profile": [
+            "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment",
+            "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/slot-id",
+            "value": "NDhlNDI4YjAtZmIzNy00MjI0LTg0ZGYtNTc4M2EzMDFhOWRhOzY5NmIzNjg1LWRkMzktNDc4MS1iNDEwLTBlNzAwYThiYTAxMDszZGMzOGNmMS0yMDM5LTQwZjEtYjg1Zi02MTY0ZjIwMmMyMzU7ZjgwMDlhNmEtZGFkOS00MTY5LWE3ZjAtNzg5ZTJkNDBiYjczOzIwMjYtMDQtMTYgMDg6MzA="
+          }
+        ],
+        "serviceType": [
+          {
+            "coding": [
+              {
+                "system": "http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id",
+                "code": "696b3685-dd39-4781-b410-0e700a8ba010"
+              }
+            ]
+          }
+        ],
+        "status": "proposed",
+        "start": "2026-04-16T08:30:00Z",
+        "end": "2026-04-16T09:00:00Z",
+        "requestedPeriod": [
+          {
+            "start": "2026-04-16T08:30:00Z",
+            "end": "2026-04-16T09:00:00Z"
+          }
+        ],
+        "participant": [
+          {
+            "actor": {
+              "reference": "Practitioner/3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "display": "Utv Mattias Ekberg"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Organization/48e428b0-fb37-4224-84df-5783a301a9da"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ],
+  "total": 24
+}
