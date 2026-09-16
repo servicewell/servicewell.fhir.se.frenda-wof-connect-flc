@@ -49,7 +49,7 @@ Output:
             {
               "system": "{{wof-connect-identifiercodesystem-service-type-id}}",
               "code": "{{ t.id }}",
-              "display": "{{ t.name }}"
+              "display": {{ t.name | to_json_string | default: 'null' }}
             }            
           ],
           "text": "{{ t.description }}"
@@ -61,15 +61,15 @@ Output:
   "actor": [
     {
       "reference": "HealthcareService/{{ root.clinic.id }}",
-      "display": "{{ root.clinic.name }}"
+      "display": {{ root.clinic.name | to_json_string | default: 'null' }}
     },
     {
       "reference": "Practitioner/{{ treater.id }}",
-      "display": "{{ treater.name | default: treater.id }}"
+      "display": {{ treater.name | default: treater.id | to_json_string | default: 'null' }}
     },
     {
       "reference": "PractitionerRole/{{ practionerRoleId }}",
-      "display": "{{ treater.name | default: treater.id }}"
+      "display": {{ treater.name | default: treater.id | to_json_string | default: 'null' }}
     }
   ],
   "planningHorizon": {
