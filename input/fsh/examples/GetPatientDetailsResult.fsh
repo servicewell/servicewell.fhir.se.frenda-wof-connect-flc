@@ -1,8 +1,10 @@
 Alias: $pms-system = http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system
 
-Instance: GetPatientDetailsResultExample
+Instance: af1019ec-4d10-349e-7efb-688ab2bd2553-fsh
 InstanceOf: Patient
 Usage: #example
+* identifier.system = "urn:oid:1.2.752.129.2.1.3.1"
+* identifier.value = "199001072397"
 * meta.tag = $pms-system#frenda
 * meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-patient"
 * name.text = "Darth Vader"

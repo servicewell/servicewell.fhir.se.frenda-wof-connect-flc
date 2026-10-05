@@ -19,7 +19,7 @@ Usage: #definition
 * group.typeMode = #none
 * group.documentation = "Frenda To FHIR"
 * group.input.name = "GetAppointmentFindOp"
-* group.input.type = "FrendaAPIAppointment"
+* group.input.type = "GetSlots"
 * group.input.mode = #source
 * group.rule.name = "liquid"
 * group.rule.source.context = "source"

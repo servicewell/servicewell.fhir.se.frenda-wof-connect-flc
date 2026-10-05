@@ -24,7 +24,7 @@ Usage: #definition
 * group.typeMode = #none
 * group.documentation = "Frenda BookingResponse to IHE Scheduled Appointment Bundle (searchset Bundle with booked Appointment)."
 * group.input.name = "AppointmentBookOpResult"
-* group.input.type = "FrendaAPIBookResponse"
+* group.input.type = "PostCreateAppointment"
 * group.input.mode = #source
 
 * group.rule.name = "liquid"
