@@ -12,7 +12,7 @@ Usage: #example
 * total = 2
 
 Instance: ae5d19b0-77f8-a719-41a3-0a905c780a3b-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile = "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
@@ -30,7 +30,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: f91ddbb2-1234-848b-7d2c-401ae9329583-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile = "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"

@@ -94,7 +94,7 @@ Usage: #example
 * total = 41
 
 Instance: 8f9073da-6e5c-467c-8464-132953582e41-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -129,7 +129,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 7a1fc89d-5801-48be-adab-837ba310c7b6-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -164,7 +164,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 5999d619-3f28-492d-ac78-12de072f4032-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -199,7 +199,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 9bb0dcb5-2bbe-4d1b-a1ce-a111fe4faede-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -234,7 +234,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 4f097f80-9e2a-4e3c-91e3-acc5cea06b38-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -269,7 +269,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 76f90b2a-2c6a-4550-a4dc-e4aebd45538c-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -304,7 +304,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 27171d93-67b7-43a8-beaf-f228720b24a2-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -339,7 +339,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: aa57f0b5-a8fa-4ae4-98bb-502eaebe1712-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -374,7 +374,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 5b02274a-7c38-4f52-b194-a192331b7721-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -409,7 +409,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: c7174d69-a025-4926-b6d4-21ee9b915239-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -444,7 +444,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 37713098-f6a9-4e17-98ef-db8dfe9dbe8d-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -479,7 +479,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: fc4af407-47c5-4332-977a-0affbb8d0156-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -514,7 +514,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: a0f52da9-5092-4dc0-ba50-a52a6e5b1cc5-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -549,7 +549,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 6545b3af-e65c-4881-806f-61ead64f5b9a-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -584,7 +584,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 9e3b7286-2e31-4f98-adb3-535c651099d8-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -619,7 +619,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: ed24134d-7609-4819-b054-a54459cd3716-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -654,7 +654,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 4e7c108c-eef9-401e-91ad-3d4fa1d46a38-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -689,7 +689,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: a7cd3db1-9573-4500-aafe-7218370c82a0-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -724,7 +724,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: bee06f7a-badd-477f-ad17-4eb0c70b1868-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -759,7 +759,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 5fc7f306-1021-4ac1-a748-92fdc039b019-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -794,7 +794,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 8a8409a3-ee35-480a-9a40-35350a6746c3-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -829,7 +829,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 8999eea2-3f7e-4f77-9c02-4fbd8aa7a34b-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -864,7 +864,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 7f63d657-b5bb-465e-91b8-618d5f733cd1-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -899,7 +899,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 5354d9eb-353f-4df4-95dd-1d0c2014a8e5-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -934,7 +934,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: b5f994f6-e765-499a-b876-a7caa09c5d50-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -969,7 +969,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 33cc85ed-f899-4c9d-8113-02c29ed0c0b6-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1004,7 +1004,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 6fc09454-03c5-499b-b970-8cf9fbf6bb46-fsh-gabpa
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1039,7 +1039,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: f7b2ebbd-3356-42d1-a28e-7e0e9b4041b5-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1074,7 +1074,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 659454b3-eb83-4e18-82d0-f13046b00744-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1109,7 +1109,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 8f921d1f-dc50-4189-8dfd-98fc150270e2-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1144,7 +1144,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 5bd0ae7c-0322-4559-8f22-4364a5ce0a97-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1179,7 +1179,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 10942225-a7b9-419a-b017-68718be5c6e8-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1214,7 +1214,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 42c6339b-4cb0-41f3-a049-be37d659ef39-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1249,7 +1249,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 4acb2fcc-b0f1-4f76-b9d6-918d053df822-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1284,7 +1284,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 4362a446-f074-462d-a570-646497ba951b-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1319,7 +1319,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: aed1b546-981d-4c4b-b637-41b9c35efc31-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1354,7 +1354,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 7e046ef8-35f6-4a03-94ca-841c97d45707-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1389,7 +1389,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: a8c44412-2177-41ed-a9cd-6e869e3a9451-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1424,7 +1424,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 95b3de92-e180-4db4-b57a-da48bcf993e0-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1459,7 +1459,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 8e967ec9-29fc-420b-83ee-a43cbfae3428-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
@@ -1494,7 +1494,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: e72a0c73-e291-4583-a1df-63958148858b-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"

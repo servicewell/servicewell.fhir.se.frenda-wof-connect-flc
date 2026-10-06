@@ -3,7 +3,7 @@ Alias: $wc-characteristic = http://canonical.fhir.link/servicewell/wof-connect/C
 Alias: $service-type-id = http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id
 
 Instance: GetAppointmentByIdResultExample-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #example
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"

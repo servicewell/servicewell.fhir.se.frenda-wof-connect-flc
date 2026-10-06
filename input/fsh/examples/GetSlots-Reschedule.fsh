@@ -2,7 +2,7 @@ Alias: $pms-system = http://canonical.fhir.link/servicewell/wof-connect/CodeSyst
 Alias: $service-type-id = http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id
 
 Instance: 65c9ca1d-fa59-70a1-bea9-e781481692e4-fsh
-InstanceOf: Bundle
+InstanceOf: WofConnectFindAppointment
 Usage: #example
 * type = #searchset
 * meta.lastUpdated = "2026-04-09T08:03:22+02:00"
@@ -45,7 +45,7 @@ Usage: #example
 * total = 17
 
 Instance: b61e56fa-bdbc-4960-1c91-c6de552cee0c-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -64,7 +64,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: a8147e83-2224-069e-ff02-5e180d6c3575-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -83,7 +83,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 0412b080-27fe-f16a-d345-841948d141c8-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -102,7 +102,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: d2f22251-7d68-0d44-5155-4c02c0243866-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -121,7 +121,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 7118e4f3-a377-0111-8067-71238e3560b6-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -140,7 +140,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 799fce74-96d8-4437-8131-5e6651a086da-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -159,7 +159,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 4f88e452-cacb-3397-a484-e13bbe0e375b-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -178,7 +178,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: a95ac708-693b-7aee-ca4b-c78cbae682af-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -197,7 +197,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: fb2420d5-0c75-15bb-5cfd-e68a273400fb-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -216,7 +216,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: f6dc3224-2724-d0c8-612f-e6fa476e3195-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -235,7 +235,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: ec7ff261-ff67-7751-7403-300af3b7d1e3-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -254,7 +254,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 7b173993-23c8-a9c7-0717-f1eb9502ba55-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -273,7 +273,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: af7e2fbf-68f4-71d4-e618-4f03db4fa7c7-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -292,7 +292,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 832c70b5-5186-eb3e-486a-f96f615c53bb-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -311,7 +311,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: b1023ccf-975f-d638-9292-950dee90cb38-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -330,7 +330,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 987bbaba-552c-55cf-b5a1-2ea1d7908ae1-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"
@@ -349,7 +349,7 @@ Usage: #inline
 * participant[=].status = #accepted
 
 Instance: 85c935c8-8561-289a-0854-01485f999bb8-fsh
-InstanceOf: Appointment
+InstanceOf: WofConnectAppointment
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-slot-appointment"

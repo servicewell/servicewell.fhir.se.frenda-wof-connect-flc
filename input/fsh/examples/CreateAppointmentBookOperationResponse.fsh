@@ -13,7 +13,7 @@ Usage: #example
 * entry.resource = ba05c46a-d683-4d22-b048-4bb13bde4787-fsh-cab
 
 Instance: ba05c46a-d683-4d22-b048-4bb13bde4787-fsh-cab
-InstanceOf: Appointment
+InstanceOf: WofConnectBookingAppointment
 Usage: #inline
 * meta.profile[0] = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-booking-appointment"
 * meta.profile[+] = "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-appt"
