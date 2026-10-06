@@ -24,7 +24,7 @@ Usage: #definition
 * group.typeMode = #none
 * group.documentation = "Frenda BookingResponse to IHE Appointment"
 * group.input.name = "GetAppointmentById"
-* group.input.type = "GetAppointmentById"
+* group.input.type = "appointment/booking"
 * group.input.mode = #source
 
 * group.rule.name = "liquid"

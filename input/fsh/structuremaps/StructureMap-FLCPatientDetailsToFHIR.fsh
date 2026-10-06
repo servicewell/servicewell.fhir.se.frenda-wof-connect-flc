@@ -24,7 +24,7 @@ Usage: #definition
 * group.typeMode = #none
 * group.documentation = "Frenda PatientDetailsResponse to WofConnectPatient"
 * group.input.name = "GetPatientDetails"
-* group.input.type = "GetPatientDetails"
+* group.input.type = "patient/details"
 * group.input.mode = #source
 
 * group.rule.name = "liquid"

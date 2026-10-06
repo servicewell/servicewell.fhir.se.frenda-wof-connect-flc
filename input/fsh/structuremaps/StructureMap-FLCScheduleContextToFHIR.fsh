@@ -24,7 +24,7 @@ Usage: #definition
 * group.typeMode = #none
 * group.documentation = "Frenda schedule context to WOF Connect ScheduleContext Bundle"
 * group.input.name = "GetScheduleContext"
-* group.input.type = "GetClinicTreatments"
+* group.input.type = "clinic/treatments"
 * group.input.mode = #source
 
 * group.rule.name = "liquid"
