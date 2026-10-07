@@ -67,7 +67,7 @@ Usage: #inline
 * telecom[+].system = #email
 * telecom[=].value = "kontakt@servicewell.se"
 * telecom[=].use = #work
-* location = Reference(adressId)
+* location = Reference(#adressIdfor48e428b0-fb37-4224-84df-5783a301a9da)
 * characteristic[0].text = "Child Patient Threshold"
 * characteristic[=].extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wofconnect-characteristic"
 * characteristic[=].extension.extension.url = "scheduling"
