@@ -27,7 +27,7 @@
                         }
                     ],
                     "profile": [
-                        "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-economy-organization"
+                        "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-billing-organization"
                     ]
                 },
                 "name": "Service Well AB",
