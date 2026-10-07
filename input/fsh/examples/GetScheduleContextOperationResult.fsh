@@ -34,7 +34,7 @@ Instance: 48e428b0-fb37-4224-84df-5783a301a9da
 InstanceOf: WofConnectBillingOrganization
 Usage: #inline
 * meta.tag = $pms-system#frenda
-* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-economy-organization"
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-billing-organization"
 * name = "Service Well AB"
 * identifier.system = "urn:oid:1.2.752.129.2.1.4.1"
 * identifier.value = "hsaid55"
