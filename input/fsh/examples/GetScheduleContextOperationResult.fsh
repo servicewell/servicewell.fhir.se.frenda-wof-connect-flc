@@ -67,7 +67,7 @@ Usage: #inline
 * telecom[+].system = #email
 * telecom[=].value = "kontakt@servicewell.se"
 * telecom[=].use = #work
-* location = Reference(#adressIdfor48e428b0-fb37-4224-84df-5783a301a9da)
+* location.reference = "#adressIdfor48e428b0-fb37-4224-84df-5783a301a9da"
 * characteristic[0].text = "Child Patient Threshold"
 * characteristic[=].extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wofconnect-characteristic"
 * characteristic[=].extension.extension.url = "scheduling"
@@ -121,7 +121,7 @@ Usage: #inline
 * contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
 * contained.entry.item.display = "Service Well AB"
 * extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
-* extension.valueReference = Reference(HealthcareServiceListId)
+* extension.valueReference.reference = "#HealthcareServiceListId"
 
 Instance: 4e10ed9b-814e-41c9-999f-3866de9d5343
 InstanceOf: WofConnectActivityDefinition
@@ -146,7 +146,7 @@ Usage: #inline
 * contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
 * contained.entry.item.display = "Service Well AB"
 * extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
-* extension.valueReference = Reference(HealthcareServiceListId)
+* extension.valueReference.reference = "#HealthcareServiceListId"
 
 Instance: 949adf08-f5b9-4fca-8423-0e6824b1e3c7
 InstanceOf: WofConnectActivityDefinition
@@ -177,7 +177,7 @@ Usage: #inline
 * contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
 * contained.entry.item.display = "Service Well AB"
 * extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
-* extension.valueReference = Reference(HealthcareServiceListId)
+* extension.valueReference.reference = "#HealthcareServiceListId"
 
 Instance: 70de741d-8dd9-40e8-b72a-98b1e2e15381
 InstanceOf: WofConnectActivityDefinition
@@ -202,7 +202,7 @@ Usage: #inline
 * contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
 * contained.entry.item.display = "Service Well AB"
 * extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
-* extension.valueReference = Reference(HealthcareServiceListId)
+* extension.valueReference.reference = "#HealthcareServiceListId"
 
 Instance: b358da0c-19e8-4c21-b534-e21133c700ce
 InstanceOf: WofConnectActivityDefinition
@@ -230,7 +230,7 @@ Usage: #inline
 * contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
 * contained.entry.item.display = "Service Well AB"
 * extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
-* extension.valueReference = Reference(HealthcareServiceListId)
+* extension.valueReference.reference = "#HealthcareServiceListId"
 
 Instance: 907d178f-e59d-4eee-8529-df62c8a8d1be
 InstanceOf: WofConnectActivityDefinition
@@ -258,7 +258,7 @@ Usage: #inline
 * contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
 * contained.entry.item.display = "Service Well AB"
 * extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
-* extension.valueReference = Reference(HealthcareServiceListId)
+* extension.valueReference.reference = "#HealthcareServiceListId"
 
 Instance: ea80a74c-7e6c-86fc-00e1-d9fe9cc5df59
 InstanceOf: Schedule
