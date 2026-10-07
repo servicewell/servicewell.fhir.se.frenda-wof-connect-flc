@@ -28,9 +28,9 @@ Description: "Standard base data (meta and data wrapper) captured with each extr
 
 * meta.FhirQueryParam 0..* BackboneElement "FHIR query parameters from the request (name/value pairs)."
 * meta.FhirQueryParam.name 1..1 string "Name of the query parameter."
-* meta.FhirQueryParam.value 1..1 string "Query string parameters from the FHIR request (everything after ?)."
-* meta.FhirQueryParam.value ^example[+].label = "FHIR query parameters for GET /fhir/Organization/1234?_pretty=true&_format=json"
-* meta.FhirQueryParam.value ^example[=].valueString = "_pretty=true&_format=json"
+* meta.FhirQueryParam.value 1..1 string "Value of the query parameter."
+* meta.FhirQueryParam.value ^example[+].label = "Identifier value for GET /fhir/Patient?identifier=199001072397"
+* meta.FhirQueryParam.value ^example[=].valueString = "199001072397"
 
 * meta.resourceSubPath 0..1 string "The optional remaining path segment after the FHIR resource type."
 * meta.resourceSubPath ^example[+].label = "Resource sub-path for GET /fhir/Organization/1234"
