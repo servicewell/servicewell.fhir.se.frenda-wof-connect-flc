@@ -64,7 +64,7 @@ Output:
           "display": {{ treater.title | default: treater.name | default: 'Practitioner' | to_json_string | default: 'null' }}
         }
       ],
-      "text": "{{ treater.title | default: treater.name | default: 'Practitioner' }}"
+      "text": {{ treater.title | default: treater.name | default: 'Practitioner' | to_json_string | default: 'null' }}
     }
   ]
   
