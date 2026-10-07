@@ -30,6 +30,7 @@ Output:
 
 {%- assign durationSeconds = appointment.duration | times: 60 -%}
 {%- assign endDateTime = appointment.start | add_seconds: durationSeconds -%}
+{%- assign treatmentDisplayName = appointment.treatment.name | default: appointment.treatment.description | default: appointment.treatmentType -%}
 
 {
   "resourceType": "Appointment",
@@ -116,13 +117,13 @@ Output:
       {
         "system": "{{ wof-connect-identifiercodesystem-service-type-id }}",
         "code": "{{ appointment.treatment.id }}",
-        "display": {{ appointment.treatment.description | to_json_string | default: 'null' }}
+        "display": {{ treatmentDisplayName | to_json_string | default: 'null' }}
       }
     ],
-    "text": "{{ appointment.treatment.description }}"
+    "text": {{ treatmentDisplayName | to_json_string | default: 'null' }}
   }],
   "status": "{{ appointmentStatus }}",
-  "description": "{{ appointment.treatmentType }}",
+  "description": {{ treatmentDisplayName | to_json_string | default: 'null' }},
   "comment": {{ appointment.reason | to_json_string | default: 'null' }},
   "start": "{{ appointment.start }}",
   "end": "{{ endDateTime }}",

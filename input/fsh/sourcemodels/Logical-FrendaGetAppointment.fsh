@@ -118,7 +118,7 @@ Title: "Exempel: Frenda Appointment"
 * webReschedulingCountAllowed = 3
 * webCode = null
 
-* clinic.id = "48e428b0-fb37-4224-84df-5783a301a9da"
+* clinic.id = "48e428b0-fb37-4224-84df-5783a301a9da-fsh-gscor-gct"
 * clinic.name = "Service Well AB"
 * clinic.hsaIdentity = "hsaid55"
 * clinic.competenceCode = "A"
@@ -138,14 +138,14 @@ Title: "Exempel: Frenda Appointment"
 * clinic.costLocations[0].name = "Klinik ServiceWell"
 * clinic.costLocations[0].number = "911920"
 
-* treater.id = "3dc38cf1-2039-40f1-b85f-6164f202c235"
+* treater.id = "3dc38cf1-2039-40f1-b85f-6164f202c235-fsh-gscor-gct"
 * treater.name = "Utv Mattias Ekberg"
 * treater.firstName = "Mattias"
 * treater.lastName = "Ekberg"
 * treater.title = "Utv"
 * treater.hsaIdentity = "SE165560772419-10K8"
 
-* treatment.id = "4e10ed9b-814e-41c9-999f-3866de9d5343"
+* treatment.id = "4e10ed9b-814e-41c9-999f-3866de9d5343-fsh"
 * treatment.name = "Akut - barn"
 * treatment.duration = 30
 * treatment.calendarTreatmentType = "Akut"

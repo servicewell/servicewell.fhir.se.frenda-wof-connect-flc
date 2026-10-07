@@ -41,6 +41,7 @@ Output:
     {%- for appointment in dataRoot.bookedAppointments -%}
       {%- assign count = count | plus: 1 -%}
       {
+        "fullUrl": "urn:uuid:{{ appointment.id }}",
         "resource": {% include "resources/bookingappointment", appointment: appointment, sourceSystem: sourceSystem %}
       }{% if forloop.last == false %},{% endif %}
     {%- endfor -%}

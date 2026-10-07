@@ -16,6 +16,7 @@
     },
     "entry": [
         {
+            "fullUrl": "urn:uuid:ba05c46a-d683-4d22-b048-4bb13bde4787",
             "resource": {
                 "resourceType": "Appointment",
                 "id": "ba05c46a-d683-4d22-b048-4bb13bde4787",
@@ -99,7 +100,7 @@
                 ],
                 "status": "booked",
                 "description": "Akut",
-                "comment": "teestar",
+                "comment": "Comment from patient",
                 "start": "2026-04-13T07:00:00Z",
                 "end": "2026-04-13T07:30:00Z",
                 "requestedPeriod": [
