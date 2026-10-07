@@ -52,7 +52,7 @@ Output:
               "display": {{ t.name | to_json_string | default: 'null' }}
             }            
           ],
-          "text": "{{ t.description }}"
+          "text": {{ t.description | to_json_string | default: 'null' }}
         }
         {% assign first = false %}
       {%- endif -%}

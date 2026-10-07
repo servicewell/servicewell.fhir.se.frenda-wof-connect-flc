@@ -36,7 +36,7 @@ Output:
             "code": "{{ treater.title | downcase | strip }}",
             "display": {{ treater.title | default: 'Practitioner' | to_json_string | default: 'null' }}
           }],
-          "text": "{{ treater.title | default: 'Practitioner' }}"
+          "text": {{ treater.title | default: 'Practitioner' | to_json_string | default: 'null' }}
         }
       }
     {%- endcapture -%}
