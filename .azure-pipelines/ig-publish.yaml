@@ -16,9 +16,13 @@ jobs:
     steps:
       - checkout: self
         persistCredentials: true
+        path: ig
+        workspaceRepo: true
 
       - script: |
-          ORG=$(yq '.id' /azp/_work/1/s/sushi-config.yaml | cut -d'.' -f1)
+          set -euo pipefail
+          ORG=$(yq e -e -r '.id' "$(Build.Repository.LocalPath)/sushi-config.yaml" | cut -d'.' -f1)
+          test -n "$ORG"
           echo "##vso[task.setvariable variable=org]$ORG"
         displayName: Detect organization from sushi-config
 
