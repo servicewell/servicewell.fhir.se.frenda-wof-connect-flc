@@ -5,7 +5,6 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: servicewell.fhir.frenda-wof-connect-flc
 canonical: https://canonical.fhir.link/servicewell/frenda-wof-connect-flc
-canonical: https://canonical.fhir.link/servicewell/frenda-wof-connect-flc
 name:  servicewell.fhir.frenda-wof-connect-flc
 title: Frenda Wof-Connect FLC
 description: Service Well’s FHIR Liquid Conversion (FLC) implementation for Frenda to WOF Connect, enabling template-driven transformation of Frenda data into standards-compliant FHIR
