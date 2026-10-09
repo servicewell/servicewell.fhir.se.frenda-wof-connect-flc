@@ -1,15 +1,11 @@
 {
-   "package-id" : "servicewell.fhir.frenda-wof-connect-flc",
-   "version" : "0.1.3",
-   "path" : "https://canonical.fhir.link/servicewell/frenda-wof-connect-flc/0.1.3",
-   "mode" : "working",
-   "status" : "update",
-   "sequence" : "Pre-Release",
-   "desc" : "Initial pre-release of Frenda-wof-connect-flc IG",
-   "changes": "./changes.html",
-   "first": true,
-   "title": "Frenda Flc ig for Wof-Connect",
-   "ci-build": "https://build.fhir.org/ig/servicewell/servicewell.fhir.frenda-wof-connect-flc",
-   "category": "FLC",
-   "introduction": "This IG describes Service Well’s FHIR Liquid Conversion (FLC) implementation for Frenda to WOF Connect, enabling template-driven transformation of Frenda data into standards-compliant FHIR"
+  "package-id": "servicewell.fhir.frenda-wof-connect-flc",
+  "version": "0.1.3-ballot",
+  "path": "https://canonical.fhir.link/servicewell/frenda-wof-connect-flc/0.1.3-ballot",
+  "mode": "working",
+  "status": "ballot",
+  "sequence": "Pre-Release",
+  "desc": "Updated pre-release with corrected mappings, templates and examples.",
+  "changes": "changes.html",
+  "first": false
 }
