@@ -1,0 +1,59 @@
+@startuml
+title Recommended FHIR structure for HealthcareService scheduling characteristics
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam linetype ortho
+
+object "HealthcareService" as hs
+object "characteristic[]\nCodeableConcept only" as characteristic
+object "extension[]\nresource-level extensions" as extensions
+
+object "CodeableConcept\ncode = scheduling-accepts-new" as acceptsNew
+object "Coding\nsystem = wc-characteristic\ncode = scheduling-accepts-new" as acceptsNewCoding
+
+object "CodeableConcept\ncode = scheduling-accepts-reschedule" as acceptsReschedule
+object "Coding\nsystem = wc-characteristic\ncode = scheduling-accepts-reschedule" as acceptsRescheduleCoding
+
+object "CodeableConcept\ncode = scheduling-accepts-cancellation" as acceptsCancellation
+object "Coding\nsystem = wc-characteristic\ncode = scheduling-accepts-cancellation" as acceptsCancellationCoding
+
+object "Extension\nurl = .../child-patient-threshold\nvalueInteger = clinic.childPatientThreshold" as childThreshold
+
+hs --> characteristic
+hs --> extensions
+
+characteristic --> acceptsNew
+acceptsNew --> acceptsNewCoding
+
+characteristic --> acceptsReschedule
+acceptsReschedule --> acceptsRescheduleCoding
+
+characteristic --> acceptsCancellation
+acceptsCancellation --> acceptsCancellationCoding
+
+extensions --> childThreshold
+
+note right of characteristic
+Use characteristic for concepts that are
+classifications or capabilities of the service.
+Represent them as CodeableConcept with coding.
+end note
+
+note right of childThreshold
+Use a dedicated extension for data that is
+quantitative and not a coded service characteristic.
+Prefer one named extension with valueInteger
+over nested anonymous extension layers.
+end note
+
+note bottom of hs
+FHIR best practice here:
+- coded flags in characteristic[]
+- custom numeric business rule in extension[]
+- avoid mixing text-only characteristic entries
+  with complex nested extensions
+end note
+
+@enduml

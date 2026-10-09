@@ -1,0 +1,150 @@
+name: IG Publish
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  sushi-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install SUSHI
+        run: npm install -g fsh-sushi
+
+      - name: Compile with SUSHI
+        run: sushi
+
+  publish-via-azure-devops-template:
+    needs: sushi-check
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          allow-no-subscriptions: true
+
+      - name: Get Azure DevOps token
+        id: azdo_token
+        shell: bash
+        run: |
+          ACCESS_TOKEN="$(az account get-access-token \
+            --resource 499b84ac-1321-427f-aa17-267ca6975798 \
+            --query accessToken -o tsv)"
+          echo "access_token=$ACCESS_TOKEN" >> "$GITHUB_OUTPUT"
+
+      - name: Queue Azure DevOps run (template-backed)
+        id: queue_run
+        shell: bash
+        env:
+          AZDO_ORG_URL: ${{ vars.AZDO_ORG_URL }}
+          AZDO_PROJECT: ${{ vars.AZDO_PROJECT }}
+          AZDO_PIPELINE_ID: ${{ vars.AZDO_PIPELINE_ID }}
+          AZDO_ACCESS_TOKEN: ${{ steps.azdo_token.outputs.access_token }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${AZDO_ORG_URL}" ] || [ -z "${AZDO_PROJECT}" ] || [ -z "${AZDO_PIPELINE_ID}" ]; then
+            echo "Missing one or more required GitHub Variables: AZDO_ORG_URL, AZDO_PROJECT, AZDO_PIPELINE_ID" >&2
+            exit 1
+          fi
+
+          if [ -z "${AZDO_ACCESS_TOKEN}" ]; then
+            echo "Missing Azure DevOps access token from 'azdo_token' step" >&2
+            exit 1
+          fi
+
+          REPO_REF="${GITHUB_REF}"
+
+          REQUEST_BODY="$(jq -n \
+            --arg refName "$REPO_REF" \
+            '{
+              resources: {
+                repositories: {
+                  IGSource: {
+                    refName: $refName
+                  }
+                }
+              }
+            }')"
+
+          API_URL="${AZDO_ORG_URL}/${AZDO_PROJECT}/_apis/pipelines/${AZDO_PIPELINE_ID}/runs?api-version=7.1"
+          RESPONSE="$(curl -sS -w '\n%{http_code}' \
+            -H "Authorization: Bearer ${AZDO_ACCESS_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -X POST \
+            -d "$REQUEST_BODY" \
+            "$API_URL")"
+
+          HTTP_CODE="$(echo "$RESPONSE" | tail -n1)"
+          RESPONSE_BODY="$(echo "$RESPONSE" | sed '$d')"
+
+          if [ "$HTTP_CODE" -lt 200 ] || [ "$HTTP_CODE" -ge 300 ]; then
+            echo "Azure DevOps queue failed with HTTP ${HTTP_CODE}" >&2
+            echo "$RESPONSE_BODY"
+            exit 1
+          fi
+
+          RUN_ID="$(echo "$RESPONSE_BODY" | jq -r '.id')"
+          RUN_URL="$(echo "$RESPONSE_BODY" | jq -r '._links.web.href // empty')"
+
+          if [ -z "$RUN_ID" ] || [ "$RUN_ID" = "null" ]; then
+            echo "Azure DevOps run id missing in response" >&2
+            echo "$RESPONSE_BODY"
+            exit 1
+          fi
+
+          echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
+          echo "run_url=$RUN_URL" >> "$GITHUB_OUTPUT"
+          echo "Queued Azure DevOps run: $RUN_ID"
+          if [ -n "$RUN_URL" ]; then
+            echo "Run URL: $RUN_URL"
+          fi
+
+      - name: Wait for Azure DevOps run completion
+        shell: bash
+        env:
+          AZDO_ORG_URL: ${{ vars.AZDO_ORG_URL }}
+          AZDO_PROJECT: ${{ vars.AZDO_PROJECT }}
+          AZDO_PIPELINE_ID: ${{ vars.AZDO_PIPELINE_ID }}
+          AZDO_ACCESS_TOKEN: ${{ steps.azdo_token.outputs.access_token }}
+          RUN_ID: ${{ steps.queue_run.outputs.run_id }}
+        run: |
+          set -euo pipefail
+
+          STATUS_URL="${AZDO_ORG_URL}/${AZDO_PROJECT}/_apis/pipelines/${AZDO_PIPELINE_ID}/runs/${RUN_ID}?api-version=7.1"
+          echo "Monitoring Azure DevOps run ${RUN_ID}"
+
+          while true; do
+            STATUS_JSON="$(curl -sS -H "Authorization: Bearer ${AZDO_ACCESS_TOKEN}" "$STATUS_URL")"
+            STATE="$(echo "$STATUS_JSON" | jq -r '.state')"
+            RESULT="$(echo "$STATUS_JSON" | jq -r '.result // empty')"
+
+            echo "State: ${STATE} | Result: ${RESULT:-pending}"
+
+            if [ "$STATE" = "completed" ]; then
+              if [ "$RESULT" = "succeeded" ]; then
+                echo "Azure DevOps run completed successfully"
+                exit 0
+              fi
+              echo "Azure DevOps run failed with result: ${RESULT}" >&2
+              exit 1
+            fi
+
+            sleep 20
+          done

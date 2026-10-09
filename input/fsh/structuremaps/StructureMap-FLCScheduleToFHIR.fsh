@@ -3,7 +3,6 @@ InstanceOf: FLCStructureMap
 Usage: #definition
 * name = "flc-getschedules"
 * id = "flc-getschedules"
-* version = "0.1.1"
 * title = "FLC GetSchedules"
 * status = #draft
 * experimental = true

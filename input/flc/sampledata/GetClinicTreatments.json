@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "requestId": "a1bf3ae2-5aa5-43f0-a942-dbe2ff99a339",
+    "extractDate": "2026-04-08T12:39:42Z",
+    "sourceSystem": "frenda",
+    "sourceSystemVersion": "1.0.0"
+  },
+  "data": {
+    "getClinicTreatments": [{
+        "clinic": {
+          "id": "48e428b0-fb37-4224-84df-5783a301a9da",
+          "name": "Service Well AB",
+          "hsaIdentity": "hsaid55",
+          "competenceCode": "A",
+          "countyCode": "33",
+          "address": "Grönegatan 1C",
+          "postalCode": "22224",
+          "city": "Lund",
+          "phone": "070-738 76 66",
+          "eMail": "kontakt@servicewell.se",
+          "searchDateLimit": "2026-04-03T07:47:13.670028Z",
+          "childPatientThreshold": 20,
+          "isNewBookingAvailable": true,
+          "isRescheduleAvailable": true,
+          "isCancellationAvailable": true,
+          "costLocations": [
+            {
+              "id": "1eab7a3a-5bf3-410f-9ec7-d4e225ec267e",
+              "name": "Klinik ServiceWell",
+              "number": "911920"
+            }
+          ]
+        },
+        "treatments": [
+          {
+            "treaterIds": [
+              "3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "8a6057fa-3dce-413f-8da1-379b4c7d63d4",
+              "61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8"
+            ],
+            "allowAdults": true,
+            "allowChildren": false,
+            "id": "696b3685-dd39-4781-b410-0e700a8ba010",
+            "name": "Akut - vuxen",
+            "duration": 30,
+            "calendarTreatmentType": "Akut",
+            "description": "Akuttid för vuxna patienter"
+          },
+          {
+            "treaterIds": [
+              "3dc38cf1-2039-40f1-b85f-6164f202c235"
+            ],
+            "allowAdults": false,
+            "allowChildren": true,
+            "id": "4e10ed9b-814e-41c9-999f-3866de9d5343",
+            "name": "Akut - barn",
+            "duration": 30,
+            "calendarTreatmentType": "Akut",
+            "description": "Akuttid för barnpatienter."
+          },
+          {
+            "treaterIds": [
+              "3dc38cf1-2039-40f1-b85f-6164f202c235",
+              "8a6057fa-3dce-413f-8da1-379b4c7d63d4",
+              "61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8"
+            ],
+            "allowAdults": true,
+            "allowChildren": true,
+            "id": "949adf08-f5b9-4fca-8423-0e6824b1e3c7",
+            "name": "Undersökning",
+            "duration": 50,
+            "calendarTreatmentType": "Undersökning",
+            "description": "För ej akuta ärenden."
+          },
+          {
+            "treaterIds": [
+              "8a6057fa-3dce-413f-8da1-379b4c7d63d4"
+            ],
+            "allowAdults": true,
+            "allowChildren": true,
+            "id": "70de741d-8dd9-40e8-b72a-98b1e2e15381",
+            "name": "Tappad fyllning",
+            "duration": 30,
+            "calendarTreatmentType": "Fyllningsterapi",
+            "description": "Tappad fyllning utan smärta"
+          },
+          {
+            "treaterIds": [
+              "8a6057fa-3dce-413f-8da1-379b4c7d63d4",
+              "61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8"
+            ],
+            "allowAdults": true,
+            "allowChildren": true,
+            "id": "b358da0c-19e8-4c21-b534-e21133c700ce",
+            "name": "Extraktion",
+            "duration": 40,
+            "calendarTreatmentType": "Extraktion",
+            "description": null
+          },
+          {
+            "treaterIds": [
+              "8a6057fa-3dce-413f-8da1-379b4c7d63d4",
+              "61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8"
+            ],
+            "allowAdults": true,
+            "allowChildren": true,
+            "id": "907d178f-e59d-4eee-8529-df62c8a8d1be",
+            "name": "Airflow - kampanj",
+            "duration": 30,
+            "calendarTreatmentType": "Behandling",
+            "description": null
+          }
+        ],
+        "treaters": [
+          {
+            "id": "3dc38cf1-2039-40f1-b85f-6164f202c235",
+            "name": "Utv Mattias Ekberg",
+            "firstName": "Mattias",
+            "lastName": "Ekberg",
+            "title": "Utv",
+            "hsaIdentity": "SE165560772419-10K8"
+          },
+          {
+            "id": "8a6057fa-3dce-413f-8da1-379b4c7d63d4",
+            "name": "Utvecklare Matilda Clevesköld",
+            "firstName": "Matilda",
+            "lastName": "Clevesköld",
+            "title": "Utvecklare",
+            "hsaIdentity": "HSA4824"
+          },
+          {
+            "id": "61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8",
+            "name": "Utvecklare Marcus Johnsson",
+            "firstName": "Marcus",
+            "lastName": "Johnsson",
+            "title": "Utvecklare",
+            "hsaIdentity": "HSA3970"
+          }
+        ]
+      }
+    ]
+  }
+}

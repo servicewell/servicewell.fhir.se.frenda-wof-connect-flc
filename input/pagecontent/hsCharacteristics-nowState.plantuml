@@ -1,0 +1,53 @@
+@startuml
+title HealthcareService.characteristic structure
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam linetype ortho
+
+object "HealthcareService" as hs
+object "characteristic[]" as characteristic
+
+object "Child Patient Threshold\nconditional: clinic.childPatientThreshold != nil" as childThreshold
+object "CodeableConcept\ntext = Child Patient Threshold" as childConcept
+object "extension[]" as childExtList
+object "Extension\nurl = wof-connect-extension-wofconnect-characteristic" as rootExt
+object "Extension\nurl = scheduling" as schedulingExt
+object "Extension\nurl = childPatientThreshold\nvalueInteger = clinic.childPatientThreshold" as thresholdValue
+
+object "New booking available\nconditional: clinic.isNewBookingAvailable != nil" as newBooking
+object "Coding\ncode = scheduling-accepts-new" as newBookingCoding
+
+object "Reschedule available\nconditional: clinic.isRescheduleAvailable != nil" as reschedule
+object "Coding\ncode = scheduling-accepts-reschedule" as rescheduleCoding
+
+object "Cancellation available\nconditional: clinic.isCancellationAvailable != nil" as cancellation
+object "Coding\ncode = scheduling-accepts-cancellation" as cancellationCoding
+
+hs --> characteristic
+
+characteristic --> childThreshold
+childThreshold --> childConcept
+childConcept --> childExtList
+childExtList --> rootExt
+rootExt --> schedulingExt
+schedulingExt --> thresholdValue
+
+characteristic --> newBooking
+newBooking --> newBookingCoding
+
+characteristic --> reschedule
+reschedule --> rescheduleCoding
+
+characteristic --> cancellation
+cancellation --> cancellationCoding
+
+note right of characteristic
+Each entry is added only if
+its source field is present.
+The Liquid variable cfirst
+controls comma placement.
+end note
+
+@enduml

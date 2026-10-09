@@ -3,7 +3,6 @@ InstanceOf: FLCStructureMap
 Usage: #definition
 * name = "flc-appointmentbyid"
 * id = "flc-appointmentbyid"
-* version = "0.1.1"
 * title = "FLC GetAppointmentById"
 * status = #draft
 * experimental = true
