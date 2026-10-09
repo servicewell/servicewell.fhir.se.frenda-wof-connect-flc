@@ -77,6 +77,9 @@ jobs:
               resources: {
                 repositories: {
                   self: {
+                    refName: "refs/heads/main"
+                  },
+                  IGSource: {
                     refName: $refName
                   }
                 }
@@ -112,6 +115,8 @@ jobs:
           echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
           echo "run_url=$RUN_URL" >> "$GITHUB_OUTPUT"
           echo "Queued Azure DevOps run: $RUN_ID"
+          echo "IG source: $(echo "$RESPONSE_BODY" | jq -r '.resources.repositories.IGSource.refName')"
+          echo "IG commit: $(echo "$RESPONSE_BODY" | jq -r '.resources.repositories.IGSource.version')"
           if [ -n "$RUN_URL" ]; then
             echo "Run URL: $RUN_URL"
           fi
