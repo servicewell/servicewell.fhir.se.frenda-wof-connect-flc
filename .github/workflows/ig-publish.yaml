@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
 
       - uses: actions/setup-node@v4
         with:
@@ -31,6 +33,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
       
       - name: Azure Login
         uses: azure/login@v2
@@ -70,14 +74,20 @@ jobs:
           fi
 
           REPO_REF="${GITHUB_REF}"
+          REPO_SHA="${GITHUB_SHA}"
 
           REQUEST_BODY="$(jq -n \
             --arg refName "$REPO_REF" \
+            --arg version "$REPO_SHA" \
             '{
               resources: {
                 repositories: {
+                  self: {
+                    refName: "refs/heads/main"
+                  },
                   IGSource: {
-                    refName: $refName
+                    refName: $refName,
+                    version: $version
                   }
                 }
               }
@@ -112,6 +122,8 @@ jobs:
           echo "run_id=$RUN_ID" >> "$GITHUB_OUTPUT"
           echo "run_url=$RUN_URL" >> "$GITHUB_OUTPUT"
           echo "Queued Azure DevOps run: $RUN_ID"
+          echo "IG source: $(echo "$RESPONSE_BODY" | jq -r '.resources.repositories.IGSource.refName')"
+          echo "IG commit: $(echo "$RESPONSE_BODY" | jq -r '.resources.repositories.IGSource.version')"
           if [ -n "$RUN_URL" ]; then
             echo "Run URL: $RUN_URL"
           fi
