@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
 
       - uses: actions/setup-node@v4
         with:
@@ -31,6 +33,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
       
       - name: Azure Login
         uses: azure/login@v2
@@ -70,9 +74,11 @@ jobs:
           fi
 
           REPO_REF="${GITHUB_REF}"
+          REPO_SHA="${GITHUB_SHA}"
 
           REQUEST_BODY="$(jq -n \
             --arg refName "$REPO_REF" \
+            --arg version "$REPO_SHA" \
             '{
               resources: {
                 repositories: {
@@ -80,7 +86,8 @@ jobs:
                     refName: "refs/heads/main"
                   },
                   IGSource: {
-                    refName: $refName
+                    refName: $refName,
+                    version: $version
                   }
                 }
               }
