@@ -62,7 +62,7 @@ Output:
     {
       "actor": {
         "reference": "Practitioner/{{ slot.treaterId }}",
-        "display": "{{ slot.treaterNameWithTitle | default: slot.treaterId }}"
+        "display": {{ slot.treaterNameWithTitle | default: slot.treaterId | to_json_string | default: 'null' }}
       },
       "status": "accepted"
     },

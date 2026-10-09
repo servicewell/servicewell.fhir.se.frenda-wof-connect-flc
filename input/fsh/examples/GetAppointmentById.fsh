@@ -2,7 +2,7 @@ Alias: $pms-system = http://canonical.fhir.link/servicewell/wof-connect/CodeSyst
 Alias: $wc-characteristic = http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/wc-characteristic
 Alias: $service-type-id = http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id
 
-Instance: GetAppointmentByIdResultExample-fsh
+Instance: 5052cc88-45ed-4c89-9d02-94e1fef79483-fsh-gabi
 InstanceOf: WofConnectBookingAppointment
 Usage: #example
 * meta.tag = $pms-system#frenda
@@ -15,8 +15,8 @@ Usage: #example
 * extension[=].extension.extension[+].url = "webReschedulingCountAllowed"
 * extension[=].extension.extension[=].valueInteger = 3
 * extension[=].extension.extension[+].url = "schedulingAvailability"
-* extension[=].extension.extension[=].valueCodeableConcept.coding[0] = $wc-characteristic#scheduling-accepts-cancellation "Scheduling Accepts Cancellation"
-* extension[=].extension.extension[=].valueCodeableConcept.coding[+] = $wc-characteristic#scheduling-accepts-reschedule "Scheduling Accepts Reschedule"
+* extension[=].extension.extension[=].valueCodeableConcept.coding[0] = $wc-characteristic#scheduling-accepts-cancellation "Cancellation available"
+* extension[=].extension.extension[=].valueCodeableConcept.coding[+] = $wc-characteristic#scheduling-accepts-reschedule "Reschedule available"
 * extension[+].url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wofconnect-appointment-update"
 * extension[=].extension[0].url = "webReschedulingCount"
 * extension[=].extension[=].valueInteger = 0

@@ -1,27 +1,40 @@
 Alias: $pms-system = http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system
-Alias: $endpoint-id = http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/endpoint-id
 Alias: $wc-characteristic = http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/wc-characteristic
+Alias: $cs-service-type = http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/cs-service-type
 Alias: $service-type-id = http://canonical.fhir.link/servicewell/wof-connect/identifiercodesystem/service-type-id
+Alias: $practitioner-role = http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/practitioner-role
 
-Instance: GetScheduleContextOperationResult
-InstanceOf: Bundle
+Instance: c483eca8-e7af-b936-6601-b744ba70df44-fsh
+InstanceOf: WofConnectScheduleContextOperationResponse
 Usage: #example
 * type = #searchset
-* meta.lastUpdated = "2025-10-23T09:19:00+02:00"
-* meta.tag[0] = $pms-system#frenda
-* meta.tag[+] = $endpoint-id#c531616c-3696-491d-ace7-ce4f186ea788
+* meta.lastUpdated = "2026-04-08T14:39:42+02:00"
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-schedule-context-operation-response"
 * entry[0].resource = 48e428b0-fb37-4224-84df-5783a301a9da
-* entry[+].resource = Inline-Instance-for-39b02f0a-b72e-f1b7-4bae-7170805c5f26-1
+* entry[+].resource = Inline-Instance-for-c483eca8-e7af-b936-6601-b744ba70df44-fsh-1
+* entry[+].resource = 696b3685-dd39-4781-b410-0e700a8ba010
+* entry[+].resource = 4e10ed9b-814e-41c9-999f-3866de9d5343
+* entry[+].resource = 949adf08-f5b9-4fca-8423-0e6824b1e3c7
+* entry[+].resource = 70de741d-8dd9-40e8-b72a-98b1e2e15381
+* entry[+].resource = b358da0c-19e8-4c21-b534-e21133c700ce
+* entry[+].resource = 907d178f-e59d-4eee-8529-df62c8a8d1be
 * entry[+].resource = ea80a74c-7e6c-86fc-00e1-d9fe9cc5df59
 * entry[+].resource = 3dc38cf1-2039-40f1-b85f-6164f202c235
 * entry[+].resource = 2087a288-8831-835d-c99f-e53aa04c0d9e
-* total = 5
+* entry[+].resource = 679e6b0a-0f5e-c873-ad31-faa0e4b9f1bd
+* entry[+].resource = 8a6057fa-3dce-413f-8da1-379b4c7d63d4
+* entry[+].resource = 866f2aca-10f8-152b-4b51-bbfda4b8966d
+* entry[+].resource = f108f69f-23dd-8b34-b12e-4a44a42d4b84
+* entry[+].resource = 61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8
+* entry[+].resource = 13db6244-e8ab-a507-402b-8602203da705
+* total = 17
 
 Instance: 48e428b0-fb37-4224-84df-5783a301a9da
-InstanceOf: Organization
+InstanceOf: WofConnectBillingOrganization
 Usage: #inline
 * meta.tag = $pms-system#frenda
-* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-economy-organization"
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-billing-organization"
 * name = "Service Well AB"
 * identifier.system = "urn:oid:1.2.752.129.2.1.4.1"
 * identifier.value = "hsaid55"
@@ -38,11 +51,13 @@ Usage: #inline
 * address.city = "Lund"
 * address.country = "SE"
 
-Instance: Inline-Instance-for-39b02f0a-b72e-f1b7-4bae-7170805c5f26-1
-InstanceOf: HealthcareService
+Instance: Inline-Instance-for-c483eca8-e7af-b936-6601-b744ba70df44-fsh-1
+InstanceOf: WofConnectHealthcareService
 Usage: #inline
 * id = "48e428b0-fb37-4224-84df-5783a301a9da"
-* meta.tag.code = #frenda
+* identifier.system = "urn:oid:1.2.752.129.2.1.4.1"
+* identifier.value = "hsaid55"
+* meta.tag = $pms-system#frenda
 * meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice"
 * providedBy = Reference(48e428b0-fb37-4224-84df-5783a301a9da) "Service Well AB"
 * name = "Service Well AB"
@@ -52,6 +67,7 @@ Usage: #inline
 * telecom[+].system = #email
 * telecom[=].value = "kontakt@servicewell.se"
 * telecom[=].use = #work
+* location.reference = "#adressIdfor48e428b0-fb37-4224-84df-5783a301a9da"
 * characteristic[0].text = "Child Patient Threshold"
 * characteristic[=].extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wofconnect-characteristic"
 * characteristic[=].extension.extension.url = "scheduling"
@@ -60,31 +76,210 @@ Usage: #inline
 * characteristic[+] = $wc-characteristic#scheduling-accepts-new "New booking available"
 * characteristic[+] = $wc-characteristic#scheduling-accepts-reschedule "Reschedule available"
 * characteristic[+] = $wc-characteristic#scheduling-accepts-cancellation "Cancellation available"
+* contained = adressIdfor48e428b0-fb37-4224-84df-5783a301a9da // <<<--------      När fsh-konverteraren konverterar en bundle genererar
+                                                              //       den en ogiltig fsh för sushi att hantera, detta är en känd begränsning.
+                                                              //       Detta sätt är det "korrekta" sättet det ska vara på.
+Instance: adressIdfor48e428b0-fb37-4224-84df-5783a301a9da
+InstanceOf: Location
+Usage: #inline
+* physicalType.text = "Site"
+* physicalType = urn:oid:2.16.840.1.113883.4.642.3.328#si
+* address.use = #work
+* address.line = "Grönegatan 1C"
+* address.city = "Lund"
+* address.postalCode = "22224"
+* address.district = "33"
+
+//                                                                          Slut   ----------->>>
+
+Instance: 696b3685-dd39-4781-b410-0e700a8ba010
+InstanceOf: WofConnectActivityDefinition
+Usage: #inline
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+* status = #active
+* title = "Akut - vuxen"
+* description = "Akuttid för vuxna patienter"
+* code.coding[0] = $cs-service-type#akut "Akut - vuxen"
+* code.coding[+] = $service-type-id#696b3685-dd39-4781-b410-0e700a8ba010 "Akut - vuxen"
+* code.text = "Akuttid för vuxna patienter"
+* timingDuration = 30 'min' "minute"
+* participant[0].type = #practitioner
+* participant[=].role = $practitioner-role#utv "Utv"
+* participant[=].role.text = "Utv"
+* participant[+].type = #practitioner
+* participant[=].role = $practitioner-role#utvecklare "Utvecklare"
+* participant[=].role.text = "Utvecklare"
+* participant[+].type = #practitioner
+* participant[=].role = $practitioner-role#utvecklare "Utvecklare"
+* participant[=].role.text = "Utvecklare"
+* contained.resourceType = "List"
+* contained.id = "HealthcareServiceListId"
+* contained.status = #current
+* contained.mode = #working
+* contained.meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+* contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
+* contained.entry.item.display = "Service Well AB"
+* extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
+* extension.valueReference.reference = "#HealthcareServiceListId"
+
+Instance: 4e10ed9b-814e-41c9-999f-3866de9d5343
+InstanceOf: WofConnectActivityDefinition
+Usage: #inline
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+* status = #active
+* title = "Akut - barn"
+* description = "Akuttid för barnpatienter."
+* code.coding[0] = $cs-service-type#akut "Akut - barn"
+* code.coding[+] = $service-type-id#4e10ed9b-814e-41c9-999f-3866de9d5343 "Akut - barn"
+* code.text = "Akuttid för barnpatienter."
+* timingDuration = 30 'min' "minute"
+* participant.type = #practitioner
+* participant.role = $practitioner-role#utv "Utv"
+* participant.role.text = "Utv"
+* contained.resourceType = "List"
+* contained.id = "HealthcareServiceListId"
+* contained.status = #current
+* contained.mode = #working
+* contained.meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+* contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
+* contained.entry.item.display = "Service Well AB"
+* extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
+* extension.valueReference.reference = "#HealthcareServiceListId"
+
+Instance: 949adf08-f5b9-4fca-8423-0e6824b1e3c7
+InstanceOf: WofConnectActivityDefinition
+Usage: #inline
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+* status = #active
+* title = "Undersökning"
+* description = "För ej akuta ärenden."
+* code.coding[0] = $cs-service-type#undersokning "Undersökning"
+* code.coding[+] = $service-type-id#949adf08-f5b9-4fca-8423-0e6824b1e3c7 "Undersökning"
+* code.text = "För ej akuta ärenden."
+* timingDuration = 50 'min' "minute"
+* participant[0].type = #practitioner
+* participant[=].role = $practitioner-role#utv "Utv"
+* participant[=].role.text = "Utv"
+* participant[+].type = #practitioner
+* participant[=].role = $practitioner-role#utvecklare "Utvecklare"
+* participant[=].role.text = "Utvecklare"
+* participant[+].type = #practitioner
+* participant[=].role = $practitioner-role#utvecklare "Utvecklare"
+* participant[=].role.text = "Utvecklare"
+* contained.resourceType = "List"
+* contained.id = "HealthcareServiceListId"
+* contained.status = #current
+* contained.mode = #working
+* contained.meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+* contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
+* contained.entry.item.display = "Service Well AB"
+* extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
+* extension.valueReference.reference = "#HealthcareServiceListId"
+
+Instance: 70de741d-8dd9-40e8-b72a-98b1e2e15381
+InstanceOf: WofConnectActivityDefinition
+Usage: #inline
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+* status = #active
+* title = "Tappad fyllning"
+* description = "Tappad fyllning utan smärta"
+* code.coding[0] = $cs-service-type#fyllningsterapi "Tappad fyllning"
+* code.coding[+] = $service-type-id#70de741d-8dd9-40e8-b72a-98b1e2e15381 "Tappad fyllning"
+* code.text = "Tappad fyllning utan smärta"
+* timingDuration = 30 'min' "minute"
+* participant.type = #practitioner
+* participant.role = $practitioner-role#utvecklare "Utvecklare"
+* participant.role.text = "Utvecklare"
+* contained.resourceType = "List"
+* contained.id = "HealthcareServiceListId"
+* contained.status = #current
+* contained.mode = #working
+* contained.meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+* contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
+* contained.entry.item.display = "Service Well AB"
+* extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
+* extension.valueReference.reference = "#HealthcareServiceListId"
+
+Instance: b358da0c-19e8-4c21-b534-e21133c700ce
+InstanceOf: WofConnectActivityDefinition
+Usage: #inline
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+* status = #active
+* title = "Extraktion"
+* description = "Extraktion"
+* code.coding[0] = $cs-service-type#extraktion "Extraktion"
+* code.coding[+] = $service-type-id#b358da0c-19e8-4c21-b534-e21133c700ce "Extraktion"
+* code.text = "Extraktion"
+* timingDuration = 40 'min' "minute"
+* participant[0].type = #practitioner
+* participant[=].role = $practitioner-role#utvecklare "Utvecklare"
+* participant[=].role.text = "Utvecklare"
+* participant[+].type = #practitioner
+* participant[=].role = $practitioner-role#utvecklare "Utvecklare"
+* participant[=].role.text = "Utvecklare"
+* contained.resourceType = "List"
+* contained.id = "HealthcareServiceListId"
+* contained.status = #current
+* contained.mode = #working
+* contained.meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+* contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
+* contained.entry.item.display = "Service Well AB"
+* extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
+* extension.valueReference.reference = "#HealthcareServiceListId"
+
+Instance: 907d178f-e59d-4eee-8529-df62c8a8d1be
+InstanceOf: WofConnectActivityDefinition
+Usage: #inline
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-activitydefinition"
+* status = #active
+* title = "Airflow - kampanj"
+* description = "Airflow - kampanj"
+* code.coding[0] = $cs-service-type#behandling "Airflow - kampanj"
+* code.coding[+] = $service-type-id#907d178f-e59d-4eee-8529-df62c8a8d1be "Airflow - kampanj"
+* code.text = "Airflow - kampanj"
+* timingDuration = 30 'min' "minute"
+* participant[0].type = #practitioner
+* participant[=].role = $practitioner-role#utvecklare "Utvecklare"
+* participant[=].role.text = "Utvecklare"
+* participant[+].type = #practitioner
+* participant[=].role = $practitioner-role#utvecklare "Utvecklare"
+* participant[=].role.text = "Utvecklare"
+* contained.resourceType = "List"
+* contained.id = "HealthcareServiceListId"
+* contained.status = #current
+* contained.mode = #working
+* contained.meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-healthcareservice-list"
+* contained.entry.item.reference = "HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da"
+* contained.entry.item.display = "Service Well AB"
+* extension.url = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-list-reference"
+* extension.valueReference.reference = "#HealthcareServiceListId"
 
 Instance: ea80a74c-7e6c-86fc-00e1-d9fe9cc5df59
 InstanceOf: Schedule
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-schedule"
-* serviceType[0].coding[0] = $service-type-id#696b3685-dd39-4781-b410-0e700a8ba010 "Akut - vuxen"
-* serviceType[=].coding[+] = $endpoint-id#c531616c-3696-491d-ace7-ce4f186ea788 "FHIR Endpoint ID"
+* serviceType[0] = $service-type-id#696b3685-dd39-4781-b410-0e700a8ba010 "Akut - vuxen"
 * serviceType[=].text = "Akuttid för vuxna patienter"
-* serviceType[+].coding[0] = $service-type-id#4e10ed9b-814e-41c9-999f-3866de9d5343 "Akut - barn"
-* serviceType[=].coding[+] = $endpoint-id#c531616c-3696-491d-ace7-ce4f186ea788 "FHIR Endpoint ID"
+* serviceType[+] = $service-type-id#4e10ed9b-814e-41c9-999f-3866de9d5343 "Akut - barn"
 * serviceType[=].text = "Akuttid för barnpatienter."
-* serviceType[+].coding[0] = $service-type-id#949adf08-f5b9-4fca-8423-0e6824b1e3c7 "Undersökning"
-* serviceType[=].coding[+] = $endpoint-id#c531616c-3696-491d-ace7-ce4f186ea788 "FHIR Endpoint ID"
+* serviceType[+] = $service-type-id#949adf08-f5b9-4fca-8423-0e6824b1e3c7 "Undersökning"
 * serviceType[=].text = "För ej akuta ärenden."
 * actor[0] = Reference(HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da) "Service Well AB"
 * actor[+] = Reference(3dc38cf1-2039-40f1-b85f-6164f202c235) "Utv Mattias Ekberg"
 * actor[+] = Reference(2087a288-8831-835d-c99f-e53aa04c0d9e) "Utv Mattias Ekberg"
-* planningHorizon.start = "2025-11-11"
+* planningHorizon.start = "2026-09-17"
 * planningHorizon.end = "2026-04-03"
 
 Instance: 3dc38cf1-2039-40f1-b85f-6164f202c235
-InstanceOf: Practitioner
+InstanceOf: WofConnectPractitioner
 Usage: #inline
-* meta.lastUpdated = "2025-08-25T12:16:00+00:00"
 * identifier[0].system = "https://frenda.se/id/treater"
 * identifier[=].value = "3dc38cf1-2039-40f1-b85f-6164f202c235"
 * identifier[+].system = "urn:oid:1.2.752.129.2.1.4.1"
@@ -95,13 +290,100 @@ Usage: #inline
 * name.given = "Mattias"
 
 Instance: 2087a288-8831-835d-c99f-e53aa04c0d9e
-InstanceOf: PractitionerRole
+InstanceOf: WofConnectPractitionerRole
 Usage: #inline
 * meta.tag = $pms-system#frenda
 * meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-practitionerrole"
 * active = true
-* period.start = "2025-10-23T09:19:00+02:00"
+* period.start = "2026-04-08T14:39:42+02:00"
 * practitioner = Reference(3dc38cf1-2039-40f1-b85f-6164f202c235) "Utv Mattias Ekberg"
-* organization = Reference(Organization/1eab7a3a-5bf3-410f-9ec7-d4e225ec267e) "Klinik ServiceWell"
+* organization = Reference(48e428b0-fb37-4224-84df-5783a301a9da) "Service Well AB"
 * healthcareService = Reference(HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da) "Service Well AB"
+* code = $practitioner-role#Utv "Utv"
 * code.text = "Utv"
+
+Instance: 679e6b0a-0f5e-c873-ad31-faa0e4b9f1bd
+InstanceOf: Schedule
+Usage: #inline
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-schedule"
+* serviceType[0] = $service-type-id#696b3685-dd39-4781-b410-0e700a8ba010 "Akut - vuxen"
+* serviceType[=].text = "Akuttid för vuxna patienter"
+* serviceType[+] = $service-type-id#949adf08-f5b9-4fca-8423-0e6824b1e3c7 "Undersökning"
+* serviceType[=].text = "För ej akuta ärenden."
+* serviceType[+] = $service-type-id#70de741d-8dd9-40e8-b72a-98b1e2e15381 "Tappad fyllning"
+* serviceType[=].text = "Tappad fyllning utan smärta"
+* serviceType[+] = $service-type-id#b358da0c-19e8-4c21-b534-e21133c700ce "Extraktion"
+* serviceType[+] = $service-type-id#907d178f-e59d-4eee-8529-df62c8a8d1be "Airflow - kampanj"
+* actor[0] = Reference(HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da) "Service Well AB"
+* actor[+] = Reference(8a6057fa-3dce-413f-8da1-379b4c7d63d4) "Utvecklare Matilda Clevesköld"
+* actor[+] = Reference(866f2aca-10f8-152b-4b51-bbfda4b8966d) "Utvecklare Matilda Clevesköld"
+* planningHorizon.start = "2026-09-17"
+* planningHorizon.end = "2026-04-03"
+
+Instance: 8a6057fa-3dce-413f-8da1-379b4c7d63d4
+InstanceOf: WofConnectPractitioner
+Usage: #inline
+* identifier[0].system = "https://frenda.se/id/treater"
+* identifier[=].value = "8a6057fa-3dce-413f-8da1-379b4c7d63d4"
+* identifier[+].system = "urn:oid:1.2.752.129.2.1.4.1"
+* identifier[=].value = "HSA4824"
+* active = true
+* name.text = "Utvecklare Matilda Clevesköld"
+* name.family = "Clevesköld"
+* name.given = "Matilda"
+
+Instance: 866f2aca-10f8-152b-4b51-bbfda4b8966d
+InstanceOf: WofConnectPractitionerRole
+Usage: #inline
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-practitionerrole"
+* active = true
+* period.start = "2026-04-08T14:39:42+02:00"
+* practitioner = Reference(8a6057fa-3dce-413f-8da1-379b4c7d63d4) "Utvecklare Matilda Clevesköld"
+* organization = Reference(48e428b0-fb37-4224-84df-5783a301a9da) "Service Well AB"
+* healthcareService = Reference(HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da) "Service Well AB"
+* code = $practitioner-role#Utvecklare "Utvecklare"
+* code.text = "Utvecklare"
+
+Instance: f108f69f-23dd-8b34-b12e-4a44a42d4b84
+InstanceOf: Schedule
+Usage: #inline
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-schedule"
+* serviceType[0] = $service-type-id#696b3685-dd39-4781-b410-0e700a8ba010 "Akut - vuxen"
+* serviceType[=].text = "Akuttid för vuxna patienter"
+* serviceType[+] = $service-type-id#949adf08-f5b9-4fca-8423-0e6824b1e3c7 "Undersökning"
+* serviceType[=].text = "För ej akuta ärenden."
+* serviceType[+] = $service-type-id#b358da0c-19e8-4c21-b534-e21133c700ce "Extraktion"
+* serviceType[+] = $service-type-id#907d178f-e59d-4eee-8529-df62c8a8d1be "Airflow - kampanj"
+* actor[0] = Reference(HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da) "Service Well AB"
+* actor[+] = Reference(61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8) "Utvecklare Marcus Johnsson"
+* actor[+] = Reference(13db6244-e8ab-a507-402b-8602203da705) "Utvecklare Marcus Johnsson"
+* planningHorizon.start = "2026-09-17"
+* planningHorizon.end = "2026-04-03"
+
+Instance: 61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8
+InstanceOf: WofConnectPractitioner
+Usage: #inline
+* identifier[0].system = "https://frenda.se/id/treater"
+* identifier[=].value = "61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8"
+* identifier[+].system = "urn:oid:1.2.752.129.2.1.4.1"
+* identifier[=].value = "HSA3970"
+* active = true
+* name.text = "Utvecklare Marcus Johnsson"
+* name.family = "Johnsson"
+* name.given = "Marcus"
+
+Instance: 13db6244-e8ab-a507-402b-8602203da705
+InstanceOf: WofConnectPractitionerRole
+Usage: #inline
+* meta.tag = $pms-system#frenda
+* meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-practitionerrole"
+* active = true
+* period.start = "2026-04-08T14:39:42+02:00"
+* practitioner = Reference(61c533b7-bd2b-4b4c-b092-d1cf49e3d9f8) "Utvecklare Marcus Johnsson"
+* organization = Reference(48e428b0-fb37-4224-84df-5783a301a9da) "Service Well AB"
+* healthcareService = Reference(HealthcareService/48e428b0-fb37-4224-84df-5783a301a9da) "Service Well AB"
+* code = $practitioner-role#Utvecklare "Utvecklare"
+* code.text = "Utvecklare"

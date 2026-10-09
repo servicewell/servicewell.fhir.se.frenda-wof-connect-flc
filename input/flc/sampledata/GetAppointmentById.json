@@ -58,7 +58,7 @@
       "isWebBooked": true,
       "status": "Active",
       "treatmentType": "Akut",
-      "reason": "",
+      "reason": "this is my comment",
       "canAppointmentBeRescheduled": true,
       "canAppointmentBeCancelled": true
     }
