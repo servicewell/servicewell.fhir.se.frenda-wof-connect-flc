@@ -1,8 +1,10 @@
 Alias: $pms-system = http://canonical.fhir.link/servicewell/wof-connect/CodeSystem/pms-system
 
-Instance: GetPatientDetailsResultExample
-InstanceOf: Patient
+Instance: af1019ec-4d10-349e-7efb-688ab2bd2553-fsh
+InstanceOf: WofConnectPatient
 Usage: #example
+* identifier.system = "urn:oid:1.2.752.129.2.1.3.1"
+* identifier.value = "199001072397"
 * meta.tag = $pms-system#frenda
 * meta.profile = "http://canonical.fhir.link/servicewell/wof-connect/StructureDefinition/wof-connect-patient"
 * name.text = "Darth Vader"
@@ -14,3 +16,4 @@ Usage: #example
 * telecom[+].system = #phone
 * telecom[=].value = "0763002510"
 * telecom[=].use = #mobile
+* birthDate = "1990-01-07"

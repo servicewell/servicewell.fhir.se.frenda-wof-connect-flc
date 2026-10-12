@@ -42,6 +42,7 @@ Output:
   },
   "entry": [
     {
+      "fullUrl": "urn:uuid:{{ dataRoot.bookingAppointment.id }}",
       "resource": {% include "resources/bookingappointment", appointment: dataRoot.bookingAppointment, sourceSystem: sourceSystem %}
     }
   ]

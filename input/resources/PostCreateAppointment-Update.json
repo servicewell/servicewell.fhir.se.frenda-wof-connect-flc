@@ -16,6 +16,7 @@
     },
     "entry": [
         {
+            "fullUrl": "urn:uuid:ba05c46a-d683-4d22-b048-4bb13bde4787",
             "resource": {
                 "resourceType": "Appointment",
                 "id": "ba05c46a-d683-4d22-b048-4bb13bde4787",

@@ -128,7 +128,7 @@ RuleSet: FindAppointmentsBaseParams
 * parameter[=].use = #out
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "An [IHE Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](https://hl7.org/fhir/R4/appointment.html) resources and MAY also contain an [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"
+* parameter[=].documentation = "An [IHE Appointment Bundle Profile](https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](https://hl7.org/fhir/R4/appointment.html) resources and MAY also contain an [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"
 * parameter[=].type = #Bundle
 * parameter[=].targetProfile = "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle"
 
@@ -265,6 +265,6 @@ Usage: #definition
 * parameter[=].use = #out
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "An [IHE Appointment Bundle Profile](StructureDefinition-ihe-sched-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](https://hl7.org/fhir/R4/appointment.html) resources and MAY also contain an [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"
+* parameter[=].documentation = "An [IHE Appointment Bundle Profile](https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle.html) of type `searchset` with entries of proposed [Appointment](https://hl7.org/fhir/R4/appointment.html) resources and MAY also contain an [OperationOutcome](https://hl7.org/fhir/R4/operationoutcome.html) with errors, warnings or information as a result of processing the operation - e.g., an informational notice that the returned appointments are not within the requested start and end times.  An empty bundle means no available appointments based on inputs"
 * parameter[=].type = #Bundle
 * parameter[=].targetProfile = "https://profiles.ihe.net/ITI/Scheduling/StructureDefinition/ihe-sched-avail-bundle" */

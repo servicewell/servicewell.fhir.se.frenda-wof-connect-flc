@@ -8,27 +8,39 @@ Description: "Standard base data (meta and data wrapper) captured with each extr
 * ^status = #draft
 
 * meta 1..1 BackboneElement "Standard metadata captured with each extraction."
+
 // ------------------------------
 // Child elements under meta
 // ------------------------------
-* meta.requestId 1..1 string "Unique identifier for the extraction request."
-* meta.requestId ^example[+].label = "Example request ID"
-* meta.requestId ^example[=].valueString = "c94e2361-24d0-49a5-9133-f6d5a0f82474"
+* meta.requestId 1..1 string "Unique identifier for the HTTP request"
 
 * meta.extractDate 1..1 dateTime "UTC timestamp when data was extracted."
-* meta.extractDate ^example[+].label = "Example extraction timestamp"
+* meta.extractDate ^example[+].label = "Extraction timestamp"
 * meta.extractDate ^example[=].valueDateTime = "2025-10-31T13:42:00Z"
 
 * meta.sourceSystem 1..1 string "Source system identifier (frenda | opus)."
-* meta.sourceSystem ^example[+].label = "Example source system"
+* meta.sourceSystem ^example[+].label = "Source system"
 * meta.sourceSystem ^example[=].valueString = "frenda"
 
 * meta.sourceSystemVersion 1..1 string "Source system version (database or API version)."
-* meta.sourceSystemVersion ^example[+].label = "Example source system version"
+* meta.sourceSystemVersion ^example[+].label = "Source system version"
 * meta.sourceSystemVersion ^example[=].valueString = "1.7.23"
 
-* meta.endpointId 1..1 string "Identifier of the endpoint from which the data was extracted."
-* meta.endpointId ^example[+].label = "Example WOF endpoint identifier"
-* meta.endpointId ^example[=].valueString = "7b61e0f4-3e7a-4b15-bb60-23e4b38da8ce"
+* meta.FhirQueryParam 0..* BackboneElement "FHIR query parameters from the request (name/value pairs)."
+* meta.FhirQueryParam.name 1..1 string "Name of the query parameter."
+* meta.FhirQueryParam.value 1..1 string "Value of the query parameter."
+* meta.FhirQueryParam.value ^example[+].label = "Identifier value for GET /fhir/Patient?identifier=199001072397"
+* meta.FhirQueryParam.value ^example[=].valueString = "199001072397"
+
+* meta.resourceSubPath 0..1 string "The optional remaining path segment after the FHIR resource type."
+* meta.resourceSubPath ^example[+].label = "Resource sub-path for GET /fhir/Organization/1234"
+* meta.resourceSubPath ^example[=].valueString = "/1234"
+
+* meta.interactionLevel 0..1 string "The interaction level of the FLC operation (resource | instance)."
+* meta.interactionLevel ^example[+].label = "Interaction level"
+* meta.interactionLevel ^example[=].valueString = "instance"
+
+* meta.FhirQueryParam.extension 0..0 Extension "Extensions are not allowed on query parameter rows."
+* meta.FhirQueryParam.modifierExtension 0..0 Extension "Modifier extensions are not allowed on query parameter rows."
 
 * data 1..1 BackboneElement "Wrapper for data."

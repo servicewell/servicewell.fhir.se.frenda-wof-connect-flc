@@ -34,7 +34,7 @@ Output:
   },
   "providedBy": {
     "reference": "Organization/{{ clinic.id }}",
-    "display": "{{ clinic.name | escape }}"
+    "display": {{ clinic.name | to_json_string | default: 'null' }}
   },
   "name": "{{ clinic.name | escape }}",
 
@@ -116,7 +116,7 @@ Output:
           {
             "system": "{{ wof-connect-codesystem-wccharacteristic}}",
             "code": "scheduling-accepts-cancellation",
-            "display": "Cancellation available"
+            "display": "Scheduling Accepts Cancellation"
           }
         ]
       }

@@ -41,7 +41,10 @@ Output:
   "entry": [
     {%- for slot in dataRoot.getAvailableSlots -%}
       {%- assign count = count | plus: 1 -%}
+      {%- assign appointmentSeed = 'appointment|frenda|' | append: slot.slotId -%}
+      {%- assign appointmentId = appointmentSeed | generate_uuid -%}
       {
+        "fullUrl": "urn:uuid:{{ appointmentId }}",
         "resource": {% include "resources/slotappointment", slot: slot, sourceSystem: sourceSystem %}
       }{% if forloop.last == false %},{% endif %}
     {%- endfor -%}
