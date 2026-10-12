@@ -1,9 +1,9 @@
 {
   "package-id": "servicewell.fhir.frenda-wof-connect-flc",
-  "version": "0.1.3-ballot",
-  "path": "https://canonical.fhir.link/servicewell/frenda-wof-connect-flc/0.1.3-ballot",
-  "mode": "working",
-  "status": "ballot",
+  "version": "0.1.3",
+  "path": "https://canonical.fhir.link/servicewell/frenda-wof-connect-flc/0.1.3",
+  "mode": "milestone",
+  "status": "update",
   "sequence": "Pre-Release",
   "desc": "Updated pre-release with corrected mappings, templates and examples.",
   "changes": "changes.html",
