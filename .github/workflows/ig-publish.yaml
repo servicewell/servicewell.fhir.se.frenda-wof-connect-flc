@@ -83,7 +83,7 @@ jobs:
               resources: {
                 repositories: {
                   self: {
-                    refName: "refs/heads/main"
+                    refName: "refs/heads/temp-version"
                   },
                   IGSource: {
                     refName: $refName,
